@@ -82,8 +82,7 @@ To answer this question, we evaluate the
       Granularity is less coarse than in the case of the piano, but coarser than in the case of BEA. </p>
       <p>Investigate relations with MPEG7 measure HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
       <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;</p>
-      <p>Seems to be &quot;only&quot; normalised cross-correlation of the signal.</p>
-      <p>&nbsp;</p></td>
+      <p>Seems to be &quot;only&quot; normalised cross-correlation of the signal.</p></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -270,7 +269,9 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
       <td style="text-align: left">Evolution of some diagonals over the years</td>
       <td style="text-align: center"><img src="imgs/Corrs_several_intervals_volweighted_nonmedfilt_upload.png" width="400" height="338" alt=""/><br>
         <span style="text-align: center">Remember the emphasis on low frequencies.<br>
-        <strong>Coherent with &quot;Wiener entropy of median filtered spectrum&quot; above - REALLY? SEEMS TO GO IN THE OPPOSITE DIRECTION, , RECHECK INTERPRETATION</strong></span></td> 
+        Coherent with &quot;Wiener entropy of median filtered spectrum&quot; as seen just below, but be careful of interpretations.
+        <br>
+        </span></td> 
       
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
@@ -281,7 +282,8 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
     </tr>
     <tr>
       <td style="text-align: left">Evolution of some median-smoothed diagonals (~LPF) over the years</td>
-      <td style="text-align: center"><img src="imgs/Corrs_several_intervals_volweigted_LPF_median_filtered_updated.png" width="400" height="251" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/Corrs_several_intervals_volweigted_LPF_median_filtered_updated.png" width="400" height="251" alt=""/><br>
+      <strong>Coherent with &quot;Wiener entropy of median filtered spectrum&quot; above - rechecked - correct, but make it clear that in the case of LPF diagonals, low value = pitchy and high value = noisy, which reevaluates the interpretation made elsewhere</strong></td>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
@@ -320,7 +322,7 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
     <tr>
       <td style="text-align: center"><span style="text-align: left">Evolution of some diagonals over the years</span></td>
       <td style="text-align: center"><img src="imgs/BEA_somediags_raw_2s_2weights_upload.png" width="400" height="342" alt=""/><br>
-        <strong>Coherent with &quot;Weighted Wiener entropy of median filtered spectrum&quot; above - REALLY? SEEMS TO GO IN THE OPPOSITE DIRECTION, RECHECK INTERPRETATION</strong><br>
+        Coherent with &quot;Wiener entropy of weighted median filtered spectrum&quot; as seen just below, but be careful of interpretations. <br>
         Falls steeply during the '90s. </td>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
@@ -330,10 +332,15 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
       <td colspan="3" bgcolor="#DBDBDB" style="text-align: center"><span style="text-align: center;">Diagonals, median-smoothed (~LPF)</span></td>
     </tr>
     <tr>
+      <td>&nbsp;</td>
+      <td colspan="3" bgcolor="#00FF52" style="text-align: center">See &quot;Analysis of examples&quot; below for descriptions of tracks according to this representation</td>
+    </tr>
+    <tr>
       <td style="text-align: center"><span style="text-align: left">Evolution of some median-smoothed diagonals (~LPF) over the years</span></td>
       <td style="text-align: center"><p><img src="imgs/BEA_somediags_LPF_2s_2weights_upload.png" width="400" height="251" alt=""/><br>
           <br>
-          The decrease in diagonal values during the '90s originates from the envelope.</p></td>
+          The decrease in diagonal values during the '90s originates from the envelope.</p>
+        <p><strong>Coherent with &quot;Wiener entropy of weighted median filtered spectrum&quot; above - rechecked - correct, but make it clear that in the case of LPF diagonals, low value = pitchy and high value = noisy, which reevaluates the interpretation made elsewhere</strong></p></td>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
@@ -581,31 +588,13 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
 <p><span style="font-size: xx-large">ANALYSIS OF EXAMPLES</span></p>
 <p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="4" bgcolor="#00FF52" style="text-align: center"><strong><br></strong><strong>Examples of high and low WE values</strong><br>
+      <br></td>
+  </tr>
   <tbody>
     <tr>
-      <td width="234" style="text-align: center">&nbsp;</td>
-      <td colspan="3" bgcolor="#DBDBDB" style="text-align: center"><strong><br>
-Pairwise correlations between freq bands, 2-second windows<br>
-<br>
-      </strong></td>
-    </tr>
-    <tr>
-      <td style="text-align: center">&nbsp;</td>
-      <td width="345" style="text-align: center"><img src="imgs/11708 - Low - Double Negative - Tempest - 2018 2s.png" width="400" height="402" alt=""/><br>
-&quot;11708 - Low - Double Negative - Tempest - 2018&quot;<br>
-Confirms that captures harmonicity (the square at the bottom left is isolated)</td>
-      <td width="390" style="text-align: center">&nbsp;</td>
-      <td width="407" style="text-align: center">&nbsp;</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">&nbsp;</td>
-      <td colspan="3" bgcolor="#DBDBDB" style="text-align: center"><p><strong><br>
-      Examples of high and low WE values<br>
-      <br>
-      </strong></p></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><p><br>
+      <td width="234" style="text-align: center"><p><br>
         <br>
       </p></td>
       <td colspan="3" style="text-align: center"><p>Following are examples of tracks from the dataset with very high WE (low peak salience) and very low WE (high peak salience).<br>
@@ -614,19 +603,24 @@ Confirms that captures harmonicity (the square at the bottom left is isolated)</
     </tr>
     <tr>
       <td style="text-align: left">Example with very high Wiener entropy (low peak salience)</td>
-      <td colspan="3" style="text-align: center; font-size: medium;"><p>The four tracks with the highest median filtered weighted Wiener entropy values are interludes or introductions with only noise.</p>
-        <p font-size: small;>06548 - Einstuerzende Neubauten - Zeichnungen des Patienten - Finger und Zahne - 1983<br>
-          10890 - Kraftwerk - Radio Aktivitat - Geigerzahler - 1975<br>
-          19060 - Soundgarden - Ultramega - One Minute Of Silence - 1988<br>
-          19228 - Steve Earle - Shut up and die like an aviator - Intro - 1991</p>
+      <td colspan="3" style="text-align: center; font-size: medium;"><p>The ten tracks with the highest median filtered weighted Wiener entropy values:</p>
+        <p>'06548 - Einstuerzende Neubauten - Zeichnungen des Patienten - Finger und Zahne - 1983'<br>
+          '10890 - Kraftwerk - Radio Aktivitat - Geigerzahler - 1975'<br>
+          '19060 - Soundgarden - Ultramega - One Minute Of Silence - 1988'<br>
+          '19228 - Steve Earle - Shut up and die like an aviator - Intro - 1991'<br>
+          '01933 - Beasty Boys - Licenssed To Ill - Paul Revere - 1986'<br>
+          '01941 - Beasty Boys - Paul s Boutique - 3 Minute Rule - 1989'<br>
+          '10873 - Kraftwerk - Computerwelt - Nummern - 1981'<br>
+          '01928 - Beasty Boys - Licenssed To Ill - Brass Monkey - 1986'<br>
+          '17304 - Redman - Whut Thee Album - Blow Your Mind Remix - 1992'<br>
+        '00344 - A Tribe Called Quest - The Low End Theory - What - 1991' </p>
+        <p>All then tracks are noisy. The first four tracks are interludes or introductions with only noise.        </p>
         <p>The track with the fifth  highest median filtered weighted Wiener entropy value is not noisy.<br>
           01933 - Beasty Boys - Licenssed To Ill - Paul Revere - 1986</p>
         <audio controls>
           <source src="audio/01933 - Beasty Boys - Licenssed To Ill - Paul Revere - 1986.mp3" type="audio/mp3">
         </audio>
-        <p>Explain low pitch salience etc.</p>
-        <p><br>
-        </p></td>
+        <p>Explain low pitch salience etc.</p></td>
     </tr>
     <tr>
       <td style="text-align: left">Example with very low Wiener entropy</td>
@@ -643,7 +637,7 @@ Confirms that captures harmonicity (the square at the bottom left is isolated)</
         '22177 - The White Stripes - White Blood Cells - I Can T Wait - 2001'<br>
         '17030 - Radiohead - In Rainbows - Go Slowly - 2007'<br>
         '06470 - Earl Sweatshirt - Some Rap Songs - Riot! - 2018'</p>
-        <p>Seven out of ten are sums of (in)harmonic compounds.<br>
+        <p>All then tracks are very &quot;pitchy&quot;. Seven out of ten are sums of (in)harmonic compounds.<br>
           One is a short sequence of 
           a single (in)harmonic compound (16993).<br>
         </p>
@@ -686,6 +680,95 @@ Confirms that captures harmonicity (the square at the bottom left is isolated)</
         To answer this question, we evaluate the 
         pairwise correlations between frequency bands.<br>
         <br></td>
+    </tr>
+    <tr>
+      <td colspan="4" bgcolor="#00FF52" style="text-align: center"><strong><br>
+        Pairwise correlations between freq bands, 2-second windows - examples<br>
+        <br>
+      </strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td width="345" style="text-align: center"><img src="imgs/11708 - Low - Double Negative - Tempest - 2018 2s.png" width="400" height="402" alt=""/><br>
+        &quot;11708 - Low - Double Negative - Tempest - 2018&quot;<br>
+        Confirms that captures harmonicity (the square at the bottom left is isolated)</td>
+      <td width="390" style="text-align: center">&nbsp;</td>
+      <td width="407" style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="4" bgcolor="#00FF52" style="text-align: center"><strong><br>
+        Pairwise correlations between freq bands, 2-second windows, weighted with level</strong> <strong>and ISO226-2003 - examples</strong><br>        
+      <br></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td colspan="3" style="text-align: center"><p><strong>10 lower values for raw diagonal corresponding to octave</strong></p>
+        <p> '03018 - Brian Eno - Ambient 4 - Lantern Marsh - 1982.mat                                                    '<br>
+'01450 - Aphex Twin - Selected Ambient Works 2 - Domino - 1994.mat                                           '<br>
+'17751 - Run The Jewels - Run the Jewels 3 - Call Ticketron - 2016.mat                                       '<br>
+'16048 - Pj Harvey - Is This Desire - Electric Light - 1998.mat                                              '<br>
+'17742 - Run The Jewels - Run The Jewels - Close Your Eyes And Count To Fuck Feat Zack De La Rocha - 2013.mat'<br>
+'23638 - Wu Tang Clan - Wu Tang Clan Forever - Triumph - 1997.mat                                            '<br>
+'06452 - Earl Sweatshirt - I dont like shit - Faucet - 2015.mat                                              '<br>
+'13137 - Midori Takada - Through the looking glass - Mr. Henri Rousseau’s Dream - 1983.mat                   '<br>
+'18710 - Snoop Dog - Malice n Wonderland - 2 Minute Warning - 2009.mat                                       '<br>
+'03654 - Busta Rhymes - Anarchy - All Night - 2000.mat                                                       '      </p>
+        <p><strong>10 higher values for raw diagonal corresponding to octave</strong></p>
+        <p>'06181 - Dr Dre - 2001 - Murder Ink Feat Hittman Ms Roq - 1999.mat                      '<br>
+          '20481 - The Band - Rock of Ages - Introduction - 1972.mat                              '<br>
+          '12479 - Marylin Manson - Antichrist Superstar - Untitled - 1996.mat                    '<br>
+          '01316 - Animal Collective - Here comes the Indian - Hey Light - 2003.mat               '<br>
+          '20630 - The Black Parade - My chemical Romance - lood - 2006.mat                       '<br>
+          '04609 - Country Joe and the Fish - Together - The Fish Moan - 1968.mat                 '<br>
+          '03737 - Busta Rhymes - It Aint Safe No More - Intro - 2002.mat                         '<br>
+          '10058 - Jimmy Hendrix - Electric Ladyland - And The Gods Made Love - 1968.mat          '<br>
+          '18939 - Sonic Youth - Bad Moon Rising - Echo Canyon - 1985.mat                         '<br>
+          '05462 - Dead Kennedys - Fresh Fruit For Rotting Vegetables - I Kill Children - 1980.mat'</p>
+        <p><strong>10 lower values for LPF diagonal corresponding to octave</strong><br>
+          All of them are very 'pitchy'
+        </p>
+        <p>'17050 - <a href="https://www.youtube.com/watch?v=L7p47zYKJoM">Radiohead - Kid A - Treefingers </a>- 2000.mat                                                          '<br>
+          '03051 - <a href="https://www.youtube.com/watch?v=bYCVke7TqlA">Brian Eno - Discreet Music - Fullness Of Wind </a>- 1975.mat                                            '<br>
+          '05431 - <a href="https://www.youtube.com/watch?v=ZFXwlZx4MGY">Dead can dance - Spleen and ideal - Ascension </a>- 1985.mat                                            '<br>
+          '03018 - <a href="https://www.youtube.com/watch?v=lxbsSVwemgM">Brian Eno - Ambient 4 - Lantern Marsh </a>- 1982.mat                                                    '<br>
+          '05018 - <a href="https://www.youtube.com/watch?v=e4ALfP6Rh8Q">David Bowie - Buddha Of Suburbia - The Mysteries </a>- 1993.mat                                         '<br>
+          '18710 - Snoop Dog - Malice n Wonderland - 2 Minute Warning - 2009.mat                                       '<br>
+          '01574 - Archive - Londinium - Organ Song - 1996.mat                                                         '<br>
+          '23638 - Wu Tang Clan - Wu Tang Clan Forever - Triumph - 1997.mat                                            '<br>
+          '17751 - Run The Jewels - Run the Jewels 3 - Call Ticketron - 2016.mat                                       '<br>
+          '17742 - Run The Jewels - Run The Jewels - Close Your Eyes And Count To Fuck Feat Zack De La Rocha - 2013.mat'</p>
+        <p><strong>10 higher values for LPF diagonal corresponding to octave</strong><br>
+          All of them are very 'noisy'
+        </p>
+        <p> '06181 - <a href="https://www.youtube.com/watch?v=R1WJZTQWoJ8">Dr Dre - 2001 - Murder Ink Feat Hittman Ms Roq</a> - 1999.mat                      '<br>
+'20481 - <a href="https://www.youtube.com/watch?v=cNtcW2LqveU">The Band - Rock of Ages - Introduction </a>- 1972.mat                              '<br>
+'12479 - <a href="https://www.youtube.com/watch?v=XndpzflRjfw">Marylin Manson - Antichrist Superstar - Untitled </a>- 1996.mat                    '<br>
+'01316 - <a href="https://www.youtube.com/watch?v=SEGhtbLuMHY">Animal Collective - Here comes the Indian - Hey Light </a>- 2003.mat               '<br>
+'10058 - <a href="https://www.youtube.com/watch?v=Hz_XAldktzY">Jimmy Hendrix - Electric Ladyland - And The Gods Made Love </a>- 1968.mat          '<br>
+'18939 - Sonic Youth - Bad Moon Rising - Echo Canyon - 1985.mat                         '<br>
+'03737 - Busta Rhymes - It Aint Safe No More - Intro - 2002.mat                         '<br>
+'20630 - The Black Parade - My chemical Romance - lood - 2006.mat                       '<br>
+'04609 - Country Joe and the Fish - Together - The Fish Moan - 1968.mat                 '<br>
+'05462 - Dead Kennedys - Fresh Fruit For Rotting Vegetables - I Kill Children - 1980.mat'</p>
+      <p>&nbsp;</p></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
     </tr>
   </tbody>
 </table>
