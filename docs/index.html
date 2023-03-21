@@ -7,7 +7,7 @@
 
 <body>
 <p>&nbsp;</p>
-<p style="font-size: xx-large">MAIN</p>
+<p style="font-size: xx-large">WIENER ENTROPY</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
     <tr>
@@ -46,6 +46,13 @@
 To answer this question, we evaluate the 
       pairwise correlations between frequency bands.<br>      <br></td>
     </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<p><span style="font-size: xx-large">PAIRWISE CORRELATIONS, 2-SECOND WINDOWS</span></p>
+<p>&nbsp;</p>
+<table width="1386" border="1" cellpadding="0" cellspacing="0">
+  <tbody>
     <tr>
       <td style="text-align: center">Dataset</td>
       <td bgcolor="#000000" style="text-align: center; color: #FFFFFF; font-size: 28px">BEA (CPM)</td>
@@ -54,8 +61,8 @@ To answer this question, we evaluate the
     </tr>
     <tr>
       <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong><br>
-      Pairwise correlations between freq bands, 2-second windows<br>
-      <br>
+        Pairwise correlations between freq bands, 2-second windows<br>
+        <br>
       </strong></td>
     </tr>
     <tr>
@@ -77,12 +84,12 @@ To answer this question, we evaluate the
       <td colspan="3" style="text-align: center"><p>White diagonal lines correspond to conjointly evolving bands.<br>
         <br>
         The diagrams define different frequency ranges that we may be able to use later.<br>
-  <br>
+        <br>
         Notice the coarser granularity, corresponding to less 'continousness' of the self-correlated content.<br>
-      Granularity is less coarse than in the case of the piano, but coarser than in the case of BEA. </p>
-      <p>Investigate relations with MPEG7 measure HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
-      <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;</p>
-      <p>Seems to be &quot;only&quot; normalised cross-correlation of the signal.</p></td>
+        Granularity is less coarse than in the case of the piano, but coarser than in the case of BEA. </p>
+        <p>Investigate relations with MPEG7 measure HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
+        <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;</p>
+        <p>Seems to be &quot;only&quot; normalised cross-correlation of the signal.</p></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -95,7 +102,7 @@ To answer this question, we evaluate the
     <tr>
       <td>Sum of diagonals and median-filtered diagonals (three datasets)</td>
       <td colspan="3" style="text-align: center"><p> Median filtering, win=10, overlap=half window.<br>
-          Diagonals evaluated between 27.5 and 5000Hz (unsignificant 
+        Diagonals evaluated between 27.5 and 5000Hz (unsignificant 
         correlations outside this range)</p>
         <p><img src="imgs/Peaks_three_superimposed_upload.png" width="400" height="324" alt=""/></p>
         <p>Correlations are generally higher for piano, then orchestra, then CPM.<br>
@@ -105,7 +112,7 @@ To answer this question, we evaluate the
         </p>
         <p>Still, the information [piano &gt; orchestra &gt; CPM] is itself significant.<br>
           For small intervals, correlations are higher for CPM.<br>
-        As we saw that these correlations come from intervals, not harmonics, we can conclude that more parallel fundamentals exist in CPM than in orchestra + opera, but timbre is less harmonic.</p>
+          As we saw that these correlations come from intervals, not harmonics, we can conclude that more parallel fundamentals exist in CPM than in orchestra + opera, but timbre is less harmonic.</p>
         <p>Bottom, salience of the harmonics from the general correlation values.<br>
           Generally, orchestra &gt; (piano and CPM).<br>
           <br>
@@ -115,7 +122,7 @@ To answer this question, we evaluate the
           CPM =&gt; low general correlation, lower saliences
           =&gt; lower tonal content, be it harmonic or non-harmonic<br>
           <br>
-      </p></td>
+        </p></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -124,14 +131,13 @@ To answer this question, we evaluate the
     <tr>
       <td rowspan="2">Evolution of some diagonals over the years</td>
       <td style="text-align: center"><p><img src="imgs/Corrs_several_intervals_nonmedfilt_upload.png" width="400" height="341" alt=""/></p>
-      <p>        (1) Values over the diagonals, overall<br>
-        (2) Values over the diagonals, year by year        <br>
-        (3) Extract from (2), some diagonals<br>
-        (4) Some diagonals, amplitude for each diagonal is normalised
-      </p>
-      <p>(4) is smoothed for better readability<br>
-        Below 1 octave: increases from the '90s<br>
-      Above 1 octave: peaks near 1976, 1995, 2010 and 2021.</p></td>
+        <p> (1) Values over the diagonals, overall<br>
+          (2) Values over the diagonals, year by year <br>
+          (3) Extract from (2), some diagonals<br>
+          (4) Some diagonals, amplitude for each diagonal is normalised </p>
+        <p>(4) is smoothed for better readability<br>
+          Below 1 octave: increases from the '90s<br>
+          Above 1 octave: peaks near 1976, 1995, 2010 and 2021.</p></td>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
@@ -163,11 +169,10 @@ To answer this question, we evaluate the
         <p>(1) Overall median-filtered diagonal values<br>
           (2) Year by year<br>
           (3) Extract from (2), some diagonals<br>
-          (4) From (2), amplitude of each diagonal is normalised
-          <br>
+          (4) From (2), amplitude of each diagonal is normalised <br>
           <br>
           The value for most diagonals (38 semitones is an exception) falls steeply between 1990 and 2000.<br>
-      </p></td>
+        </p></td>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
@@ -178,28 +183,28 @@ To answer this question, we evaluate the
     <tr>
       <td>Origin of the median-filtered diagonals</td>
       <td colspan="3" style="text-align: center">One question is whether the observed intervals come from harmonics or parallel voices.<br>
-To answer the question, we start from MIDI files, sonify them with sine waves and piano, and compare the contributions of sine waves (fundamental) and piano (fundamental + harmonics) to the diagonals.<br>
-<br>
-<img src="imgs/Piano_sine_Distributions_upload.png" width="400" height="99" alt=""/><br>
-<br>
-Possible only from MIDI files.<br>
-Shows that median-filtered diagonals come mainly from  voices from intervals &lt; fifth, and gradually from harmonics above.<br>
-Notice the inharmonicity.</td>
+        To answer the question, we start from MIDI files, sonify them with sine waves and piano, and compare the contributions of sine waves (fundamental) and piano (fundamental + harmonics) to the diagonals.<br>
+        <br>
+        <img src="imgs/Piano_sine_Distributions_upload.png" width="400" height="99" alt=""/><br>
+        <br>
+        Possible only from MIDI files.<br>
+        Shows that median-filtered diagonals come mainly from  voices from intervals &lt; fifth, and gradually from harmonics above.<br>
+        Notice the inharmonicity.</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
       <td colspan="3" style="text-align: center"><p><strong>Conclusion</strong> <strong>to  the diachronic analysis</strong></p>
-      <p>There are two drawbacks to the pairwise correlations between freq bands, 2-second windows, not weighted<br>
-        1) long windows, no detection of small-scale movements<br>
-        2) not weighted 
-      using level, correlations for low levels have the same importance as correlations for high levels<br>
-      </p>
-      <p>Still, the conclusions are the following.<br>
-        Diagonals generally increase with time, but the salience of the diagonals decrease with time.<br>
-        In other words, CPM goes toward the presence of more intervals, but the intervals have less and less harmonic relationships.<br>
-      Pitch in CPM is less and less compliant to &quot;pitch = f0 + multiples&quot;, even though there are more simultaneous, parallel frequency evolutions.</p>
-      <p>The conclusions mainly concern intervals that originate from overtones.</p>
-      <p>&nbsp;</p></td>
+        <p>There are two drawbacks to the pairwise correlations between freq bands, 2-second windows, not weighted<br>
+          1) long windows, no detection of small-scale movements<br>
+          2) not weighted 
+          using level, correlations for low levels have the same importance as correlations for high levels<br>
+        </p>
+        <p>Still, the conclusions are the following.<br>
+          Diagonals generally increase with time, but the salience of the diagonals decrease with time.<br>
+          In other words, CPM goes toward the presence of more intervals, but the intervals have less and less harmonic relationships.<br>
+          Pitch in CPM is less and less compliant to &quot;pitch = f0 + multiples&quot;, even though there are more simultaneous, parallel frequency evolutions.</p>
+        <p>The conclusions mainly concern intervals that originate from overtones.</p>
+        <p>&nbsp;</p></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -208,7 +213,7 @@ Notice the inharmonicity.</td>
     <tr>
       <td>Pairwise correlations between frequency bands, PC1</td>
       <td style="text-align: center"><p><img src="imgs/BEA_PC1_upload.png" width="400" height="325" alt=""/></p>
-      <p>PC1 may be interpreted as 'everything but periodic content'. Suggests that PC1 is quantity of harmonicity. But there are two problems: (1) window is large (2s), and conclusions can't be applied to small-time-scale evolutions; (2) higher physical level of bass frequencies introduce a bias towards high frequencies, which doesn't reflect what is actually perceived.</p></td>
+        <p>PC1 may be interpreted as 'everything but periodic content'. Suggests that PC1 is quantity of harmonicity. But there are two problems: (1) window is large (2s), and conclusions can't be applied to small-time-scale evolutions; (2) higher physical level of bass frequencies introduce a bias towards high frequencies, which doesn't reflect what is actually perceived.</p></td>
       <td style="text-align: center"><img src="imgs/Piano_PC1_upload.png" width="400" height="326" alt=""/><br>
         Piano PC1 is similar to BEA PC1. One difference is the granularity.</td>
       <td style="text-align: center">&nbsp;</td>
@@ -229,7 +234,7 @@ Notice the inharmonicity.</td>
       <td style="text-align: center"><img src="imgs/second_diagonal_BEA_upload.png" width="400" height="153" alt=""/><br>
         Variance of the second diagonal from high pass filtered pairwise correlations between frequency bands</td>
       <td style="text-align: center"><img src="imgs/second_diagonal_piano_upload.png" width="400" height="152" alt=""/><br>
-      Variance of the second diagonal from high pass filtered pairwise correlations between frequency bands</td>
+        Variance of the second diagonal from high pass filtered pairwise correlations between frequency bands</td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
     <tr>
@@ -239,8 +244,8 @@ Notice the inharmonicity.</td>
     </tr>
     <tr>
       <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong><br>
-Pairwise correlations between freq bands, 2-second windows, weighted with level<br>
-<br>
+        Pairwise correlations between freq bands, 2-second windows, weighted with level<br>
+        <br>
       </strong></td>
     </tr>
     <tr>
@@ -268,11 +273,8 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
     <tr>
       <td style="text-align: left">Evolution of some diagonals over the years</td>
       <td style="text-align: center"><img src="imgs/Corrs_several_intervals_volweighted_nonmedfilt_upload.png" width="400" height="338" alt=""/><br>
-        <span style="text-align: center">Remember the emphasis on low frequencies.<br>
-        Coherent with &quot;Wiener entropy of median filtered spectrum&quot; as seen just below, but be careful of interpretations.
-        <br>
-        </span></td> 
-      
+        Remember the emphasis on low frequencies.<br>
+        Coherent with &quot;Wiener entropy of median filtered spectrum&quot; as seen just below, but be careful of interpretations. <br></td>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
@@ -283,7 +285,7 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
     <tr>
       <td style="text-align: left">Evolution of some median-smoothed diagonals (~LPF) over the years</td>
       <td style="text-align: center"><img src="imgs/Corrs_several_intervals_volweigted_LPF_median_filtered_updated.png" width="400" height="251" alt=""/><br>
-      <strong>Coherent with &quot;Wiener entropy of median filtered spectrum&quot; above - rechecked - correct, but make it clear that in the case of LPF diagonals, low value = pitchy and high value = noisy, which reevaluates the interpretation made elsewhere</strong></td>
+        <strong>Coherent with &quot;Wiener entropy of median filtered spectrum&quot; above - rechecked - correct, but make it clear that in the case of LPF diagonals, low value = pitchy and high value = noisy, which reevaluates the interpretation made elsewhere</strong></td>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
@@ -299,8 +301,8 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
     </tr>
     <tr>
       <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong><br>
-Pairwise correlations between freq bands, 2-second windows, weighted with level</strong> <strong>and ISO226-2003</strong><br>
-<br> </td>
+        Pairwise correlations between freq bands, 2-second windows, weighted with level</strong> <strong>and ISO226-2003</strong><br>
+        <br></td>
     </tr>
     <tr>
       <td colspan="4" style="text-align: center">Will be possible to compare diagonals with weighted Wiener correlation</td>
@@ -312,7 +314,7 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
     <tr>
       <td style="text-align: center"><span style="text-align: left">Pairwise correlations between frequency bands</span></td>
       <td style="text-align: center"><img src="imgs/BEA_freq_freq_2s_2weights_upload.png" width="400" height="394" alt=""/></td>
-      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center"><img src="imgs/Piano_freq_freq_2s_2weights_upload.png" width="400" height="395" alt=""/></td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
     <tr>
@@ -338,8 +340,8 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
     <tr>
       <td style="text-align: center"><span style="text-align: left">Evolution of some median-smoothed diagonals (~LPF) over the years</span></td>
       <td style="text-align: center"><p><img src="imgs/BEA_somediags_LPF_2s_2weights_upload.png" width="400" height="251" alt=""/><br>
-          <br>
-          The decrease in diagonal values during the '90s originates from the envelope.</p>
+        <br>
+        The decrease in diagonal values during the '90s originates from the envelope.</p>
         <p><strong>Coherent with &quot;Wiener entropy of weighted median filtered spectrum&quot; above - rechecked - correct, but make it clear that in the case of LPF diagonals, low value = pitchy and high value = noisy, which reevaluates the interpretation made elsewhere</strong></p></td>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
@@ -351,8 +353,8 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
     <tr>
       <td style="text-align: center"><span style="text-align: left">Evolution of some median-filtered diagonals (~HPF) over the years</span></td>
       <td style="text-align: center"><img src="imgs/BEA_somediags_HPF_2s_2weights_upload.png" width="400" height="340" alt=""/><br>
-      <br>
-      Salience of the diagonals (particular intervals) depends on the interval, but the decrease during the '90s can also be observed in all cases.</td>
+        <br>
+        Salience of the diagonals (particular intervals) depends on the interval, but the decrease during the '90s can also be observed in all cases.</td>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
@@ -361,10 +363,24 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
         Let's use 0.1s windows instead of 2 second windows. <br>
         There will be issues with low frequencies (STFT resolution) but the analysis will capture short time-scale evolutions.</p></td>
     </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: xx-large">PAIRWISE CORRELATIONS, 0.1-SECOND WINDOWS</span></p>
+<p>&nbsp;</p>
+<table width="1386" border="1" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="text-align: center">Dataset</td>
+      <td bgcolor="#000000" style="text-align: center; color: #FFFFFF; font-size: 28px">BEA (CPM)</td>
+      <td bgcolor="#000000" style="text-align: center; color: #FFFFFF; font-size: 28px">Piano</td>
+      <td bgcolor="#000000" style="text-align: center; color: #FFFFFF; font-size: 28px">Orchestra + Opera</td>
+    </tr>
     <tr>
       <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong><br>
-      Pairwise correlations between freq bands, 0.1-second windows<br>
-      <br>
+        Pairwise correlations between freq bands, 0.1-second windows<br>
+        <br>
       </strong></td>
     </tr>
     <tr>
@@ -383,8 +399,8 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
     </tr>
     <tr>
       <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong><br>
-      Pairwise correlations between freq bands, 0.1-second windows, weighted with both level and ISO226-2001<br>
-      <br>
+        Pairwise correlations between freq bands, 0.1-second windows, weighted with both level and ISO226-2001<br>
+        <br>
       </strong></td>
     </tr>
     <tr>
@@ -407,7 +423,7 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
     <tr>
       <td>Pairwise correlations between frequency bands, PC1</td>
       <td style="text-align: center"><img src="imgs/BEA_small_PC1_weighted_upload.png" width="400" height="324" alt=""/><br>
-      PC1 is similar to the two PC1s above, with consideration of the applied weightings.</td>
+        PC1 is similar to the two PC1s above, with consideration of the applied weightings.</td>
       <td style="text-align: center"><img src="imgs/Piano_PC1_small_windows_weighted_upload.png" width="400" height="309" alt=""/><br>
         PC1 for weighted piano only partially reflects 'pitchiness'.</td>
       <td style="text-align: center"><img src="imgs/Orchestra_small_windows_weighted_PC1_upload.png" width="400" height="311" alt=""/><br>
@@ -421,12 +437,12 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
             <td><audio controls>
               <source src="audio/02338 - Bjork - Vespertine - Frosti - 2001.mp3" type="audio/mp3" width=120px;>
             </audio></td>
-            </tr>
+          </tr>
           <tr>
             <td><audio controls>
               <source src="audio/19649 - Sufjan Stevens - Illinois - Riffs and Variations on a Single Note for Jelly Roll Earl Hines Louis Armstrong Baby Dodds And The King of Swing to Name a Few - 2005.mp3" type="audio/mp3" width=120px;>
             </audio></td>
-            </tr>
+          </tr>
           <tr>
             <td><audio controls>
               <source src="audio/01086 - Alice Cooper - Welcome to my Nightmare - Flatline - 2011.mp3" type="audio/mp3" width=120px;>
@@ -494,8 +510,8 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
           </tr>
         </tbody>
       </table>
-		<p>Examples correspond to a clear intuitive percept, unlike the same experiment with unweighted audio.</p>
-		<p>11708 - Low - Double Negative - Tempest - 2018 is near the 55th percentile, whereas the Wiener Entropy was one of the lowest =&gt; indeed captures (in)harmonicity</p></td>
+        <p>Examples correspond to a clear intuitive percept, unlike the same experiment with unweighted audio.</p>
+        <p>11708 - Low - Double Negative - Tempest - 2018 is near the 55th percentile, whereas the Wiener Entropy was one of the lowest =&gt; indeed captures (in)harmonicity</p></td>
       <td style="text-align: center"><table width="100%" border="1">
         <tbody>
           <tr>
@@ -517,7 +533,7 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
       </table>
         <p>Examples correspond to a percept, but less clear than in the case of BEA. The percept appears to correspond to some sort of clarity in the piano sound.</p>
         <p>Possible origin: instrument + legato.<br>
-      </p></td>
+        </p></td>
       <td style="text-align: center"><table width="100%" border="1">
         <tbody>
           <tr>
@@ -536,9 +552,8 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
             </audio></td>
           </tr>
         </tbody>
-      </table> 
-        The percept appears  similar to BEA.
-</td>
+      </table>
+        The percept appears  similar to BEA. </td>
     </tr>
     <tr>
       <td>PC1, evolution over the years</td>
@@ -554,11 +569,10 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
         <p>(recheck proper order of PC1 to make sure the conclusions are correct)</p>
         <p>'70s: low peak salience and less organised into parallel formants (harmonic and inharmonic)<br>
           '70s -&gt; '90s: low peak salience but more organised into parallel formants (harmonic and inharmonic)<br>
-          '90s -&gt; '20s: higher peak salience
-        </p>
+          '90s -&gt; '20s: higher peak salience </p>
         <p>Value of (in)harmonicity is dependent on peak salience.  Therefore, we evaluate (in)harmonicity / abs(peak salience) as a function of peak salience.</p>
         <p><img src="imgs/WE-PC_2 upload.png" width="400" height="328" alt=""/><br>
-        Weighted median filtered WE and PC1 / abs(Weighted median filtered WE)      </p>
+          Weighted median filtered WE and PC1 / abs(Weighted median filtered WE) </p>
         <p>Values on Y axis will converge to zero as abs(peak salience) increase. Still, the representation conserves the information according to which after 2000, (in)harmonicity is lower than the median over the dataset (zero).</p>
         <p>Find a better way to represent the latter.<br>
         </p></td>
@@ -568,7 +582,7 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
     <tr>
       <td rowspan="2">Evolution of the peak of some diagonals over the years</td>
       <td style="text-align: center"><img src="imgs/BEA small weighted Corrs_several_intervals_upload.png" width="400" height="336" alt=""/><br>
-      <strong>Not comparable with PC1 as it's salience only</strong><br></td>
+        <strong>Not comparable with PC1 as it's salience only</strong><br></td>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
@@ -583,7 +597,6 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
     </tr>
   </tbody>
 </table>
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p><span style="font-size: xx-large">ANALYSIS OF EXAMPLES</span></p>
 <p>&nbsp;</p>
@@ -614,13 +627,37 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
           '01928 - Beasty Boys - Licenssed To Ill - Brass Monkey - 1986'<br>
           '17304 - Redman - Whut Thee Album - Blow Your Mind Remix - 1992'<br>
         '00344 - A Tribe Called Quest - The Low End Theory - What - 1991' </p>
-        <p>All then tracks are noisy. The first four tracks are interludes or introductions with only noise.        </p>
-        <p>The track with the fifth  highest median filtered weighted Wiener entropy value is not noisy.<br>
+        <p>The tracks tend to be noisy. The first four tracks are interludes or introductions with only noise.        </p>
+        <p>Yey, not all tracks are noisy. The track with the fifth  highest median filtered weighted Wiener entropy value is not noisy.<br>
           01933 - Beasty Boys - Licenssed To Ill - Paul Revere - 1986</p>
         <audio controls>
           <source src="audio/01933 - Beasty Boys - Licenssed To Ill - Paul Revere - 1986.mp3" type="audio/mp3">
         </audio>
-        <p>Explain low pitch salience etc.</p></td>
+        <p>Explain low pitch salience etc.</p>
+        <table width="100%" border="1" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td width="33%" style="text-align: center"><p><img src="imgs/01933_kick_upload.png" width="400" height="210" alt=""/><br>
+                Kick drum<br>
+                Top, spectrum. The vertical lines denotes the peaks.<br>
+                Bottom, distribution of the distance between peaks. Spectrum based pitch detection would indicate a pitch value between 52 and 55Hz, correlation based pitch detection would indicate a pitch value around 2.7Hz.</p>
+                <p>Manual transcription leads to A1 and Bb1, whose fundamental frequencies are 55 and 58Hz.</p></td>
+              <td width="38%" style="text-align: center"><p><img src="imgs/01933_snare_upload.png" width="400" height="103" alt=""/><br>
+                Snare drum<br>
+                At least two notes can be heard, E4, D5, and perhaps B5.<br>
+              E4 and D5 are close to formants.</p>
+              <p>Perception of E4 and D5 occurs through spectrum-based pitch detection.<br>
+              Still, as the spectrum above 1000Hz is noisy, multiple of 330 and 587Hz necessarily fall near existing formants.<br>
+              The uncertain B5 falls near the region with more energy.
+              </p></td>
+              <td width="29%" style="text-align: center"><p><img src="imgs/01933_HH_waveform.png" width="300" height="66" alt=""/><br>
+              HH is built from two samples that switch channels.</p>
+              <p>TBC</p></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p></td>
     </tr>
     <tr>
       <td style="text-align: left">Example with very low Wiener entropy</td>
@@ -639,7 +676,10 @@ Pairwise correlations between freq bands, 2-second windows, weighted with level<
         '06470 - Earl Sweatshirt - Some Rap Songs - Riot! - 2018'</p>
         <p>All then tracks are very &quot;pitchy&quot;. Seven out of ten are sums of (in)harmonic compounds.<br>
           One is a short sequence of 
-          a single (in)harmonic compound (16993).<br>
+        a single (in)harmonic compound (16993).</p>
+        <p>Example of standard, &quot;compliant&quot; sum of harmonic compounds: 02836</p>
+        <p><img src="imgs/02821 - Boards Of Canada - Music Has The Right To Children - Bocuma - 1998_upload.png" width="400" height="199" alt=""/></p>
+        <p><br>
         </p>
         <p>Yet two are not easily described as a sum of (in)harmonic compounds (23961 and 11708).<br>
           Low Wiener entropy / high peak salience doesn't necessarily mean high harmonicity. The file from the dataset that features the lowest median filtered unweighted Wiener entropy and the 7th lowest median filtered weighted Wiener entropy is &quot;11708 - Low - Double Negative - Tempest - 2018&quot;. </p>
