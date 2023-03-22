@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>pairwise band correlations</title>
+<title>Harmonicity</title>
 </head>
 
 <body>
@@ -659,33 +659,16 @@ To answer this question, we evaluate the
     <tr>
       <td>&nbsp;</td>
       <td style="text-align: center"><p>Examples correspond to a clear intuitive percept, unlike the same experiment with unweighted audio.</p>
-        <p>11708 - Low - Double Negative - Tempest - 2018 is near the 55th percentile, whereas the Wiener Entropy was one of the lowest =&gt; indeed captures (in)harmonicity</p>
+        <p>11708 - Low - Double Negative - Tempest - 2018 is near the 55th percentile of PC1, whereas the Wiener Entropy was one of the lowest =&gt; representation indeed captures (in)harmonicity</p>
       <p>!!!!!! Not a bad idea to systematically compare WE and PC1 orders so as to find out (1) which files are the less harmonically structured and (2) if there is an evolution</p></td>
       <td style="text-align: center"><p>Examples correspond to a percept, but less clear than in the case of BEA. The percept appears to correspond to some sort of clarity in the piano sound.</p>
-      <p>Possible origin: instrument + legato.</p></td>
+      <p>Possible origin: instrument (+ legato?)</p></td>
       <td style="text-align: center">The percept appears  similar to BEA. </td>
     </tr>
     <tr>
       <td>PC1, evolution over the years</td>
       <td style="text-align: center"><img src="imgs/BEA_small_weighted_PC1_evolution_upload.png" width="400" height="153" alt=""/><br>
         Provide interpretation<br></td>
-      <td style="text-align: center">&nbsp;</td>
-      <td style="text-align: center">&nbsp;</td>
-    </tr>
-    <tr>
-      <td>PC1 and Wiener entropy</td>
-      <td style="text-align: center"><p><img src="imgs/WE-PC upload.png" width="400" height="314" alt=""/><br>
-        Weighted median filtered WE and PC1</p>
-        <p>CHANGE INTERPRETATIONS !!!</p>
-        <p>'70s: low peak salience and less organised into parallel formants (harmonic and inharmonic)<br>
-          '70s -&gt; '90s: low peak salience but more organised into parallel formants (harmonic and inharmonic)<br>
-          '90s -&gt; '20s: higher peak salience </p>
-        <p>Value of (in)harmonicity is dependent on peak salience.  Therefore, we evaluate (in)harmonicity / abs(peak salience) as a function of peak salience.</p>
-        <p><img src="imgs/WE-PC_2 upload.png" width="400" height="328" alt=""/><br>
-          Weighted median filtered WE and PC1 / abs(Weighted median filtered WE) </p>
-        <p>Values on Y axis will converge to zero as abs(peak salience) increase. Still, the representation conserves the information according to which after 2000, (in)harmonicity is lower than the median over the dataset (zero).</p>
-        <p>Find a better way to represent the latter.<br>
-        </p></td>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
@@ -699,16 +682,88 @@ To answer this question, we evaluate the
     <tr>
       <td colspan="3" style="text-align: center"><img src="imgs/BEA small weighted Peak saliences_upload.png" width="400" height="252" alt=""/></td>
     </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: xx-large">WIENER ENTROPY AND PAIRWISE CORRELATIONS</span></p>
+<p>&nbsp;</p>
+<table width="1386" border="1" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td colspan="3" bgcolor="#88F5FF" style="text-align: center"><br>
+      <strong>Original scales</strong><br>      <br></td>
+    </tr>
+    <tr>
+      <td width="207">PC1 and Wiener entropy, original scale</td>
+      <td colspan="2" style="text-align: center"><p><img src="imgs/WE-PC upload.png" width="400" height="314" alt=""/><br>
+        Weighted median filtered WE and PC1</p>
+        <p>--------- CHANGE INTERPRETATIONS !!! ---------</p>
+        <p>'70s: low peak salience and less organised into parallel formants (harmonic and inharmonic)<br>
+          '70s -&gt; '90s: low peak salience but more organised into parallel formants (harmonic and inharmonic)<br>
+          '90s -&gt; '20s: higher peak salience </p>
+        <p><br>
+        </p></td>
+    </tr>
+    <tr>
+      <td colspan="3" bgcolor="#88F5FF" style="text-align: center"><br>
+        <strong>Adapted  scales</strong><br>
+      <br></td>
+    </tr>
     <tr>
       <td>&nbsp;</td>
-      <td style="text-align: center">&nbsp;</td>
-      <td style="text-align: center">&nbsp;</td>
-      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center"><p>Zoom out from the figure above.</p>
+        <p>The distribution of  log(WE) is skewed towards 0.<br>
+      The distribution of WE is skewed towards 1.<br>
+      This makes readability 
+        difficult.</p></td>
+      <td style="text-align: center"><img src="imgs/WE-PC_zoomout_upload.png" width="400" height="306" alt=""/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td width="563" style="text-align: center"><p>Let's adapt the scale for WE so that the distribution is closer to normal.</p>
+      <p>Let's also reverse the axes so that right corresponds to more peak salience and up corresponds to more harmonicity.</p></td>
+      <td width="608" style="text-align: center"><img src="imgs/BEA_WE_show_balanced_dists_upload.png" width="400" height="206" alt=""/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="text-align: center">Distribution and decade evolution with adapted scales.<br></td>
+      <td style="text-align: center"><img src="imgs/BEA_WE_PC1_balanced_dists_upload.png" width="400" height="312" alt=""/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="text-align: center"><p>Value of (in)harmonicity is dependent on peak salience (do we need proof?)</p>
+      <p>Therefore, PCA of the diagram above, in the hope of separating harmonicity from peak salience.</p>
+      <p>If we indeed separate harmonicity from peak salience, then the Y axis indicates the harmonic organisation of the peaks.</p></td>
+      <td style="text-align: center"><img src="imgs/BEA_WE_PC1_balanced_dists_rotated_upload.png" width="400" height="308" alt=""/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="text-align: center"><p>Distribution and decade evolution with adapted scales, with
+      median values from unique artists/bands.</p>
+      <p>Note the proximity of similar artists like Obituary / Death (top left), and Marylin Manson / Nine Inch Nails (bottom left).</p></td>
+      <td style="text-align: center"><a href="imgs/straight_upload.png"><img src="imgs/straight_upload.png" width="400" height="320" alt=""/><br>
+        <span style="font-size: small">Click to enlarge </span></a><br></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="text-align: center"><p>PCA of the diagram above.</p>
+      <p>We are still assuming that we separate harmonicity from peak salience.</p>
+      <p>A few remarks from that perspective:</p>
+      <p>- Death and Obituary are Death metal bands from the '80s and '90s. It's music with a lot of distortion. Check that the pitched components of this noisy music are well organised into harmonic structures.</p>
+      <p>- Bottom right, &quot;Low&quot; is indeed music with high peak salience but the peaks are not organised into harmonic structures (see example 11708 - Low - Double Negative - Tempest - 2018 below). </p>
+      <p>Do other checks.</p></td>
+      <td style="text-align: center; font-size: small;"><a href="imgs/rotated_upload.png"><img src="imgs/rotated_upload.png" width="400" height="305" alt=""/><br>
+        Click to enlarge</a></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="2" style="text-align: center">&nbsp;</td>
     </tr>
   </tbody>
 </table>
 <p>&nbsp;</p>
-<p><span style="font-size: xx-large">ANALYSIS OF EXAMPLES</span></p>
+<p><span style="font-size: xx-large">ANALYSES OF EXAMPLES</span></p>
 <p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tr>
