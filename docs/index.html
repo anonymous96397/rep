@@ -211,53 +211,55 @@ To answer this question, we evaluate the
       <td colspan="3" bgcolor="#DBDBDB" style="text-align: center">PCA</td>
     </tr>
     <tr>
-      <td>Pairwise correlations between frequency bands, PC1</td>
+      <td rowspan="2">Pairwise correlations between frequency bands, PC1</td>
       <td style="text-align: center"><p><img src="imgs/BEA_PC1_upload.png" width="400" height="325" alt=""/></p>
-        <p>PC1 may be interpreted as 'everything but periodic content'. Suggests that PC1 is quantity of harmonicity. But there are three problems: (1) window is large (2s), and conclusions can't be applied to small-time-scale evolutions; (2) pairwise correlation is not weighted by energy, which means correlations corresponding to low energy bands count as much as correlations corresponding to high energy bands.</p>
-        <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td style="text-align: center"><img src="imgs/BEA_2s_raw_pctile_0-25.png" width="200" height="201" alt=""/></td>
-              <td style="text-align: center"><img src="imgs/BEA_2s_raw_pctile_75-100.png" width="200" height="201" alt=""/></td>
-            </tr>
-            <tr>
-              <td style="text-align: center">Median of PC1 prctiles 0-25</td>
-              <td style="text-align: center">Median of PC1 prctiles 75-100</td>
-            </tr>
-          </tbody>
-        </table></td>
+        <p>PC1 may be interpreted as 'everything but periodic content'. Suggests that PC1 is quantity of harmonicity. But there are three problems: (1) window is large (2s), and conclusions can't be applied to small-time-scale evolutions; (2) pairwise correlation is not weighted by energy, which means correlations corresponding to low energy bands count as much as correlations corresponding to high energy bands.</p></td>
       <td style="text-align: center"><p><img src="imgs/Piano_PC1_upload.png" width="400" height="326" alt=""/><br>
         Piano PC1 is similar to BEA PC1.<br>
-        One difference is the granularity.</p>
-        <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td style="text-align: center"><img src="imgs/Piano_2s_raw_pctile_0-25.png" width="200" height="201" alt=""/></td>
-              <td style="text-align: center"><img src="imgs/Piano_2s_raw_pctile_75-100.png" width="200" height="201" alt=""/></td>
-            </tr>
-            <tr>
-              <td style="text-align: center">Median of PC1 prctiles 0-25</td>
-              <td style="text-align: center">Median of PC1 prctiles 75-100</td>
-            </tr>
-          </tbody>
-        </table></td>
+        One difference is the granularity.</p></td>
       <td style="text-align: center"><p><img src="imgs/Orch_2s_raw_PC01_upload.png" width="400" height="310" alt=""/><br>
       Orch PC1 is similar to BEA PC1.<br>
       Also more granular than BEA.
       </p>
-        <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td style="text-align: center"><img src="imgs/Orch_2s_raw_pctile_0-25.png" width="200" height="201" alt=""/></td>
-              <td style="text-align: center"><img src="imgs/Orch_2s_raw_pctile_75-100.png" width="200" height="201" alt=""/></td>
+      <p>&nbsp;</p></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td style="text-align: center"><img src="imgs/BEA_2s_raw_pctile_0-25.png" width="200" height="201" alt=""/></td>
+            <td style="text-align: center"><img src="imgs/BEA_2s_raw_pctile_75-100.png" width="200" height="201" alt=""/></td>
             </tr>
-            <tr>
-              <td style="text-align: center">Median of PC1 prctiles 0-25</td>
-              <td style="text-align: center">Median of PC1 prctiles 75-100</td>
+          <tr>
+            <td style="text-align: center">Median of PC1 prctiles 0-25</td>
+            <td style="text-align: center">Median of PC1 prctiles 75-100</td>
             </tr>
           </tbody>
-        </table>
-      <p>&nbsp;</p></td>
+      </table></td>
+      <td style="text-align: center"><table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td style="text-align: center"><img src="imgs/Piano_2s_raw_pctile_0-25.png" width="200" height="201" alt=""/></td>
+            <td style="text-align: center"><img src="imgs/Piano_2s_raw_pctile_75-100.png" width="200" height="201" alt=""/></td>
+          </tr>
+          <tr>
+            <td style="text-align: center">Median of PC1 prctiles 0-25</td>
+            <td style="text-align: center">Median of PC1 prctiles 75-100</td>
+          </tr>
+        </tbody>
+      </table></td>
+      <td style="text-align: center"><table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td style="text-align: center"><img src="imgs/Orch_2s_raw_pctile_0-25.png" width="200" height="201" alt=""/></td>
+            <td style="text-align: center"><img src="imgs/Orch_2s_raw_pctile_75-100.png" width="200" height="201" alt=""/></td>
+          </tr>
+          <tr>
+            <td style="text-align: center">Median of PC1 prctiles 0-25</td>
+            <td style="text-align: center">Median of PC1 prctiles 75-100</td>
+          </tr>
+        </tbody>
+      </table></td>
     </tr>
     <tr>
       <td><span style="text-align: left">PC1 evolution over year.</span></td>
@@ -462,51 +464,58 @@ To answer this question, we evaluate the
       <td colspan="3" bgcolor="#DBDBDB" style="text-align: center">PCA</td>
     </tr>
     <tr>
-      <td>Pairwise correlations between frequency bands, PC1</td>
+      <td rowspan="2">Pairwise correlations between frequency bands, PC1</td>
       <td style="text-align: center"><p><img src="imgs/BEA_small_PC1_weighted_upload.png" width="400" height="324" alt=""/><br>
-        PC1 is similar to the two PC1s above, with consideration of the applied weightings.</p>
-        <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td style="text-align: center"><img src="imgs/BEA_.1s_weight_pctile_0-25.png" width="200" height="201" alt=""/></td>
-              <td style="text-align: center"><img src="imgs/BEA_.1s_weight_pctile_75-100.png" width="200" height="201" alt=""/></td>
-            </tr>
-            <tr>
-              <td style="text-align: center">Median of PC1 prctiles 0-25</td>
-              <td style="text-align: center">Median of PC1 prctiles 75-100</td>
-            </tr>
-          </tbody>
-        </table></td>
+        PC1 is similar to the two PC1s above, with consideration of the applied weightings.</p></td>
       <td style="text-align: center"><p><img src="imgs/Piano_PC1_small_windows_weighted_upload.png" width="400" height="309" alt=""/><br>
         PC1 for weighted piano only partially reflects 'pitchiness'.</p>
-        <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td style="text-align: center"><img src="imgs/Piano_.1s_weight_pctile_0-25.png" width="200" height="201" alt=""/></td>
-              <td style="text-align: center"><img src="imgs/Piano_.1s_weight_pctile_75-100.png" width="200" height="201" alt=""/></td>
-            </tr>
-            <tr>
-              <td style="text-align: center">Median of PC1 prctiles 0-25</td>
-              <td style="text-align: center">Median of PC1 prctiles 75-100</td>
-            </tr>
-          </tbody>
-        </table>
         <p>&nbsp;</p></td>
       <td style="text-align: center"><p><img src="imgs/Orchestra_small_windows_weighted_PC1_upload.png" width="400" height="311" alt=""/><br>
         PC1 for weighted orchestra reflects 'pitchiness'. Note the very high value for the explained variance.</p>
-        <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td style="text-align: center"><img src="imgs/Orch_.1s_weight_pctile_0-25.png" width="200" height="201" alt=""/></td>
-              <td style="text-align: center"><img src="imgs/Orch_.1s_weight_pctile_75-100.png" width="200" height="201" alt=""/></td>
+        <p>&nbsp;</p></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td style="text-align: center"><img src="imgs/BEA_.1s_weight_pctile_0-25.png" width="200" height="201" alt=""/></td>
+            <td style="text-align: center"><img src="imgs/BEA_.1s_weight_pctile_75-100.png" width="200" height="201" alt=""/></td>
             </tr>
-            <tr>
-              <td style="text-align: center">Median of PC1 prctiles 0-25</td>
-              <td style="text-align: center">Median of PC1 prctiles 75-100</td>
+          <tr>
+            <td style="text-align: center">Median of PC1 prctiles 0-25</td>
+            <td style="text-align: center">Median of PC1 prctiles 75-100</td>
             </tr>
           </tbody>
-        </table>
-        <p>&nbsp;</p></td>
+      </table></td>
+      <td style="text-align: center"><table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td style="text-align: center"><img src="imgs/Piano_.1s_weight_pctile_0-25.png" width="200" height="201" alt=""/></td>
+            <td style="text-align: center"><img src="imgs/Piano_.1s_weight_pctile_75-100.png" width="200" height="201" alt=""/></td>
+          </tr>
+          <tr>
+            <td style="text-align: center">Median of PC1 prctiles 0-25</td>
+            <td style="text-align: center">Median of PC1 prctiles 75-100</td>
+          </tr>
+        </tbody>
+      </table></td>
+      <td style="text-align: center"><table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td style="text-align: center"><img src="imgs/Orch_.1s_weight_pctile_0-25.png" width="200" height="201" alt=""/></td>
+            <td style="text-align: center"><img src="imgs/Orch_.1s_weight_pctile_75-100.png" width="200" height="201" alt=""/></td>
+          </tr>
+          <tr>
+            <td style="text-align: center">Median of PC1 prctiles 0-25</td>
+            <td style="text-align: center">Median of PC1 prctiles 75-100</td>
+          </tr>
+        </tbody>
+      </table></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="3" style="text-align: center"><br>
+      PCA representations are less visually readable than when unweighted but correspond more to audible perception.<br>      <br></td>
     </tr>
     <tr>
       <td>PC1, some samples with high values</td>
