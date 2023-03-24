@@ -475,39 +475,39 @@ To answer this question, we evaluate the
         <p>&nbsp;</p></td>
     </tr>
     <tr>
-      <td style="text-align: center"><table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+      <td style="text-align: center"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
         <tbody>
           <tr>
             <td style="text-align: center"><img src="imgs/BEA_.1s_weight_pctile_0-25.png" width="200" height="201" alt=""/></td>
             <td style="text-align: center"><img src="imgs/BEA_.1s_weight_pctile_75-100.png" width="200" height="201" alt=""/></td>
             </tr>
           <tr>
-            <td style="text-align: center">Median of PC1 prctiles 0-25</td>
-            <td style="text-align: center">Median of PC1 prctiles 75-100</td>
+            <td style="text-align: center; font-size: small;"><p>Median of PC1 prctiles 0-25</p></td>
+            <td style="text-align: center; font-size: small;"><p>Median of PC1 prctiles 75-100</p></td>
             </tr>
           </tbody>
       </table></td>
-      <td style="text-align: center"><table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+      <td style="text-align: center"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
         <tbody>
           <tr>
             <td style="text-align: center"><img src="imgs/Piano_.1s_weight_pctile_0-25.png" width="200" height="201" alt=""/></td>
             <td style="text-align: center"><img src="imgs/Piano_.1s_weight_pctile_75-100.png" width="200" height="201" alt=""/></td>
           </tr>
           <tr>
-            <td style="text-align: center">Median of PC1 prctiles 0-25</td>
-            <td style="text-align: center">Median of PC1 prctiles 75-100</td>
+            <td style="text-align: center; font-size: small;"><p>Median of PC1 prctiles 0-25</p></td>
+            <td style="text-align: center; font-size: small;"><p>Median of PC1 prctiles 75-100</p></td>
           </tr>
         </tbody>
       </table></td>
-      <td style="text-align: center"><table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+      <td style="text-align: center"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
         <tbody>
           <tr>
             <td style="text-align: center"><img src="imgs/Orch_.1s_weight_pctile_0-25.png" width="200" height="201" alt=""/></td>
             <td style="text-align: center"><img src="imgs/Orch_.1s_weight_pctile_75-100.png" width="200" height="201" alt=""/></td>
           </tr>
           <tr>
-            <td style="text-align: center">Median of PC1 prctiles 0-25</td>
-            <td style="text-align: center">Median of PC1 prctiles 75-100</td>
+            <td style="text-align: center; font-size: small;"><p>Median of PC1 prctiles 0-25</p></td>
+            <td style="text-align: center; font-size: small;"><p>Median of PC1 prctiles 75-100</p></td>
           </tr>
         </tbody>
       </table></td>
@@ -698,7 +698,7 @@ To answer this question, we evaluate the
       <td width="207">PC1 and Wiener entropy, original scale</td>
       <td colspan="2" style="text-align: center"><p><img src="imgs/WE-PC upload.png" width="400" height="314" alt=""/><br>
         Weighted median filtered WE and PC1</p>
-        <p>Interpretation (discussed just below):</p>
+        <p>Interpretation (revised and discussed below):</p>
         <p>'70s: high peak salience and less organised into parallel formants (harmonic and inharmonic)<br>
           '70s -&gt; '90s: high peak salience but more organised into parallel formants (harmonic and inharmonic)<br>
           '90s -&gt; '20s: lower peak salience.</p>
@@ -758,7 +758,33 @@ To answer this question, we evaluate the
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td colspan="2" style="text-align: center">&nbsp;</td>
+      <td colspan="2" style="text-align: center"><p><br>
+        Interpretation</p>
+        <table width="100%" border="1" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td width="50%" style="text-align: center"><img src="imgs/expl_paper1.png" width="400" height="208" alt=""/></td>
+              <td width="50%" style="text-align: center"><img src="imgs/expl_paper2.png" width="400" height="242" alt=""/></td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><p>FT-like interpretation, with one element only<br>
+                  <br>
+                  The dashed horizontal line is &quot;noise&quot; (elements we don't explain yet)<br>
+                  Bottom right (2): one formant with high energy value<br>
+                  Top right (1): a set of parallel formants with high energy values (depicted as f0 + harmonics)<br>
+                  Bottom left (4): one           formant with low energy value<br>
+                  Top left (3):            a set of parallel formants with low energy values (depicted as f0 + harmonics)<br>
+              </p></td>
+              <td style="text-align: center"><p>STFT-like interpretation, with two elements</p>
+              <p>Bottom right (2): two independent formants with high energy values<br>
+Top right (1): two sets of parallel formants with high energy values (depicted as f0 + harmonics)<br>
+Bottom left (4): two independent formants with low energy values<br>
+Top left (3): two sets of parallel formants with low energy values (depicted as f0 + harmonics)</p></td>
+            </tr>
+          </tbody>
+        </table>
+        <p><br>
+      </p></td>
     </tr>
   </tbody>
 </table>
