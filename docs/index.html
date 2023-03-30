@@ -662,7 +662,10 @@ To answer this question, we evaluate the
         <p>11708 - Low - Double Negative - Tempest - 2018 is near the 55th percentile of PC1, whereas the Wiener Entropy was one of the lowest =&gt; representation indeed captures (in)harmonicity</p>
       <p>!!!!!! Not a bad idea to systematically compare WE and PC1 orders so as to find out (1) which files are the less harmonically structured and (2) if there is an evolution</p></td>
       <td style="text-align: center"><p>Examples correspond to a percept, but less clear than in the case of BEA. The percept appears to correspond to some sort of clarity in the piano sound.</p>
-      <p>Possible origin: instrument (+ legato?)</p></td>
+      <p>Possible origin: instrument (+ legato?)<br>
+        Locate the same two pieces, with different interpretations<br>
+        Compare with BEA (see Taylor Swift's &quot;Red&quot; and &quot;Fearless&quot; Taylor versions?)
+      </p></td>
       <td style="text-align: center">The percept appears  similar to BEA. </td>
     </tr>
     <tr>
@@ -697,7 +700,7 @@ To answer this question, we evaluate the
     <tr>
       <td width="207">PC1 and Wiener entropy, original scale</td>
       <td colspan="2" style="text-align: center"><p><img src="imgs/WE-PC upload.png" width="400" height="314" alt=""/><br>
-        Weighted median filtered WE and PC1</p>
+        Median filtered, weighted spectrum WE - and PC1</p>
         <p>Interpretation (revised and discussed below):</p>
         <p>'70s: high peak salience and less organised into parallel formants (harmonic and inharmonic)<br>
           '70s -&gt; '90s: high peak salience but more organised into parallel formants (harmonic and inharmonic)<br>
@@ -780,10 +783,46 @@ Top right (1): two sets of parallel formants with high energy values (depicted a
 Bottom left (4): two independent formants with low energy values<br>
 Top left (3): two sets of parallel formants with low energy values (depicted as f0 + harmonics)</p></td>
             </tr>
+            <tr>
+              <td colspan="2" style="text-align: center"><br>
+              NB the number of lines in representations 1 and 2 are not a criterion. Parallelism is.<br>              
+              <br></td>
+            </tr>
           </tbody>
         </table>
         <p><br>
       </p></td>
+    </tr>
+    <tr>
+      <td colspan="3" bgcolor="#88F5FF" style="text-align: center"> <strong><br>
+      Influence of Resonance EQ<br>
+      <br> 
+      </strong></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="text-align: center"><p>Resonance EQ is a CSL plug-in designed to attenuate the resonances / spectral formants (Grachten, Deruty, Tanguy, 2018)</p>
+      <p>One file of 50 from the BEA dataset is processed using REQ, settings on the right.</p></td>
+      <td style="text-align: center"><img src="imgs/C_REQ_settings.png" width="300" height="321" alt=""/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="text-align: center"><p>WE - PCA of pairwise corr representation<br>
+        White points: original<br>
+        Yellow points: processed<br>
+        Yellow line: median influence of REQ</p>
+        <p>Conclusions: (1) removing resonances acts on both WE and PCA of pairwise corr and (2) attenuating WE attenuates  PCA of pairwise corr</p></td>
+      <td style="text-align: center"><img src="imgs/straight_PEQ_upload.png" width="400" height="306" alt=""/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="text-align: center"><p>PCA of (WE - PCA of pairwise corr) representation<br>
+        White points: original<br>
+        Yellow points: processed<br>
+        Yellow line: median influence of REQ </p>
+        <p>Conclusions: (1) PC1 of (WE - PCA of pairwise corr) is a reasonable approximation of the effect of Resonance EQ (remove resonances) (2) PCA of (WE - PCA of pairwise corr) is a reaonsable separator of spectral salience (WE) and organisation into parallel formants<br>
+      </p></td>
+      <td style="text-align: center"><img src="imgs/rotated_PEQ_upload.png" width="400" height="304" alt=""/></td>
     </tr>
   </tbody>
 </table>
@@ -827,22 +866,39 @@ Top left (3): two sets of parallel formants with low energy values (depicted as 
         <table width="100%" border="1" cellpadding="0" cellspacing="0">
           <tbody>
             <tr>
-              <td width="33%" style="text-align: center"><p><img src="imgs/01933_kick_upload.png" width="400" height="210" alt=""/><br>
+              <td width="31%" style="text-align: center"><p><img src="imgs/01933_kick_upload.png" width="400" height="210" alt=""/><br>
                 Kick drum<br>
                 Top, spectrum. The vertical lines denotes the peaks.<br>
                 Bottom, distribution of the distance between peaks. Spectrum based pitch detection would indicate a pitch value between 52 and 55Hz, correlation based pitch detection would indicate a pitch value around 2.7Hz.</p>
-                <p>Manual transcription leads to A1 and Bb1, whose fundamental frequencies are 55 and 58Hz.</p></td>
-              <td width="38%" style="text-align: center"><p><img src="imgs/01933_snare_upload.png" width="400" height="103" alt=""/><br>
+                <p>Manual transcription leads to A1 and Bb1, whose fundamental frequencies are 55 and 58Hz.</p>
+                <audio controls>
+                  <source src="audio/01933 Kick.mp3" type="audio/mp3">
+                </audio></td>
+              <td width="34%" style="text-align: center"><p><img src="imgs/01933_snare_upload.png" width="400" height="103" alt=""/><br>
                 Snare drum<br>
                 At least two notes can be heard, E4, D5, and perhaps B5.<br>
               E4 and D5 are close to formants.</p>
-              <p>Perception of E4 and D5 occurs through spectrum-based pitch detection.<br>
-              Still, as the spectrum above 1000Hz is noisy, multiple of 330 and 587Hz necessarily fall near existing formants.<br>
-              The uncertain B5 falls near the region with more energy.
-              </p></td>
-              <td width="29%" style="text-align: center"><p><img src="imgs/01933_HH_waveform.png" width="300" height="66" alt=""/><br>
-              HH is built from two samples that switch channels.</p>
-              <p>TBC</p></td>
+              <p>Perception of E4 and D5 occurs through spectrum-based pitch detection. Still, as the spectrum above 1000Hz is noisy, multiple of 330 and 587Hz necessarily fall near existing formants. The uncertain B5 falls near the region with more energy.
+              </p>
+              <audio controls>
+                <source src="audio/01933 Snare.mp3" type="audio/mp3">
+              </audio></td>
+              <td width="35%" style="text-align: center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td style="text-align: center"><a href="imgs/HH_2corrs_upload.png"><img src="imgs/HH_2corrs_upload.png" width="200" height="158" alt=""/></a></td>
+                    <td style="text-align: center"><a href="imgs/HH_2_spec_upload.png"><img src="imgs/HH_2_spec_upload.png" width="200" height="156" alt=""/></a></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" style="text-align: center">Hi-hat. Click images to enlarge</td>
+                    </tr>
+                </tbody>
+              </table>
+              <p>HH seems to alternate between similar &quot;higher&quot; and &quot;lower&quot; samples. Slight differences between autocorrelation amplitudes and spectra. There is also a gradation, perhaps linked to loudness. Relevant to &quot;low pitch strength&quot; (paper 4).
+              </p>
+              <audio controls>
+                <source src="audio/01933_HH_alt.mp3" type="audio/mp3">
+              </audio></td>
             </tr>
           </tbody>
         </table>
@@ -1039,7 +1095,9 @@ Top left (3): two sets of parallel formants with low energy values (depicted as 
 <p>&nbsp;</p>
 <p><span style="font-size: xx-large">REFERENCES</span></p>
 <p>Cichocki, Andrzej, Rafal Zdunek, and Shun-ichi Amari (2006). "New algorithms for non-negative matrix factorization in applications to blind source separation." <em>2006 IEEE International Conference on Acoustics Speech and Signal Processing Proceedings</em>. Vol. 5. IEEE, 2006. </p>
+<p>Grachten, Maarten, Emmanuel Deruty, and Alexandre Tanguy. "Auto-adaptive resonance equalization using dilated residual networks." <em>arXiv preprint arXiv:1807.08636</em> (2018).</p>
 <p>ISO/IEC (2001), Information technology — Multimedia content description interface — Part 4: Audio, in FDIS 15938-4:2001(E), n.d. </p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
