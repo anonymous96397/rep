@@ -7,26 +7,40 @@
 
 <body>
 <p>&nbsp;</p>
-<p style="font-size: xx-large">WIENER ENTROPY</p>
+<table width="580" border="0" text-align: center;>
+  <tbody text-align: center;>
+    <tr text-align: center;>
+      <td width="574" bgcolor="#000000"><span style="font-size: xx-large; color: #FFFFFF; text-align: center;"><center>ORGANISATION OF FORMANTS</center></span></td>
+    </tr>
+  </tbody>
+</table>
+<p style="font-size: xx-large">&nbsp;</p>
+<p style="font-size: xx-large">1. WIENER ENTROPY</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
     <tr>
-      <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><p><strong><br>
-        Introduction: Wiener entropy (peak salience)</strong><span style="text-align: center"><br>
+      <td colspan="2" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+        Wiener entropy (peak salience)<br>
         <br>
-      </span></p></td>
+      </strong></td>
     </tr>
     <tr>
       <td style="text-align: left">Wiener entropy</td>
-      <td colspan="3" style="text-align: center"><p><img src="imgs/Wiener_upload.png" width="400" height="322" alt=""/></p>
+      <td style="text-align: center"><p><img src="imgs/Wiener_upload.png" width="400" height="322" alt=""/></p>
         <p>Similar to MPEG7, &quot;AudioSpectrumFlatnessType&quot; feature (ISO/IEC, 2001), but global. Definition by (ISO/IEC, 2001), p.34:</p>
         <p>&quot;The AudioSpectrumFlatnessType describes the flatness properties of the short-term power spectrum of an audio signal. This descriptor expresses the deviation of the signal’s power spectrum over frequency from a flat shape (corresponding to a noise-like or an impulse-like signal). A high deviation from a flat shape may indicate the presence of tonal components. The spectral flatness analysis is calculated for a number of frequency bands. It may be used as a feature vector for robust matching between pairs of audio signals.&quot;</p>
         <p><strong>Problem:</strong> wiener entropy is sensitive to large-scale envelope (cf white noise / pink noise difference), and we want to detect the salience of the local peaks.</p>
         <p>&nbsp;</p></td>
     </tr>
     <tr>
+      <td colspan="2" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+        Corrected Wiener entropy<br>
+        <br>
+      </strong></td>
+    </tr>
+    <tr>
       <td style="text-align: left">Wiener entropy of median filtered spectrum</td>
-      <td colspan="3" style="text-align: center"><p><img src="imgs/Wiener_medianfilt_upload.png" width="400" height="320" alt=""/><br>
+      <td style="text-align: center"><p><img src="imgs/Wiener_medianfilt_upload.png" width="400" height="320" alt=""/><br>
         Median filtering of the spectrum provides values that reflect what we want to capture. White and pink noise WE is now zero.</p>
         <p><strong>What we can learn from these diagrams?</strong><br>
           Peak salience for CPM is increasing. The shift is the beginning of the '90s.<br>
@@ -37,10 +51,10 @@
     </tr>
     <tr>
       <td style="text-align: center">&nbsp;</td>
-      <td colspan="3" bgcolor="#00FF52" style="text-align: center">See &quot;Analysis of examples&quot; below for examples of tracks with high and low WE values</td>
+      <td bgcolor="#00FF52" style="text-align: center">See &quot;Analysis of examples&quot; below for examples of tracks with high and low WE values</td>
     </tr>
     <tr>
-      <td colspan="4" style="text-align: center"><strong><br>
+      <td colspan="2" style="text-align: center"><strong><br>
         Observation<br>
       </strong>Wiener entropy doesn't provide details about which peaks are salient. One question is: to what extent are the salient peaks in an harmonic relation.<br>
 To answer this question, we evaluate the 
@@ -49,7 +63,7 @@ To answer this question, we evaluate the
   </tbody>
 </table>
 <p>&nbsp;</p>
-<p><span style="font-size: xx-large">PAIRWISE CORRELATIONS, 2-SECOND WINDOWS</span></p>
+<p><span style="font-size: xx-large">2. PAIRWISE CORRELATIONS, 2-SECOND WINDOWS</span></p>
 <p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
@@ -269,23 +283,6 @@ To answer this question, we evaluate the
       <td style="text-align: center">&nbsp;</td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
-      <td colspan="3" bgcolor="#DBDBDB" style="text-align: center">Granularity (in progress)</td>
-    </tr>
-    <tr>
-      <td>Measure of granularity over the dataset.</td>
-      <td style="text-align: center"><img src="imgs/second_diagonal_BEA_upload.png" width="400" height="153" alt=""/><br>
-        Variance of the second diagonal from high pass filtered pairwise correlations between frequency bands</td>
-      <td style="text-align: center"><img src="imgs/second_diagonal_piano_upload.png" width="400" height="152" alt=""/><br>
-        Variance of the second diagonal from high pass filtered pairwise correlations between frequency bands</td>
-      <td style="text-align: center">&nbsp;</td>
-    </tr>
-    <tr>
-      <td>Evolution of continuousness/granularity over the years</td>
-      <td colspan="3" style="text-align: center"><img src="imgs/BEA_long_Separation_by_tracks_upload.png" width="400" height="313" alt=""/><br>
-        Top is variance over the second diagonal. Bottom is mean over the second diagonal. Top may be interpreted as scale salience (some sort of discreteness). Bottom is something like correlation with eighth tone interval (not quarter as written).</td>
-    </tr>
-    <tr>
       <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong><br>
         Pairwise correlations between freq bands, 2-second windows, weighted with level<br>
         <br>
@@ -410,7 +407,7 @@ To answer this question, we evaluate the
 </table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><span style="font-size: xx-large">PAIRWISE CORRELATIONS, 0.1-SECOND WINDOWS</span></p>
+<p><span style="font-size: xx-large">3. PAIRWISE CORRELATIONS, 0.1-SECOND WINDOWS</span></p>
 <p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
@@ -689,7 +686,7 @@ To answer this question, we evaluate the
 </table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><span style="font-size: xx-large">WIENER ENTROPY AND PAIRWISE CORRELATIONS</span></p>
+<p><span style="font-size: xx-large">4. WIENER ENTROPY AND PAIRWISE CORRELATIONS</span></p>
 <p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
@@ -714,7 +711,7 @@ To answer this question, we evaluate the
       <br></td>
     </tr>
     <tr>
-      <td rowspan="6"><p>PC1 and Wiener entropy, adapted scales and better analysis</p></td>
+      <td rowspan="5"><p>PC1 and Wiener entropy, adapted scales and better analysis</p></td>
       <td style="text-align: center"><p>Zoom out from the figure above.</p>
         <p>The distribution of  log(WE) is skewed towards 0.<br>
       The distribution of WE is skewed towards 1.<br>
@@ -743,6 +740,38 @@ To answer this question, we evaluate the
       <td style="text-align: center"><img src="imgs/BEA_WE_PC1_balanced_dists_rotated_upload.png" width="400" height="308" alt=""/></td>
     </tr>
     <tr>
+      <td colspan="2" style="text-align: center"><p>Interpretation of the 4 diagrams above. (1), (2), (3) and (4) correspond to the four quadrants.</p>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td width="50%" style="text-align: center"><img src="imgs/expl_paper1.png" width="400" height="208" alt=""/></td>
+              <td width="50%" style="text-align: center"><img src="imgs/expl_paper2.png" width="400" height="242" alt=""/></td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><p>FT-like interpretation, with one element only<br>
+                <br>
+                The dashed horizontal line is &quot;noise&quot; (elements we don't explain yet)<br>
+                Bottom right (2): one formant with high energy value<br>
+                Top right (1): a set of parallel formants with high energy values (depicted as f0 + harmonics)<br>
+                Bottom left (4): one           formant with low energy value<br>
+                Top left (3):            a set of parallel formants with low energy values (depicted as f0 + harmonics)<br>
+              </p></td>
+              <td style="text-align: center"><p>STFT-like interpretation, with two elements</p>
+                <p>Bottom right (2): two independent formants with high energy values<br>
+                  Top right (1): two sets of parallel formants with high energy values (depicted as f0 + harmonics)<br>
+                  Bottom left (4): two independent formants with low energy values<br>
+                  Top left (3): two sets of parallel formants with low energy values (depicted as f0 + harmonics)</p></td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align: center"><br>
+                NB the number of lines in representations 1 and 2 are not a criterion. Parallelism is.<br>
+                <br></td>
+            </tr>
+          </tbody>
+      </table></td>
+    </tr>
+    <tr>
+      <td rowspan="2">PC1 and Wiener entropy, single artists/bands</td>
       <td style="text-align: center"><p>Distribution and decade evolution with adapted scales, with
         median values from unique artists/bands.</p>
       <p>Note the proximity of similar artists like Obituary / Death (top left), and Marylin Manson / Nine Inch Nails (bottom left).</p></td>
@@ -760,38 +789,19 @@ To answer this question, we evaluate the
         Click to enlarge</a></td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
-      <td colspan="2" style="text-align: center"><p>Interpretation of the 4 diagrams above. (1), (2), (3) and (4) correspond to the four quadrants.</p>
-        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td width="50%" style="text-align: center"><img src="imgs/expl_paper1.png" width="400" height="208" alt=""/></td>
-              <td width="50%" style="text-align: center"><img src="imgs/expl_paper2.png" width="400" height="242" alt=""/></td>
-            </tr>
-            <tr>
-              <td style="text-align: center"><p>FT-like interpretation, with one element only<br>
-                  <br>
-                  The dashed horizontal line is &quot;noise&quot; (elements we don't explain yet)<br>
-                  Bottom right (2): one formant with high energy value<br>
-                  Top right (1): a set of parallel formants with high energy values (depicted as f0 + harmonics)<br>
-                  Bottom left (4): one           formant with low energy value<br>
-                  Top left (3):            a set of parallel formants with low energy values (depicted as f0 + harmonics)<br>
-              </p></td>
-              <td style="text-align: center"><p>STFT-like interpretation, with two elements</p>
-              <p>Bottom right (2): two independent formants with high energy values<br>
-Top right (1): two sets of parallel formants with high energy values (depicted as f0 + harmonics)<br>
-Bottom left (4): two independent formants with low energy values<br>
-Top left (3): two sets of parallel formants with low energy values (depicted as f0 + harmonics)</p></td>
-            </tr>
-            <tr>
-              <td colspan="2" style="text-align: center"><br>
-              NB the number of lines in representations 1 and 2 are not a criterion. Parallelism is.<br>              
-              <br></td>
-            </tr>
-          </tbody>
-        </table>
-        <p><br>
-      </p></td>
+      <td rowspan="2">PC1 and Wiener entropy, single albums</td>
+      <td style="text-align: center"><p>Distribution and decade evolution with adapted scales, with
+      median values from unique albums</p>
+      <p>At first glance, artists tend to produce similar albums<br>
+      I should do a zoomable version (see <a href="http://www.d3js.com">d3js.com</a>)</p></td>
+      <td style="text-align: center"><a href="imgs/straight_albums_upload.png"><img src="imgs/straight_albums_upload.png" width="400" height="305" alt=""/><br>
+        <span style="font-size: small">Click to enlarge</span></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><p>PCA of the diagram above<br>
+    </p></td>
+      <td style="text-align: center"><a href="imgs/rotated_albums_upload.png"><img src="imgs/rotated_albums_upload.png" width="400" height="307" alt=""/><br>
+        <span style="font-size: small">Click to enlarge</span></a></td>
     </tr>
     <tr>
       <td colspan="3" bgcolor="#88F5FF" style="text-align: center"> <strong><br>
@@ -827,7 +837,77 @@ Top left (3): two sets of parallel formants with low energy values (depicted as 
   </tbody>
 </table>
 <p>&nbsp;</p>
-<p><span style="font-size: xx-large">ANALYSES OF EXAMPLES</span></p>
+<p><span style="font-size: xx-large">5. GRANULARITY</span></p>
+<p>&nbsp;</p>
+<table width="1386" border="1" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="text-align: center">Dataset</td>
+      <td bgcolor="#000000" style="text-align: center; color: #FFFFFF; font-size: 28px">BEA (CPM)</td>
+      <td bgcolor="#000000" style="text-align: center; color: #FFFFFF; font-size: 28px">Piano</td>
+      <td bgcolor="#000000" style="text-align: center; color: #FFFFFF; font-size: 28px">Orchestra + Opera</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Reminder: pairwise correlations between frequency bands, 2 second windows, unweighted</td>
+      <td style="text-align: center"><p><img src="imgs/BEA_freq_freq_upload.png" width="400" height="396" alt=""/></p></td>
+      <td style="text-align: center"><p><img src="imgs/piano_freq_freq_upload.png" width="400" height="396" alt=""/></p></td>
+      <td style="text-align: center"><img src="imgs/orchestra_freq_freq_transfer.png" width="400" height="395" alt=""/><br></td>
+    </tr>
+    <tr>
+      <td colspan="3" style="text-align: center">Notice the differences in granularity. <br>
+        Pitch values in piano pieces are discrete: the music goes from one note to another.<br>
+        Pitch values in CPM pieces are more continuous (eg vocals, there are examples in one of the pdfs).<br>
+        <br>
+        It is possible that granularity reflects continuousness. Let's zoom in to find out whether it's the case.</td>
+    </tr>
+    <tr>
+      <td rowspan="3" style="text-align: center">Zooms on points close to the main diagonal</td>
+      <td colspan="2" style="text-align: center"><p>Zoom on piano and BEA, A3-A4, correlations up to 1 tone interval, 2s windows, unweighted.</p>
+        <p><img src="imgs/Proper_zoom_2s_upload.png" width="400" height="304" alt=""/><br>
+          An expression of granularity is the following: in both cases, positive correlations are clear 
+      until 1/4 tone. The correlation's variance is greater in the case of piano.</p></td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center"><p>Zoom on piano and BEA, A3-A4, correlations up to 1 tone interval, 2s windows, weighted with energy.<br>
+      </p>
+        <p><img src="imgs/Proper_zoom_2s_volweighted_upload.png" width="400" height="307" alt=""/></p>
+        <p>Less readable as expected, but similar observation.<br>
+          Additional observations: (1) the main diagonal, which represents the energy, is also more discrete in the case of the piano. and (2) the influence of the weighting suggests that the variance should be measured on HPF filtered values.</p></td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center"><p>Zoom on piano and BEA, A3-A4, correlations up to 1 tone interval, .1s windows, weighted with energy and ISO226</p>
+        <p><img src="imgs/Proper_zoom_1.s_2weights_upload.png" width="400" height="305" alt=""/></p>
+      <p>Similar observations as above.<br>
+      </p></td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong><br>
+        Second diagonal, unweighted, 2s.<br>
+        <br>
+      </strong></td>
+    </tr>
+    <tr>
+      <td>Measure of granularity over the dataset.</td>
+      <td style="text-align: center"><img src="imgs/second_diagonal_BEA_upload.png" width="400" height="153" alt=""/><br>
+        Variance of the second diagonal from high pass filtered pairwise correlations between frequency bands</td>
+      <td style="text-align: center"><img src="imgs/second_diagonal_piano_upload.png" width="400" height="152" alt=""/><br>
+        Variance of the second diagonal from high pass filtered pairwise correlations between frequency bands</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Evolution of continuousness/granularity over the years</td>
+      <td colspan="3" style="text-align: center"><img src="imgs/BEA_long_Separation_by_tracks_upload.png" width="400" height="313" alt=""/><br>
+        Top is variance over the second diagonal. Bottom is mean over the second diagonal. Top may be interpreted as scale salience (some sort of discreteness). Bottom is something like correlation with eighth tone interval (not quarter as written).</td>
+    </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: xx-large">6. ANALYSES OF EXAMPLES</span></p>
 <p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tr>
