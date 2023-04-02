@@ -858,14 +858,15 @@ To answer this question, we evaluate the
         Pitch values in piano pieces are discrete: the music goes from one note to another.<br>
         Pitch values in CPM pieces are more continuous (eg vocals, there are examples in one of the pdfs).<br>
         <br>
-        It is possible that granularity reflects continuousness. Let's zoom in to find out whether it's the case.</td>
+        It is possible that granularity reflects continuousness. Let's zoom in to find out whether it's the case.<br>
+        ANSWER THE QUESTION USING THE STUDY BELOW!</td>
     </tr>
     <tr>
-      <td rowspan="3" style="text-align: center">Zooms on points close to the main diagonal</td>
+      <td rowspan="3" style="text-align: center">Zooms on points close to the main diagonal, 2s window</td>
       <td colspan="2" style="text-align: center"><p>Zoom on piano and BEA, A3-A4, correlations up to 1 tone interval, 2s windows, unweighted.</p>
         <p><img src="imgs/Proper_zoom_2s_upload.png" width="400" height="304" alt=""/><br>
           An expression of granularity is the following: in both cases, positive correlations are clear 
-      until 1/4 tone. The correlation's variance is greater in the case of piano.</p></td>
+      until 1/4 tone. The correlation's variance is greater in the case of piano, diagonal 2 is the clearest.</p></td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
     <tr>
@@ -877,31 +878,49 @@ To answer this question, we evaluate the
       <td style="text-align: center">&nbsp;</td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align: center"><p>Zoom on piano and BEA, A3-A4, correlations up to 1 tone interval, .1s windows, weighted with energy and ISO226</p>
-        <p><img src="imgs/Proper_zoom_1.s_2weights_upload.png" width="400" height="305" alt=""/></p>
+      <td colspan="2" style="text-align: center"><p>Zoom on piano and BEA, A3-A4, correlations up to 1 tone interval, 2s windows, weighted with energy and ISO226</p>
+        <p><img src="imgs/Proper_zoom_2s_2weights_upload.png" width="400" height="305" alt=""/></p>
       <p>Similar observations as above.<br>
       </p></td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
     <tr>
+      <td rowspan="2" style="text-align: center">Zooms on points close to the main diagonal, .1s window</td>
+      <td colspan="2" style="text-align: center"><p>Zoom on piano and BEA, A3-A4, correlations up to 1 tone interval, .1s windows, no weight</p>
+      <p><em>I don't have the measures yet</em></p></td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center"><p>Zoom on piano and BEA, A3-A4, correlations up to 1 tone interval, .1s windows, weighted with energy and ISO226</p>
+      <p><em>recheck alignment</em></p></td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
       <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong><br>
-        Second diagonal, unweighted, 2s.<br>
+        Granularity, diachronic study, unweighted, 2s.<br>
         <br>
       </strong></td>
     </tr>
     <tr>
-      <td>Measure of granularity over the dataset.</td>
-      <td style="text-align: center"><img src="imgs/second_diagonal_BEA_upload.png" width="400" height="153" alt=""/><br>
-        Variance of the second diagonal from high pass filtered pairwise correlations between frequency bands</td>
-      <td style="text-align: center"><img src="imgs/second_diagonal_piano_upload.png" width="400" height="152" alt=""/><br>
-        Variance of the second diagonal from high pass filtered pairwise correlations between frequency bands</td>
-      <td style="text-align: center">&nbsp;</td>
+      <td>How to measure granularity</td>
+      <td colspan="3" style="text-align: center"><figure><img src="imgs/Diagonals_2_3_2s_unweighted_upload.png" width="1200" height="392" alt=""/>
+        <figcaption></figcaption>
+      </figure></td>
     </tr>
     <tr>
-      <td>Evolution of continuousness/granularity over the years</td>
-      <td colspan="3" style="text-align: center"><p><strong>should be redone, difficult interpretation</strong></p>
-        <p><img src="imgs/BEA_long_Separation_by_tracks_upload.png" width="400" height="313" alt=""/><br>
-        Top is variance over the second diagonal. Bottom is mean over the second diagonal. Top may be interpreted as scale salience (some sort of discreteness). Bottom is something like correlation with eighth tone interval (not quarter as written).</p></td>
+      <td>Evolution of granularity over the years</td>
+      <td colspan="3" style="text-align: center"><p><img src="imgs/BEA_long_Separation_by_tracks_upload.png" width="400" height="313" alt=""/><br>
+        Top is variance over the second diagonal. Bottom is mean over the second diagonal.<br>
+        Top is variance of the second diagonal.<br>
+      Interpretation of bottom remains to be understood.</p>
+      <p>If variance over the second diagonal is increasing, then popular music is becoming more discrete.<br>
+        It remains, however, much more continuous than piano and orchestra.
+          <br>
+        <em>redo from graphs above to check </em></p></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="3" style="text-align: center">INSERT DIAGONAL ZERO FROM WEIGHTED</td>
     </tr>
   </tbody>
 </table>
