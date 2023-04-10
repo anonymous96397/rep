@@ -106,9 +106,11 @@ To answer this question, we evaluate the
         <br>
         Notice the coarser granularity, corresponding to less 'continousness' of the self-correlated content.<br>
         Granularity is less coarse than in the case of the piano, but coarser than in the case of BEA. </p>
+        <p>Irt granularity: the representations above measure the continuity in frequency distribution, not in frequency succession.</p>
         <p>Investigate relations with MPEG7 measure HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
-        <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;</p>
-        <p>Seems to be &quot;only&quot; normalised cross-correlation of the signal.</p></td>
+        <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;<br>
+        =&gt; Seems to be &quot;only&quot; normalised cross-correlation of the signal.</p>
+        <p>&nbsp;</p></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -149,7 +151,7 @@ To answer this question, we evaluate the
     </tr>
     <tr>
       <td rowspan="2">Evolution of some diagonals over the years</td>
-      <td style="text-align: center"><p><img src="imgs/Corrs_several_intervals_nonmedfilt_upload.png" width="400" height="341" alt=""/></p>
+      <td style="text-align: center"><p><img src="imgs/H_diags_notfiltered_2s_unweighted_upload.png" width="400" height="338" alt=""/></p>
         <p> (1) Values over the diagonals, overall<br>
           (2) Values over the diagonals, year by year <br>
           (3) Extract from (2), some diagonals<br>
@@ -169,7 +171,7 @@ To answer this question, we evaluate the
     </tr>
     <tr>
       <td>Evolution of some median-smoothed diagonals (~LPF) over the years</td>
-      <td style="text-align: center"><p><img src="imgs/Corrs_several_intervals_LPF_median_filtered_upload.png" width="400" height="248" alt=""/><br>
+      <td style="text-align: center"><p><img src="imgs/H_diags_LPF_2s_unweighted_upload.png" width="400" height="250" alt=""/><br>
         (1) Values over the smoothed diagonals, year by year<br>
         (2) Extract from (1), some diagonals<br>
         (3) Some diagonals, amplitude for each diagonal is normalised<br>
@@ -184,7 +186,7 @@ To answer this question, we evaluate the
     </tr>
     <tr>
       <td rowspan="2">Evolution of some median-filtered diagonals (~HPF) over the years</td>
-      <td style="text-align: center"><p><img src="imgs/Corrs_several_intervals_median_filtered_upload.png" width="400" height="339" alt=""/></p>
+      <td style="text-align: center"><p><img src="imgs/H_diags_HPF_2s_unweighted_upload.png" width="400" height="338" alt=""/></p>
         <p>(1) Overall median-filtered diagonal values<br>
           (2) Year by year<br>
           (3) Extract from (2), some diagonals<br>
@@ -211,9 +213,29 @@ To answer this question, we evaluate the
         Notice the inharmonicity.</td>
     </tr>
     <tr>
+      <td rowspan="2">Tuning</td>
+      <td colspan="3" style="text-align: center"><p>Another question is whether the measure of diagonals is sensitive to tuning - see (Mauch and Dixon 2010) for tuning correction before chroma analysis.</p>
+      <p><img src="imgs/Tuning_upload.png" width="400" height="311" alt=""/><br>
+        Top, measured tuning. 
+      Bottom, uncertainty in the measure of tuning</p></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><p>The answer is no.</p>
+        <p><img src="imgs/H_diags_HPF_2s_unweighted_diap_upload.png" width="400" height="338" alt=""/><br>
+        </p>
+        <p>The figure above (tuning corrected) is the same           as in Evolution of some median-filtered diagonals (~HPF) over the years (tuning not corrected).</p>
+        <p>See &quot;all measures&quot; at the bottom of the page to check that tuning correction has no influence.<br>
+      </p></td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
       <td>&nbsp;</td>
-      <td colspan="3" style="text-align: center"><p><strong>Conclusion</strong> <strong>to  the diachronic analysis</strong></p>
-        <p>There are two drawbacks to the pairwise correlations between freq bands, 2-second windows, not weighted<br>
+      <td colspan="3" bgcolor="#DBDBDB" style="text-align: center">Conclusion to  the diachronic analysis</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="3" style="text-align: center"><p>There are two drawbacks to the pairwise correlations between freq bands, 2-second windows, not weighted<br>
           1) long windows, no detection of small-scale movements<br>
           2) not weighted 
           using level, correlations for low levels have the same importance as correlations for high levels<br>
@@ -222,8 +244,7 @@ To answer this question, we evaluate the
           Diagonals generally increase with time, but the salience of the diagonals decrease with time.<br>
           In other words, CPM goes toward the presence of more intervals, but the intervals have less and less harmonic relationships.<br>
           Pitch in CPM is less and less compliant to &quot;pitch = f0 + multiples&quot;, even though there are more simultaneous, parallel frequency evolutions.</p>
-        <p>The conclusions mainly concern intervals that originate from overtones.</p>
-        <p>&nbsp;</p></td>
+        <p>The conclusions mainly concern intervals that originate from overtones.</p></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -1174,6 +1195,172 @@ To answer this question, we evaluate the
   </tbody>
 </table>
 <p>&nbsp;</p>
+<p><span style="font-size: xx-large">ALL MEASURES</span></p>
+<p>&nbsp;</p>
+<table width="1386" border="1" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+        Frequency-frequency pairwise correlations<br>
+        <br>
+      </strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">unweighted</td>
+      <td style="text-align: center">weighted with energy</td>
+      <td style="text-align: center">weighted with energy and ISO226</td>
+    </tr>
+    <tr>
+      <td width="278" style="text-align: center">2s window<br>
+        no tuning adj</td>
+      <td width="287" style="text-align: center"><img src="imgs/Pw_2s_freq_freq.png" width="400" height="400" alt=""/></td>
+      <td width="364" style="text-align: center"><p><img src="imgs/Ps_2s_freq_freq.png" width="400" height="396" alt=""/></p></td>
+      <td width="447" style="text-align: center"><img src="imgs/Pi_2s_freq_freq.png" width="404" height="396" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2s window<br>
+        with tuning adj.</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">.1s window<br>
+        no tuning adj.</td>
+      <td style="text-align: center"><img src="imgs/Pw_p1s_freq_freq.png" width="400" height="396" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/Ps_p1s_freq_freq.png" width="400" height="396" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/Pi_p1s_freq_freq.png" width="400" height="396" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">.1s window<br>
+        with tuning adj.</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+        Diagonals<br>
+        <br>
+      </strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">unweighted</td>
+      <td style="text-align: center">weighted with energy</td>
+      <td style="text-align: center">weighted with energy and ISO226</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2s window<br>
+        no tuning adj.</td>
+      <td style="text-align: center"><img src="imgs/H_diags_notfiltered_2s_unweighted_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_notfiltered_2s_weight_energy_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_notfiltered_2s_weight_both_upload.png" width="400" height="338" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2s window<br>
+        with tuning adj.</td>
+      <td style="text-align: center"><img src="imgs/H_diags_notfiltered_2s_unweighted_diap_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_notfiltered_2s_weight_energy_diap_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_notfiltered_2s_weight_both_diap_upload.png" width="400" height="338" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">.1s window<br>
+        no tuning adj.</td>
+      <td style="text-align: center"><img src="imgs/H_diags_notfiltered_p1s_unweighted_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_notfiltered_p1s_weight_energy_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_notfiltered_p1s_weight_both_upload.png" width="400" height="338" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">.1s window<br>
+        with tuning adj.</td>
+      <td style="text-align: center"><img src="imgs/H_diags_notfiltered_p1s_unweighted_diap_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_notfiltered_p1s_weight_energy_diap_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_notfiltered_p1s_weight_both_diap_upload.png" width="400" height="338" alt=""/></td>
+    </tr>
+    <tr>
+      <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+        Diagonals, LPF<br>
+        <br>
+      </strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">unweighted</td>
+      <td style="text-align: center">weighted with energy</td>
+      <td style="text-align: center">weighted with energy and ISO226</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2s window<br>
+        no tuning adj.</td>
+      <td style="text-align: center"><img src="imgs/H_diags_LPF_2s_unweighted_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_LPF_2s_weight_energy_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_LPF_2s_weight_both_upload.png" width="400" height="338" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2s window<br>
+        with tuning adj.</td>
+      <td style="text-align: center"><img src="imgs/H_diags_LPF_2s_unweighted_diap_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_LPF_2s_weight_energy_diap_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_LPF_2s_weight_both_diap_upload.png" width="400" height="338" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">.1s window<br>
+        no tuning adj.</td>
+      <td style="text-align: center"><img src="imgs/H_diags_LPF_p1s_unweighted_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_LPF_p1s_weight_energy_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_LPF_p1s_weight_both_upload.png" width="400" height="338" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">.1s window<br>
+        with tuning adj.</td>
+      <td style="text-align: center"><img src="imgs/H_diags_LPF_p1s_unweighted_diap_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_LPF_p1s_weight_energy_diap_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_LPF_p1s_weight_both_diap_upload.png" width="400" height="338" alt=""/></td>
+    </tr>
+    <tr>
+      <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+        Diagonals, HPF<br>
+        <br>
+      </strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">unweighted</td>
+      <td style="text-align: center">weighted with energy</td>
+      <td style="text-align: center">weighted with energy and ISO226</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2s window<br>
+        no tuning adj.</td>
+      <td style="text-align: center"><img src="imgs/H_diags_HPF_2s_unweighted_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_HPF_2s_weight_energy_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_HPF_2s_weight_both_upload.png" width="400" height="338" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2s window<br>
+        with tuning adj.</td>
+      <td style="text-align: center"><img src="imgs/H_diags_HPF_2s_unweighted_diap_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_HPF_2s_weight_energy_diap_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_HPF_2s_weight_both_diap_upload.png" width="400" height="338" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">.1s window<br>
+        no tuning adj.</td>
+      <td style="text-align: center"><img src="imgs/H_diags_HPF_p1s_unweighted_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_HPF_p1s_weight_energy_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_HPF_p1s_weight_both_upload.png" width="400" height="338" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">.1s window<br>
+        with tuning adj.</td>
+      <td style="text-align: center"><img src="imgs/H_diags_HPF_p1s_unweighted_diap_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_HPF_p1s_weight_energy_diap_upload.png" width="400" height="338" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/H_diags_HPF_p1s_weight_both_diap_upload.png" width="400" height="338" alt=""/></td>
+    </tr>
+  </tbody>
+</table>
 <p>&nbsp;</p>
 <p><span style="font-size: xx-large">BIN</span></p>
 <p>&nbsp;</p>
@@ -1212,6 +1399,7 @@ To answer this question, we evaluate the
 <p>Cichocki, Andrzej, Rafal Zdunek, and Shun-ichi Amari (2006). "New algorithms for non-negative matrix factorization in applications to blind source separation." <em>2006 IEEE International Conference on Acoustics Speech and Signal Processing Proceedings</em>. Vol. 5. IEEE, 2006. </p>
 <p>Grachten, Maarten, Emmanuel Deruty, and Alexandre Tanguy. "Auto-adaptive resonance equalization using dilated residual networks." <em>arXiv preprint arXiv:1807.08636</em> (2018).</p>
 <p>ISO/IEC (2001), Information technology — Multimedia content description interface — Part 4: Audio, in FDIS 15938-4:2001(E), n.d. </p>
+<p>Mauch, Matthias, and Simon Dixon. "Approximate Note Transcription for the Improved Identification of Difficult Chords." <em>ISMIR</em>. 2010.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
