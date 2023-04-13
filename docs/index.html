@@ -172,8 +172,33 @@
         <p>Irt granularity: the representations above measure the continuity in frequency distribution, not in frequency succession.</p>
         <p>Investigate relations with MPEG7 measure HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
         <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;<br>
-        =&gt; Seems to be &quot;only&quot; normalised cross-correlation of the signal.</p>
-        <p>&nbsp;</p></td>
+        =&gt; Seems to be &quot;only&quot; normalised cross-correlation of the signal.</p></td>
+    </tr>
+    <tr>
+      <td rowspan="3">Origin of the diagonals</td>
+      <td colspan="3" style="text-align: center"><p>One question is whether the observed intervals come from harmonics or parallel voices.<br>
+        Two answers to this question</p>
+        <p>(1) We evalute the ideal correlation from uniformy distributed harmonic compounds.<br>
+          See (Mauch and Dixon, 2010) for the models. of harmonic compounds.<br>
+          Not a proof but shows commonalities.</p>
+      <p>Evaluate difference? Evaluate factor?</p></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><p>.<img src="imgs/BEA_freq_freq_upload.png" width="400" height="396" alt=""/><br>
+        BEA</p></td>
+      <td style="text-align: center"><img src="imgs/pairwise_model_0.6.png" width="400" height="402" alt=""/><br>
+        A = .6.^(k-1)</td>
+      <td style="text-align: center"><img src="imgs/pairwise_model_0.9.png" width="400" height="402" alt=""/><br>
+        A = .9.^(k-1)</td>
+    </tr>
+    <tr>
+      <td colspan="3" style="text-align: center">(2) we start from MIDI files, sonify them with sine waves and piano, and compare the contributions of sine waves (fundamental) and piano (fundamental + harmonics) to the diagonals.<br>
+        <br>
+        <img src="imgs/Piano_sine_Distributions_upload.png" width="400" height="99" alt=""/><br>
+        <br>
+Possible only from MIDI files.<br>
+Shows that median-filtered diagonals come mainly from  voices from intervals &lt; fifth, and gradually from harmonics above.<br>
+Notice the inharmonicity.</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -265,35 +290,8 @@
         Median-filtered diagonals decrease with time.</td>
     </tr>
     <tr>
-      <td rowspan="3">Origin of the median-filtered diagonals</td>
-      <td colspan="3" style="text-align: center"><p>One question is whether the observed intervals come from harmonics or parallel voices.<br>
-        Two answers to this question</p>
-        <p>(1) We evalute the ideal correlation from uniformy distributed harmonic compounds.<br>
-See (Mauch and Dixon, 2010) for the models. of harmonic compounds.<br>
-Not a proof but shows commonalities.</p>
-        <p>Evaluate difference? Evaluate factor?<br>
-      </p></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><p>.<img src="imgs/BEA_freq_freq_upload.png" width="400" height="396" alt=""/><br>
-        BEA</p></td>
-      <td style="text-align: center"><img src="imgs/pairwise_model_0.6.png" width="400" height="402" alt=""/><br>
-      A = .6.^(k-1)</td>
-      <td style="text-align: center"><img src="imgs/pairwise_model_0.9.png" width="400" height="402" alt=""/><br>
-      A = .9.^(k-1)</td>
-    </tr>
-    <tr>
-      <td colspan="3" style="text-align: center">(2) we start from MIDI files, sonify them with sine waves and piano, and compare the contributions of sine waves (fundamental) and piano (fundamental + harmonics) to the diagonals.<br>
-        <br>
-        <img src="imgs/Piano_sine_Distributions_upload.png" width="400" height="99" alt=""/><br>
-        <br>
-Possible only from MIDI files.<br>
-Shows that median-filtered diagonals come mainly from  voices from intervals &lt; fifth, and gradually from harmonics above.<br>
-Notice the inharmonicity.</td>
-    </tr>
-    <tr>
       <td rowspan="2">Tuning</td>
-      <td colspan="3" style="text-align: center"><p>Another question is whether the measure of diagonals is sensitive to tuning - see (Mauch and Dixon 2010) for tuning correction before chroma analysis.</p>
+      <td colspan="3" style="text-align: center"><p>A question is whether the measure of diagonals is sensitive to tuning - see (Mauch and Dixon 2010) for tuning correction before chroma analysis.</p>
       <p><img src="imgs/Tuning_upload.png" width="400" height="311" alt=""/><br>
         Top, measured tuning. 
       Bottom, uncertainty in the measure of tuning</p></td>
