@@ -45,25 +45,104 @@
     </tr>
     <tr>
       <td style="text-align: left">Wiener entropy of median filtered spectrum</td>
-      <td style="text-align: center"><p><img src="imgs/Wiener_medianfilt_upload.png" width="400" height="320" alt=""/><br>
-        Median filtering of the spectrum provides values that reflect what we want to capture. White and pink noise WE is now zero.</p>
+      <td style="text-align: center"><table width="100%" border="1" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td width="38%" rowspan="5" style="text-align: center"><img src="imgs/Wiener_medianfilt_upload.png" width="400" height="320" alt=""/></td>
+            <td width="31%" style="text-align: center"><audio controls>
+              <source src="audio/06548 - Einstuerzende Neubauten - Zeichnungen des Patienten - Finger und Zahne - 1983.mp3" type="audio/mp3">
+            </audio>
+              <br>
+              06548 - Einstuerzende Neubauten - Zeichnungen des Patienten - Finger und Zahne - 1983</td>
+            <td width="31%" style="text-align: center"><audio controls>
+              <source src="audio/02836 - Boards Of Canada - Music Has The Right To Children - Wildlife Analysis - 1998.mp3" type="audio/mp3">
+            </audio>
+              <br>
+              02836 - Boards Of Canada - Music Has The Right To Children - Wildlife Analysis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center"><audio controls>
+              <source src="audio/10890 - Kraftwerk - Radio Aktivitat - Geigerzahler - 1975.mp3" type="audio/mp3">
+            </audio>
+<br>
+              10890 - Kraftwerk - Radio Aktivitat - Geigerzahler - 1975</td>
+            <td width="31%" style="text-align: center"><audio controls>
+              <source src="audio/10896 - Kraftwerk - Radio Aktivitat - Sendepause - 1975.mp3" type="audio/mp3">
+            </audio>
+<br>
+              10896 - Kraftwerk - Radio Aktivitat - Sendepause - 1975</td>
+          </tr>
+          <tr>
+            <td style="text-align: center"><audio controls>
+              <source src="audio/19060 - Soundgarden - Ultramega - One Minute Of Silence - 1988.mp3" type="audio/mp3">
+            </audio>
+<br>
+              19060 - Soundgarden - Ultramega - One Minute Of Silence - 1988</td>
+            <td width="31%" style="text-align: center"><audio controls>
+              <source src="audio/02821 - Boards Of Canada - Music Has The Right To Children - Bocuma - 1998.mp3" type="audio/mp3">
+            </audio>
+<br>
+              02821 - Boards Of Canada - Music Has The Right To Children - Bocuma - 1998</td>
+          </tr>
+          <tr>
+            <td style="text-align: center"><audio controls>
+              <source src="audio/19228 - Steve Earle - Shut up and die like an aviator - Intro - 1991.mp3" type="audio/mp3">
+            </audio>
+<br>
+              19228 - Steve Earle - Shut up and die like an aviator - Intro - 1991</td>
+            <td width="31%" style="text-align: center"><audio controls>
+              <source src="audio/16993 - Radiohead - Amnesiac - Morning Bell - 2001.mp3" type="audio/mp3">
+            </audio>
+<br>
+              16993 - Radiohead - Amnesiac - Morning Bell - 2001</td>
+          </tr>
+          <tr>
+            <td style="text-align: center"><audio controls><source src="audio/01933 - Beasty Boys - Licenssed To Ill - Paul Revere - 1986.mp3" type="audio/mp3"></audio>
+              <br>
+              01933 - Beasty Boys - Licenssed To Ill - Paul Revere - 1986</td>
+            <td width="31%" style="text-align: center"><audio controls>
+              <source src="audio/23961 - Low - Hey What - Don t Walk Away - 2021.mp3" type="audio/mp3">
+            </audio>
+<br>
+              23961 - Low - Hey What - Don't Walk Away - 2021 </td>
+          </tr>
+          <tr>
+            <td style="text-align: center">&nbsp;</td>
+            <td style="text-align: center"><strong>5 lowest median filtered weighted WE values<br>
+              (formants are not salient)
+            </strong></td>
+            <td style="text-align: center"><strong>5 highest median filtered weighted WE values<br>
+              (salient formants)
+            </strong></td>
+          </tr>
+        </tbody>
+      </table>
+        <p><br>
+          Median filtering of the spectrum provides values that reflect what we want to capture. White and pink noise WE is now zero.</p>
         <p><strong>What we can learn from these diagrams?</strong><br>
           Peak salience for CPM is increasing. The shift is the beginning of the '90s.<br>
           Peak salience for CPM (unweighted) is greater than for piano and orchestra from the shift.<br>
         As the weighting attenuates the low freqs and enhances the high-medium frequencies, it appears that peak salience for the piano is important in the high-medium frequencies.</p>
         <p><strong>To investigate</strong><br>
-        Confirm with observations of the spectrum that peak salience for the piano is important in the high-medium frequencies.</p></td>
+        Confirm with observations of the spectrum that peak salience for the piano is important in the high-medium frequencies.<br>
+        Relation to spectral contrast?
+      </p></td>
     </tr>
     <tr>
       <td style="text-align: center">&nbsp;</td>
-      <td bgcolor="#00FF52" style="text-align: center">See &quot;Analysis of examples&quot; below for examples of tracks with high and low WE values</td>
+      <td bgcolor="#00FF52" style="text-align: center">See &quot;Analysis of examples&quot; below for analyses of tracks with high and low WE values</td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align: center"><strong><br>
+      <td colspan="2" style="text-align: center"><p><strong><br>
         Observation<br>
-      </strong>Wiener entropy doesn't provide details about which peaks are salient. One question is: to what extent are the salient peaks in an harmonic relation.<br>
-To answer this question, we evaluate the 
-      pairwise correlations between frequency bands.<br>      <br></td>
+        </strong>Wiener entropy doesn't provide details about which peaks are salient. One question is: to what extent are the salient peaks in an harmonic relation.<br>
+        To answer this question, we evaluate the 
+        pairwise correlations between frequency bands.</p>
+        <p>!!! In the current state, pairwise correlation doesn't provide information about harmonic relations, it provides information about parallelism<br>
+          Insert model of harmonic relation and compare.
+          <br>      
+          <br>
+      </p></td>
     </tr>
   </tbody>
 </table>
@@ -109,8 +188,37 @@ To answer this question, we evaluate the
         <p>Irt granularity: the representations above measure the continuity in frequency distribution, not in frequency succession.</p>
         <p>Investigate relations with MPEG7 measure HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
         <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;<br>
-        =&gt; Seems to be &quot;only&quot; normalised cross-correlation of the signal.</p>
-        <p>&nbsp;</p></td>
+        =&gt; Seems to be &quot;only&quot; normalised cross-correlation of the signal.</p></td>
+    </tr>
+    <tr>
+      <td rowspan="4">Origin of the diagonals</td>
+      <td colspan="3" style="text-align: center"><p>One question is whether the observed intervals come from harmonics or parallel voices.<br>
+        Two answers to this question</p>
+        <p>(1) We evalute the ideal correlation from uniformy distributed harmonic compounds.<br>
+          See (Mauch and Dixon, 2010) for the models of harmonic compounds.<br>
+      Not a proof but shows commonalities.</p></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><p>.<img src="imgs/BEA_freq_freq_upload.png" width="400" height="396" alt=""/><br>
+        BEA</p></td>
+      <td style="text-align: center"><img src="imgs/pairwise_model_0.6.png" width="400" height="402" alt=""/><br>
+        A = .6.^(k-1)</td>
+      <td style="text-align: center"><img src="imgs/pairwise_model_0.9.png" width="400" height="402" alt=""/><br>
+        A = .9.^(k-1)</td>
+    </tr>
+    <tr>
+      <td colspan="3" style="text-align: center"><p>Notice that the lines in the models are less visible due to absence of FT artifacts.</p>
+      <p>Evaluate difference? Evaluate factor! Provides a solution to the problem in (Mauch and Dixon, 2010)<br>
+      </p></td>
+    </tr>
+    <tr>
+      <td colspan="3" style="text-align: center">(2) we start from MIDI files, sonify them with sine waves and piano, and compare the contributions of sine waves (fundamental) and piano (fundamental + harmonics) to the diagonals.<br>
+        <br>
+        <img src="imgs/Piano_sine_Distributions_upload.png" width="400" height="99" alt=""/><br>
+        <br>
+Possible only from MIDI files.<br>
+Shows that median-filtered diagonals come mainly from  voices from intervals &lt; fifth, and gradually from harmonics above.<br>
+Notice the inharmonicity.</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -202,19 +310,8 @@ To answer this question, we evaluate the
         Median-filtered diagonals decrease with time.</td>
     </tr>
     <tr>
-      <td>Origin of the median-filtered diagonals</td>
-      <td colspan="3" style="text-align: center">One question is whether the observed intervals come from harmonics or parallel voices.<br>
-        To answer the question, we start from MIDI files, sonify them with sine waves and piano, and compare the contributions of sine waves (fundamental) and piano (fundamental + harmonics) to the diagonals.<br>
-        <br>
-        <img src="imgs/Piano_sine_Distributions_upload.png" width="400" height="99" alt=""/><br>
-        <br>
-        Possible only from MIDI files.<br>
-        Shows that median-filtered diagonals come mainly from  voices from intervals &lt; fifth, and gradually from harmonics above.<br>
-        Notice the inharmonicity.</td>
-    </tr>
-    <tr>
       <td rowspan="2">Tuning</td>
-      <td colspan="3" style="text-align: center"><p>Another question is whether the measure of diagonals is sensitive to tuning - see (Mauch and Dixon 2010) for tuning correction before chroma analysis.</p>
+      <td colspan="3" style="text-align: center"><p>A question is whether the measure of diagonals is sensitive to tuning - see (Mauch and Dixon 2010) for tuning correction before chroma analysis.</p>
       <p><img src="imgs/Tuning_upload.png" width="400" height="311" alt=""/><br>
         Top, measured tuning. 
       Bottom, uncertainty in the measure of tuning</p></td>
@@ -869,12 +966,11 @@ To answer this question, we evaluate the
       <td style="text-align: center"><img src="imgs/C_REQ_settings.png" width="300" height="321" alt=""/></td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
+      <td rowspan="2">Influence of Resonance EQ</td>
       <td style="text-align: center"><img src="imgs/straight_PEQ_upload.png" width="400" height="306" alt=""/></td>
       <td style="text-align: center"><img src="imgs/rotated_PEQ_upload.png" width="400" height="304" alt=""/></td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
       <td style="text-align: center"><p>WE - PCA of pairwise corr representation<br>
         White points: original<br>
         Yellow points: processed<br>
@@ -885,6 +981,38 @@ To answer this question, we evaluate the
         Yellow points: processed<br>
         Yellow line: median influence of REQ </p>
       <p>Conclusions: (1) PC1 of (WE - PCA of pairwise corr) is a reasonable approximation of the effect of Resonance EQ (remove resonances) (2) PCA of (WE - PCA of pairwise corr) is a reaonsable separator of spectral salience (WE) and organisation into parallel formants</p></td>
+    </tr>
+    <tr>
+      <td colspan="3" bgcolor="#88F5FF" style="text-align: center"> <strong><br>
+      Pairwise correlation diagrams on representation<br>
+      <br> 
+      </strong></td>
+    </tr>
+    <tr>
+      <td rowspan="3">&nbsp;</td>
+      <td style="text-align: center"><a href="imgs/straight_pairwise_upload.png"><img src="imgs/straight_pairwise_upload.png" width="400" height="347" alt=""/><br>
+        <span style="font-size: small">Click to enlarge</span></a></td>
+      <td style="text-align: center"><a href="imgs/rotated_pairwise_upload.png"><img src="imgs/rotated_pairwise_upload.png" width="400" height="352" alt=""/><br>
+        <span style="font-size: small">Click to enlarge</span></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="imgs/straight_pairwise_larger_upload.png"><img src="imgs/straight_pairwise_larger_upload.png" width="400" height="347" alt=""/><br>
+        <span style="font-size: small">Click to enlarge</span></a></td>
+      <td style="text-align: center"><a href="imgs/rotated_pairwise_larger_upload.png"><img src="imgs/rotated_pairwise_larger_upload.png" width="400" height="352" alt=""/><br>
+        <span style="font-size: small">Click to enlarge</span></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><p>Y-axis is the PC1 for which we provide audio examples above. From noisy to clear.</p>
+      <p>X-axis is the Wiener entropy, i.e. peak salience.<br>
+        Note that peak salience may not be visible on the median representations, as they may be distributed over the representation.
+      </p></td>
+      <td style="text-align: center">To interpret<br>
+        Appears to be coherent with the drawings above (right = stronger resonances, top = more numerous resonances).<br>
+        <br>
+        <img src="imgs/expl_paper2.png" width="300" height="178" alt=""/> <br>
+        Another aspect of the vertical component is the 
+        stronger division by frequency zones.<br>
+        <br></td>
     </tr>
   </tbody>
 </table>
@@ -989,7 +1117,7 @@ To answer this question, we evaluate the
   </tr>
   <tbody>
     <tr>
-      <td width="234" style="text-align: center"><p><br>
+      <td width="68" style="text-align: center"><p><br>
         <br>
       </p></td>
       <td colspan="3" style="text-align: center"><p>Following are examples of tracks from the dataset with very high WE (low peak salience) and very low WE (high peak salience).<br>
@@ -1128,11 +1256,11 @@ To answer this question, we evaluate the
     </tr>
     <tr>
       <td style="text-align: center">&nbsp;</td>
-      <td width="345" style="text-align: center"><img src="imgs/11708 - Low - Double Negative - Tempest - 2018 2s.png" width="400" height="402" alt=""/><br>
+      <td width="400" style="text-align: center"><img src="imgs/11708 - Low - Double Negative - Tempest - 2018 2s.png" width="400" height="402" alt=""/><br>
         &quot;11708 - Low - Double Negative - Tempest - 2018&quot;<br>
         Confirms that captures harmonicity (the square at the bottom left is isolated)</td>
-      <td width="390" style="text-align: center">&nbsp;</td>
-      <td width="407" style="text-align: center">&nbsp;</td>
+      <td width="495" style="text-align: center">&nbsp;</td>
+      <td width="413" style="text-align: center">&nbsp;</td>
     </tr>
     <tr>
       <td colspan="4" bgcolor="#00FF52" style="text-align: center"><strong><br>
@@ -1192,15 +1320,84 @@ To answer this question, we evaluate the
       <p>&nbsp;</p></td>
     </tr>
     <tr>
+      <td colspan="4" bgcolor="#00FF52" style="text-align: center"><strong><br>
+        Examples from PCA of (PC1 WE) representation<br>
+        <br>
+      </strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">22442 - Tim Buckley - Starsailor - Starsailor - 1970</td>
+      <td style="text-align: center"><img src="imgs/straight_titles_upload_22442.png" width="200" height="159" alt=""/><img src="imgs/rotated_titles_upload_22442.png" width="200" height="154" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/22442 - Tim Buckley - Starsailor - Starsailor - 1970.png" width="380" height="380" alt=""/></td>
       <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">04485 - Clipping - Visions of bodies being burned - Invocation (Interlude) (with Greg Stuart) - 2020.wav</td>
+      <td style="text-align: center"><img src="imgs/straight_titles_upload_04485.png" width="200" height="159" alt=""/><img src="imgs/rotated_titles_upload_04485.png" width="200" height="154" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/04485 - Clipping - Visions of bodies being burned - Invocation (Interlude) (with Greg Stuart) - 2020.png" width="380" height="380" alt=""/></td>
       <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">01086 - Alice Cooper - Welcome to my Nightmare - Flatline - 2011</td>
+      <td style="text-align: center"><img src="imgs/straight_titles_upload_01086.png" width="200" height="159" alt=""/><img src="imgs/rotated_titles_upload_01086.png" width="200" height="154" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/01086 - Alice Cooper - Welcome to my Nightmare - Flatline - 2011.png" width="380" height="380" alt=""/></td>
       <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">01574 - Archive - Londinium - Organ Song - 1996.wav</td>
+      <td style="text-align: center"><img src="imgs/straight_titles_upload_01574.png" width="200" height="159" alt=""/><img src="imgs/rotated_titles_upload_01574.png" width="200" height="154" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/01574 - Archive - Londinium - Organ Song - 1996.png" width="380" height="380" alt=""/></td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">11990 - M83 - Hurry Up Were Dreaming - When Will You Come Home - 2011</td>
+      <td style="text-align: center"><img src="imgs/straight_titles_upload_11990.png" width="200" height="159" alt=""/><img src="imgs/rotated_titles_upload_11990.png" width="200" height="154" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/11990 - M83 - Hurry Up Were Dreaming - When Will You Come Home - 2011.png" width="380" height="380" alt=""/></td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">02338 - Bjork - Vespertine - Frosti - 2001</td>
+      <td style="text-align: center"><p><img src="imgs/straight_titles_upload_02338.png" width="200" height="159" alt=""/><img src="imgs/rotated_titles_upload_02338.png" width="200" height="154" alt=""/></p></td>
+      <td style="text-align: center"><p><img src="imgs/02338 - Bjork - Vespertine - Frosti - 2001.png" width="380" height="380" alt=""/></p>
+      <p>Pairwise corr, .1s, weighted energy + ISO226<br>
+      Discrete distribution of frequencies<br>
+      Discrete sequences<br>
+      No noise
+      </p></td>
+      <td style="text-align: center"><p>STFT<br>
+        <img src="imgs/02338_STFT_upload.png" width="400" height="209" alt=""/></p>
+        <p>FT, Frame 18 (3.6s)</p>
+      <p><img src="imgs/02338_FT_upload.png" width="400" height="146" alt=""/></p>
+      <p>Harmonic sounds with only a few harmonics (very strong fundamental)</p></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">21123 - The Human League - Dare - Get Carter - 1981</td>
+      <td style="text-align: center"><img src="imgs/straight_titles_upload_21123.png" width="200" height="159" alt=""/><img src="imgs/rotated_titles_upload_21123.png" width="200" height="154" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/21123 - The Human League - Dare - Get Carter - 1981.png" width="380" height="380" alt=""/></td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">13792 - My Bloody Valentine - Loveless - Touched - 1991.wav</td>
+      <td style="text-align: center"><img src="imgs/straight_titles_upload_13792.png" width="200" height="159" alt=""/><img src="imgs/rotated_titles_upload_13792.png" width="200" height="154" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/13792 - My Bloody Valentine - Loveless - Touched - 1991.png" width="380" height="380" alt=""/></td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">11708 - Low - Double Negative - Tempest - 2018</td>
+      <td style="text-align: center"><img src="imgs/straight_titles_upload_11708.png" width="200" height="159" alt=""/><img src="imgs/rotated_titles_upload_11708.png" width="200" height="154" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/11708 - Low - Double Negative - Tempest - 2018.png" width="380" height="380" alt=""/></td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">14861 - Oasis - Dont Believe the Truth - A Bell Will Ring - 2005</td>
+      <td style="text-align: center"><img src="imgs/straight_titles_upload_14861.png" width="200" height="159" alt=""/><img src="imgs/rotated_titles_upload_14861.png" width="200" height="154" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/14861 - Oasis - Dont Believe the Truth - A Bell Will Ring - 2005.png" width="380" height="380" alt=""/></td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
     <tr>
@@ -1212,7 +1409,7 @@ To answer this question, we evaluate the
   </tbody>
 </table>
 <p>&nbsp;</p>
-<p><span style="font-size: xx-large">ALL MEASURES</span></p>
+<p><span style="font-size: xx-large">ALL BEA PAIRWISE AND DIAGONAL MEASURES</span></p>
 <p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
