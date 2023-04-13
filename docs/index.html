@@ -92,8 +92,12 @@
           </tr>
           <tr>
             <td style="text-align: center">&nbsp;</td>
-            <td style="text-align: center"><strong>5 lowest median filtered weighted WE values</strong></td>
-            <td style="text-align: center"><strong>5 highest median filtered weighted WE values</strong></td>
+            <td style="text-align: center"><strong>5 lowest median filtered weighted WE values<br>
+              (formants are not salient)
+            </strong></td>
+            <td style="text-align: center"><strong>5 highest median filtered weighted WE values<br>
+              (salient formants)
+            </strong></td>
           </tr>
         </tbody>
       </table>
@@ -261,15 +265,31 @@
         Median-filtered diagonals decrease with time.</td>
     </tr>
     <tr>
-      <td>Origin of the median-filtered diagonals</td>
-      <td colspan="3" style="text-align: center">One question is whether the observed intervals come from harmonics or parallel voices.<br>
-        To answer the question, we start from MIDI files, sonify them with sine waves and piano, and compare the contributions of sine waves (fundamental) and piano (fundamental + harmonics) to the diagonals.<br>
+      <td rowspan="3">Origin of the median-filtered diagonals</td>
+      <td colspan="3" style="text-align: center"><p>One question is whether the observed intervals come from harmonics or parallel voices.<br>
+        Two answers to this question</p>
+        <p>(1) We evalute the ideal correlation from uniformy distributed harmonic compounds.<br>
+See (Mauch and Dixon, 2010) for the models. of harmonic compounds.<br>
+Not a proof but shows commonalities.</p>
+        <p>Evaluate difference? Evaluate factor?<br>
+      </p></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><p>.<img src="imgs/BEA_freq_freq_upload.png" width="400" height="396" alt=""/><br>
+        BEA</p></td>
+      <td style="text-align: center"><img src="imgs/pairwise_model_0.6.png" width="400" height="402" alt=""/><br>
+      A = .6.^(k-1)</td>
+      <td style="text-align: center"><img src="imgs/pairwise_model_0.9.png" width="400" height="402" alt=""/><br>
+      A = .9.^(k-1)</td>
+    </tr>
+    <tr>
+      <td colspan="3" style="text-align: center">(2) we start from MIDI files, sonify them with sine waves and piano, and compare the contributions of sine waves (fundamental) and piano (fundamental + harmonics) to the diagonals.<br>
         <br>
         <img src="imgs/Piano_sine_Distributions_upload.png" width="400" height="99" alt=""/><br>
         <br>
-        Possible only from MIDI files.<br>
-        Shows that median-filtered diagonals come mainly from  voices from intervals &lt; fifth, and gradually from harmonics above.<br>
-        Notice the inharmonicity.</td>
+Possible only from MIDI files.<br>
+Shows that median-filtered diagonals come mainly from  voices from intervals &lt; fifth, and gradually from harmonics above.<br>
+Notice the inharmonicity.</td>
     </tr>
     <tr>
       <td rowspan="2">Tuning</td>
