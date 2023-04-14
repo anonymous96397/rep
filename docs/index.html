@@ -208,13 +208,27 @@
     </tr>
     <tr>
       <td colspan="3" style="text-align: center"><p>Notice that the lines in the models are less visible due to absence of FT artifacts.</p>
-      <p>Evaluate difference? Evaluate factor! Provides a solution to the problem in (Mauch and Dixon, 2010)<br>
-      </p></td>
+      <p>Evaluate difference? Evaluate factor! May provides a solution to the problem in (Mauch and Dixon, 2010)<br>
+        *<span style="color: #FF0004"> problem: not one solution if treated as an optimisation problem with a free choices of harmonic coefficients, hard to converge</span></p>
+      <p>Using Mauch models:<br>
+        <em><br>
+        &quot;We generate a dictionary of idealised note profiles in the log-frequency domain using a model with geometrically declining overtone amplitudes ak = sk−1 where the parameter s ∈ (0, 1) influences the spectral shape: the smaller the value of s, the weaker the higher partials. Gomez [5] favours the parameter s = 0.6 for her chroma generation, in [13] s = 0.9 was used. We will test both possibilities, and add a third possibility, where s is linearly spaced (LS) between s = 0.9 for the lowest note and s = 0.6 for the highest note. This is motivated by the fact that resonant frequencies of musical instruments are fixed, and hence partials of notes with higher fundamental frequency are less likely to correspond to a resonance.&quot;</em></p>
+      <p>Apparently goes the other way:</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td width="38%" style="text-align: center"><img src="imgs/From frequency 83.61Hz upload.png" width="400" height="320" alt=""/></td>
+            <td width="31%" style="text-align: center"><img src="imgs/From frequency 172.11Hz_upload.png" width="400" height="326" alt=""/></td>
+            <td width="31%" style="text-align: center"><img src="imgs/From frequency 354.31Hz_upload.png" width="400" height="318" alt=""/></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>&nbsp;</p></td>
     </tr>
     <tr>
       <td colspan="3" style="text-align: center">(2) we start from MIDI files, sonify them with sine waves and piano, and compare the contributions of sine waves (fundamental) and piano (fundamental + harmonics) to the diagonals.<br>
         <br>
-        <img src="imgs/Piano_sine_Distributions_upload.png" width="400" height="99" alt=""/><br>
+        <img src="imgs/Piano_sine_Distributions_upload.png" width="800" height="194" alt=""/><br>
         <br>
 Possible only from MIDI files.<br>
 Shows that median-filtered diagonals come mainly from  voices from intervals &lt; fifth, and gradually from harmonics above.<br>
