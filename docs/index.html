@@ -20,7 +20,46 @@
   </tbody>
 </table>
 <p style="font-size: xx-large">&nbsp;</p>
-<p style="font-size: xx-large">1. WIENER ENTROPY</p>
+<p style="font-size: xx-large">&nbsp;</p>
+<p style="font-size: xx-large">1. HARMONIC RATIO</p>
+<table width="1386" border="1" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td colspan="2" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+        ISO/IEC 2001 (MPEG7), &quot;harmonic ratio&quot;<br>
+        <br>
+      </strong></td>
+    </tr>
+    <tr>
+      <td width="106" style="text-align: left">Overall</td>
+      <td width="1274" style="text-align: center"><p>HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
+        <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;<br>
+      =&gt; Seems to be &quot;only&quot; normalised cross-correlation of the signal.</p>
+      <p><img src="imgs/harmonic_ratio_upload.png" width="400" height="148" alt=""/></p>
+      <p>Minimum at the end of the '80s.<br>
+        Generally lower than piano and orchestra.
+      </p></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Band-specific</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center"><p><strong><br>
+        Observation<br>
+        </strong></p>
+        <p>It is not &quot; the proportion of harmonic components within the power spectrum.&quot;<br>
+          It is &quot;the proportion of <strong><em>periodic </em></strong>components within the power spectrum.&quot;<br>
+          It doesn't measure the harmonicity of 
+           the signal (ie organisation into harmonics).<br>
+          <br>
+        </p></td>
+    </tr>
+  </tbody>
+</table>
+<p style="font-size: xx-large">&nbsp;</p>
+<p style="font-size: xx-large">&nbsp;</p>
+<p style="font-size: xx-large">2. WIENER ENTROPY</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
     <tr>
@@ -49,7 +88,11 @@
         <tbody>
           <tr>
             <td width="38%" rowspan="5" style="text-align: center"><img src="imgs/Wiener_medianfilt_upload.png" width="400" height="320" alt=""/></td>
-            <td width="31%" style="text-align: center">'06548 - Einstuerzende Neubauten - Zeichnungen des Patienten - Finger und Zahne - 1983.mat'</td>
+            <td width="31%" style="text-align: center"><audio controls>
+              <source src="audio/06548 - Einstuerzende Neubauten - Zeichnungen des Patienten - Finger und Zahne - 1983.mp3" type="audio/mp3">
+            </audio>
+              <br>
+              06548 - Einstuerzende Neubauten - Zeichnungen des Patienten - Finger und Zahne - 1983</td>
             <td width="31%" style="text-align: center"><audio controls>
               <source src="audio/02836 - Boards Of Canada - Music Has The Right To Children - Wildlife Analysis - 1998.mp3" type="audio/mp3">
             </audio>
@@ -57,7 +100,11 @@
               02836 - Boards Of Canada - Music Has The Right To Children - Wildlife Analysis</td>
           </tr>
           <tr>
-            <td style="text-align: center">'10890 - Kraftwerk - Radio Aktivitat - Geigerzahler - 1975.mat'</td>
+            <td style="text-align: center"><audio controls>
+              <source src="audio/10890 - Kraftwerk - Radio Aktivitat - Geigerzahler - 1975.mp3" type="audio/mp3">
+            </audio>
+<br>
+              10890 - Kraftwerk - Radio Aktivitat - Geigerzahler - 1975</td>
             <td width="31%" style="text-align: center"><audio controls>
               <source src="audio/10896 - Kraftwerk - Radio Aktivitat - Sendepause - 1975.mp3" type="audio/mp3">
             </audio>
@@ -65,7 +112,11 @@
               10896 - Kraftwerk - Radio Aktivitat - Sendepause - 1975</td>
           </tr>
           <tr>
-            <td style="text-align: center">'19060 - Soundgarden - Ultramega - One Minute Of Silence - 1988.mat'</td>
+            <td style="text-align: center"><audio controls>
+              <source src="audio/19060 - Soundgarden - Ultramega - One Minute Of Silence - 1988.mp3" type="audio/mp3">
+            </audio>
+<br>
+              19060 - Soundgarden - Ultramega - One Minute Of Silence - 1988</td>
             <td width="31%" style="text-align: center"><audio controls>
               <source src="audio/02821 - Boards Of Canada - Music Has The Right To Children - Bocuma - 1998.mp3" type="audio/mp3">
             </audio>
@@ -73,7 +124,11 @@
               02821 - Boards Of Canada - Music Has The Right To Children - Bocuma - 1998</td>
           </tr>
           <tr>
-            <td style="text-align: center">'19228 - Steve Earle - Shut up and die like an aviator - Intro - 1991.mat '</td>
+            <td style="text-align: center"><audio controls>
+              <source src="audio/19228 - Steve Earle - Shut up and die like an aviator - Intro - 1991.mp3" type="audio/mp3">
+            </audio>
+<br>
+              19228 - Steve Earle - Shut up and die like an aviator - Intro - 1991</td>
             <td width="31%" style="text-align: center"><audio controls>
               <source src="audio/16993 - Radiohead - Amnesiac - Morning Bell - 2001.mp3" type="audio/mp3">
             </audio>
@@ -131,7 +186,7 @@
   </tbody>
 </table>
 <p>&nbsp;</p>
-<p><span style="font-size: xx-large">2. PAIRWISE CORRELATIONS, 2-SECOND WINDOWS</span></p>
+<p><span style="font-size: xx-large">3. PAIRWISE CORRELATIONS, 2-SECOND WINDOWS</span></p>
 <p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
@@ -165,23 +220,20 @@
       <td>&nbsp;</td>
       <td colspan="3" style="text-align: center"><p>White diagonal lines correspond to conjointly evolving bands.<br>
         <br>
-        The diagrams define different frequency ranges that we may be able to use later.<br>
-        <br>
-        Notice the coarser granularity, corresponding to less 'continousness' of the self-correlated content.<br>
-        Granularity is less coarse than in the case of the piano, but coarser than in the case of BEA. </p>
-        <p>Irt granularity: the representations above measure the continuity in frequency distribution, not in frequency succession.</p>
-        <p>Investigate relations with MPEG7 measure HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
-        <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;<br>
-        =&gt; Seems to be &quot;only&quot; normalised cross-correlation of the signal.</p></td>
+        The diagrams define different frequency ranges that we may be able to use later.</p>
+        <p>&quot;only repetition rates between ∼30 and 4000 Hz elicit a pitch sensation that is salient enough to carry melodic information&quot; (Pressnitzer et al., 2001)<br>
+          <br>
+          Notice the coarser granularity, corresponding to less 'continousness' of the self-correlated content.<br>
+          Granularity is less coarse than in the case of the piano, but coarser than in the case of BEA. </p>
+        <p>Irt granularity: the representations above measure the continuity in frequency distribution, not in frequency succession.</p></td>
     </tr>
     <tr>
-      <td rowspan="3">Origin of the diagonals</td>
+      <td rowspan="4">Origin of the diagonals</td>
       <td colspan="3" style="text-align: center"><p>One question is whether the observed intervals come from harmonics or parallel voices.<br>
         Two answers to this question</p>
         <p>(1) We evalute the ideal correlation from uniformy distributed harmonic compounds.<br>
-          See (Mauch and Dixon, 2010) for the models. of harmonic compounds.<br>
-          Not a proof but shows commonalities.</p>
-      <p>Evaluate difference? Evaluate factor?</p></td>
+          See (Mauch and Dixon, 2010) for the models of harmonic compounds.<br>
+      Not a proof but shows commonalities.</p></td>
     </tr>
     <tr>
       <td style="text-align: center"><p>.<img src="imgs/BEA_freq_freq_upload.png" width="400" height="396" alt=""/><br>
@@ -192,9 +244,29 @@
         A = .9.^(k-1)</td>
     </tr>
     <tr>
+      <td colspan="3" style="text-align: center"><p>Notice that the lines in the models are less visible due to absence of FT artifacts.</p>
+      <p>Evaluate difference? Evaluate factor! May provides a solution to the problem in (Mauch and Dixon, 2010)<br>
+        *<span style="color: #FF0004"> problem: not one solution if treated as an optimisation problem with a free choices of harmonic coefficients, hard to converge</span></p>
+      <p>Using Mauch models:<br>
+        <em><br>
+        &quot;We generate a dictionary of idealised note profiles in the log-frequency domain using a model with geometrically declining overtone amplitudes ak = sk−1 where the parameter s ∈ (0, 1) influences the spectral shape: the smaller the value of s, the weaker the higher partials. Gomez [5] favours the parameter s = 0.6 for her chroma generation, in [13] s = 0.9 was used. We will test both possibilities, and add a third possibility, where s is linearly spaced (LS) between s = 0.9 for the lowest note and s = 0.6 for the highest note. This is motivated by the fact that resonant frequencies of musical instruments are fixed, and hence partials of notes with higher fundamental frequency are less likely to correspond to a resonance.&quot;</em></p>
+      <p>Apparently goes the other way:</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td width="38%" style="text-align: center"><img src="imgs/From frequency 83.61Hz upload.png" width="400" height="320" alt=""/></td>
+            <td width="31%" style="text-align: center"><img src="imgs/From frequency 172.11Hz_upload.png" width="400" height="326" alt=""/></td>
+            <td width="31%" style="text-align: center"><img src="imgs/From frequency 354.31Hz_upload.png" width="400" height="318" alt=""/></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      This is indirect observation. The observation method should be checked with data on which we can perform direct observation.</td>
+    </tr>
+    <tr>
       <td colspan="3" style="text-align: center">(2) we start from MIDI files, sonify them with sine waves and piano, and compare the contributions of sine waves (fundamental) and piano (fundamental + harmonics) to the diagonals.<br>
         <br>
-        <img src="imgs/Piano_sine_Distributions_upload.png" width="400" height="99" alt=""/><br>
+        <img src="imgs/Piano_sine_Distributions_upload.png" width="800" height="194" alt=""/><br>
         <br>
 Possible only from MIDI files.<br>
 Shows that median-filtered diagonals come mainly from  voices from intervals &lt; fifth, and gradually from harmonics above.<br>
@@ -510,7 +582,7 @@ Notice the inharmonicity.</td>
 </table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><span style="font-size: xx-large">3. PAIRWISE CORRELATIONS, 0.1-SECOND WINDOWS</span></p>
+<p><span style="font-size: xx-large">4. PAIRWISE CORRELATIONS, 0.1-SECOND WINDOWS</span></p>
 <p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
@@ -798,7 +870,7 @@ Notice the inharmonicity.</td>
 </table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><span style="font-size: xx-large">4. WIENER ENTROPY AND PAIRWISE CORRELATIONS</span></p>
+<p><span style="font-size: xx-large">5. WIENER ENTROPY AND PAIRWISE CORRELATIONS</span></p>
 <p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
@@ -997,7 +1069,7 @@ Notice the inharmonicity.</td>
   </tbody>
 </table>
 <p>&nbsp;</p>
-<p><span style="font-size: xx-large">5. GRANULARITY</span></p>
+<p><span style="font-size: xx-large">6. GRANULARITY</span></p>
 <p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
@@ -1088,7 +1160,7 @@ Notice the inharmonicity.</td>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><span style="font-size: xx-large">6. ANALYSES OF EXAMPLES</span></p>
+<p><span style="font-size: xx-large">7. ANALYSES OF EXAMPLES</span></p>
 <p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tr>
@@ -1660,7 +1732,7 @@ Notice the inharmonicity.</td>
 <p>Grachten, Maarten, Emmanuel Deruty, and Alexandre Tanguy. "Auto-adaptive resonance equalization using dilated residual networks." <em>arXiv preprint arXiv:1807.08636</em> (2018).</p>
 <p>ISO/IEC (2001), Information technology — Multimedia content description interface — Part 4: Audio, in FDIS 15938-4:2001(E), n.d. </p>
 <p>Mauch, Matthias, and Simon Dixon. "Approximate Note Transcription for the Improved Identification of Difficult Chords." <em>ISMIR</em>. 2010.</p>
-<p>&nbsp;</p>
+<p>Pressnitzer, Daniel, Roy D. Patterson, and Katrin Krumbholz. "The lower limit of melodic pitch." <em>The Journal of the Acoustical Society of America</em> 109.5 (2001): 2074-2084.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
