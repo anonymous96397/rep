@@ -53,6 +53,16 @@
            the signal (ie organisation into harmonics).<br>
         </p></td>
     </tr>
+    <tr>
+            <td colspan="2" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+        ISO/IEC 2001 (MPEG7), &quot;harmonic ratio&quot;, on ISO 226 2001 weighted audio<br>
+        <br>
+      </strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
   </tbody>
 </table>
 <p style="font-size: xx-large">&nbsp;</p>
@@ -68,6 +78,9 @@
     <tr>
       <td style="text-align: left">Wiener entropy</td>
       <td style="text-align: center"><p><img src="imgs/Wiener_upload.png" width="400" height="322" alt=""/></p>
+        <p>Top: physical. Bottom: weighted with ISO 226 2001.<br>
+          Main effect of ISO226 2001 is to attenuate the influence of bass frequencies and increase the influence of high-medium frequencies.
+        </p>
         <p>Similar to MPEG7, &quot;AudioSpectrumFlatnessType&quot; feature (ISO/IEC, 2001), but global. Definition by (ISO/IEC, 2001), p.34:</p>
         <p>&quot;The AudioSpectrumFlatnessType describes the flatness properties of the short-term power spectrum of an audio signal. This descriptor expresses the deviation of the signal’s power spectrum over frequency from a flat shape (corresponding to a noise-like or an impulse-like signal). A high deviation from a flat shape may indicate the presence of tonal components. The spectral flatness analysis is calculated for a number of frequency bands. It may be used as a feature vector for robust matching between pairs of audio signals.&quot;</p>
         <p><strong>Problem:</strong> wiener entropy is sensitive to large-scale envelope (cf white noise / pink noise difference), and we want to detect the salience of the local peaks.</p>
@@ -160,7 +173,8 @@
           Peak salience for CPM (unweighted) is greater than for piano and orchestra from the shift.<br>
         As the weighting attenuates the low freqs and enhances the high-medium frequencies, it appears that peak salience for the piano is important in the high-medium frequencies.</p>
         <p><strong>To investigate</strong><br>
-        Confirm with observations of the spectrum that peak salience for the piano is important in the high-medium frequencies.<br>
+          Clarify the difference between unweighted and ISO226 2001 weighted.<br>
+          Confirm with observations of the spectrum that peak salience for the piano is important in the high-medium frequencies.<br>
         Relation to spectral contrast?
       </p></td>
     </tr>
@@ -183,18 +197,35 @@
   </tbody>
 </table>
 <p>&nbsp;</p>
-<p><span style="font-size: xx-large">3. WIENER ENTROPY AND PERIODICITY</span></p>
+<p><span style="font-size: xx-large">3. PEAK SALIENCE AND PERIODICITY</span></p>
 <p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
     <tr>
       <td colspan="3" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
-        Wiener entropy and periodicity<br>
+        Peak salience and periodicity (physical domain)<br>
         <br>
       </strong></td>
     </tr>
     <tr>
-      <td width="106" rowspan="2" style="text-align: left">&nbsp;</td>
+      <td width="106" rowspan="3" style="text-align: left">&nbsp;</td>
+      <td colspan="2" style="text-align: center"><p> &quot;Peak salience&quot; is derived from median filtered spectrum: peak salience = (-WE).^.1. WE is the non-weighted </p>
+        <p>&quot;Minus&quot; comes from: when WE is high, peak salience is low<br>
+&quot;.^1&quot; comes from: make the WE distribution more normal</p>
+        <table width="50%" border="0" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td><img src="imgs/Peak_salience_upload.png" width="400" height="154" alt=""/></td>
+              <td><img src="imgs/harmonic_ratio_upload.png" width="400" height="148" alt=""/></td>
+            </tr>
+            <tr>
+              <td style="text-align: center">X axis</td>
+              <td style="text-align: center">Y axis</td>
+            </tr>
+          </tbody>
+        </table></td>
+    </tr>
+    <tr>
       <td width="637" style="text-align: center"><img src="imgs/BEA_WE_Harm_balanced_dists_upload.png" width="400" height="319" alt=""/></td>
       <td width="637" style="text-align: center"><img src="imgs/BEA_WE_Harm_balanced_dists_rotated_upload.png" width="400" height="305" alt=""/></td>
     </tr>
@@ -202,16 +233,28 @@
       <td style="text-align: center">When peak salience increases, periodicity increases.<br>
       On first approximation, both features reach a local minimum during the '80s.</td>
       <td style="text-align: center"><p>PCA of the left diagram.<br>
-        The PCA coefficients are identical =&gt; overall, both features evolve jointly.</p>
-        <p>PC2 shows that from the '2000s, periodicity decreases at equal peak salience.</p></td>
+      </p>
+        <p>PC2 shows that from the '80s, periodicity decreases at equal peak salience.</p></td>
     </tr>
     <tr>
       <td colspan="3" style="text-align: center"><p><strong>Possible interpretation<br>
       </strong></p>
-        <p>The width of the peaks may increase from the '2000s.<br>
+        <p>Could the width of the peaks increase from the '2000s?<br>
           Is not contradictory with the &quot;PC1-WE&quot; diagrams below, in which we see that parallel 
-          organisation for a given peak salience decreases during the same period.<br>
+        organisation for a given peak salience decreases during the same period.</p>
+        <p>Imagine and produce examples of variable periodicity with equal peak salience.<br>
         </p></td>
+    </tr>
+    <tr>
+      <td colspan="3" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+        Peak salience and periodicity (weighted with ISO 226 2001)<br>
+        <br>
+      </strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
     </tr>
   </tbody>
 </table>
