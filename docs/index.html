@@ -33,25 +33,32 @@
     <tr>
       <td width="106" style="text-align: left">Overall</td>
       <td width="1274" style="text-align: center"><p>HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
-        <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;<br>
-      =&gt; Seems to be &quot;only&quot; normalised cross-correlation of the signal.</p>
-      <p><img src="imgs/harmonic_ratio_upload.png" width="400" height="148" alt=""/></p>
-      <p>Minimum at the end of the '80s.<br>
-        Generally lower than piano and orchestra.
-      </p></td>
+        <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;</p>
+        <p>=&gt; it does NOT measure the &quot;proportion of harmonic components within the power spectrum&quot; . It measures the proportion of <strong><em>periodic</em></strong> components within the power spectrum.<br>
+        </p>
+        <table width="63%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td><img src="imgs/harmonic_ratio_upload.png" width="400" height="148" alt=""/></td>
+              <td><p>Minimum at the end of the '80s.<br>
+              Generally lower than piano and orchestra. </p>
+              <p>Include music concrète for lower bound.</p></td>
+            </tr>
+          </tbody>
+      </table></td>
     </tr>
     <tr>
-      <td style="text-align: left">Band-specific</td>
-      <td style="text-align: center">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="2" style="text-align: center"><p><strong>Observation<br>
-        </strong></p>
-        <p>Harmonic ratio is not &quot; the proportion of harmonic components within the power spectrum&quot; as specified in (ISO/IEC, 2001), p.44.<br>
-          It is &quot;the proportion of <strong><em>periodic </em></strong>components within the power spectrum.&quot;<br>
-          It doesn't measure the harmonicity of 
-           the signal (ie organisation into harmonics).<br>
-        </p></td>
+      <td style="text-align: left"><p>Band-specific<br>
+          <strong>(partial, evaluation in progress) </strong></p></td>
+      <td style="text-align: center"><p><img src="imgs/Periodicity_by_band_normalised.png" width="400" height="317" alt=""/></p>
+      <p>Top, not normalised. Difficult to read.<br>
+        Middle, mean values for each band.<br>
+        Bottom, each band is normalised with its mean value. Higher and lower bands follow a specific pattern. </p>
+      <p>The high and low frequency bands may be irrelevant&quot;:<br>
+        (1) 
+        only repetition rates between ∼30 and 4000 Hz elicit a pitch sensation that is salient enough to carry melodic information&quot; ( Oxenham, 2012)<br>
+        (2) Insert diachronic RMS per band (will be similar to (Pestana et al., 2013)), will show that signal for lower bands is weak before the '80s.</p>
+      <p>Let's try minimise the influence of bass and high frequencies. This is done by weighting the input signal using ISO226-2001.</p></td>
     </tr>
     <tr>
             <td colspan="2" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
@@ -194,6 +201,15 @@
           <br>
       </p></td>
     </tr>
+    <tr>
+      <td colspan="2" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+        Desirable to evaluate peak salience by band?<br>
+        <br>
+      </strong></td>    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
   </tbody>
 </table>
 <p>&nbsp;</p>
@@ -209,7 +225,7 @@
     </tr>
     <tr>
       <td width="106" rowspan="3" style="text-align: left">&nbsp;</td>
-      <td colspan="2" style="text-align: center"><p> <span style="text-align: center">&quot;Peak salience&quot; is derived from median filtered spectrum: peak salience = (-WE).^.1. WE is the non-weighted </span></p>
+      <td colspan="2" style="text-align: center"><p> <span style="text-align: center">&quot;Peak salience&quot; is derived from median filtered spectrum: peak salience = (-WE).^.1. WE is the non-weighted WE.</span></p>
         <p>&quot;Minus&quot; comes from: when WE is high, peak salience is low<br>
 &quot;.^1&quot; comes from: make the WE distribution more normal</p>
         <table width="50%" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -219,8 +235,8 @@
               <td><img src="imgs/harmonic_ratio_upload.png" width="400" height="148" alt=""/></td>
             </tr>
             <tr>
-              <td style="text-align: center">X axis</td>
-              <td style="text-align: center">Y axis</td>
+              <td style="text-align: center">X axis in the diagrams below</td>
+              <td style="text-align: center">Y axis in the diagrams below</td>
             </tr>
           </tbody>
         </table></td>
@@ -248,6 +264,17 @@
     <tr>
       <td colspan="3" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
         Peak salience and periodicity (weighted with ISO 226 2001)<br>
+        <br>
+      </strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+	  <tr>
+      <td colspan="3" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+        Peak salience and periodicity, by band?<br>
         <br>
       </strong></td>
     </tr>
@@ -1806,9 +1833,9 @@ Notice the inharmonicity.</td>
 <p>Grachten, Maarten, Emmanuel Deruty, and Alexandre Tanguy. "Auto-adaptive resonance equalization using dilated residual networks." <em>arXiv preprint arXiv:1807.08636</em> (2018).</p>
 <p>ISO/IEC (2001), Information technology — Multimedia content description interface — Part 4: Audio, in FDIS 15938-4:2001(E), n.d. </p>
 <p>Mauch, Matthias, and Simon Dixon. "Approximate Note Transcription for the Improved Identification of Difficult Chords." <em>ISMIR</em>. 2010.</p>
+<p>Andrew J. Oxenham. &quot;Pitch Perception&quot;. Journal of Neuroscience 26 September 2012, 32 (39) 13335-13338; DOI: https://doi.org/10.1523/JNEUROSCI.3815-12.2012</p>
+<p>Pestana, Pedro Duarte, et al. "Spectral characteristics of popular commercial recordings 1950-2010." <em>Audio Engineering Society Convention 135</em>. Audio Engineering Society, 2013.</p>
 <p>Pressnitzer, Daniel, Roy D. Patterson, and Katrin Krumbholz. "The lower limit of melodic pitch." <em>The Journal of the Acoustical Society of America</em> 109.5 (2001): 2074-2084.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 </body>
 </html>
