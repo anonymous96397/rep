@@ -78,7 +78,7 @@
               <td width="50%" style="text-align: center"><img src="imgs/harmonic_ratio_upload.png" width="400" height="148" alt=""/></td>
               <td width="50%" style="text-align: center"><p>Minimum at the end of the '80s.<br>
               Generally lower than piano and orchestra. </p>
-              <p>Amount of periodicity comparable to <em>musique concrète</em>, which is produced with the same methods and absence of constraints linked to the resources of the performance.</p></td>
+              <p>Amount of periodicity comparable to <em>musique concrète</em>, which is produced with the same methods and absence of constraints linked to the resources of the performance (vocabulary from (Parry, 1911)).</p></td>
             </tr>
           </tbody>
       </table></td>
@@ -95,8 +95,9 @@ Middle, mean values for each band.<br>
 Bottom, each band is normalised with its mean value. Higher and lower bands follow a specific pattern. </p>
               <p>The highest band is irrelevant to melodic information: &quot;only repetition rates between ∼30 and 4000 Hz elicit a pitch sensation that is salient enough to carry melodic information&quot; (Oxenham, 2012)</p></td>
               <td width="50%" style="text-align: center"><p><img src="imgs/allspectra_diachronic_upload.png" width="400" height="213" alt=""/></p>
-                <p>Top, evolution of spectrum, normalised, same resolution as left diagram.<br>
-                Bottom, the same, weighted with ISO226-2003.                </p>
+                <p>Top, evolution of spectrum, normalised, same resolution as left diagram. Result coherent with (Pestana, 2013).<br>
+                Bottom, the same, weighted with ISO226-2003 (ISO/IEC, 2003).</p>
+                <p>Top suggests that the values measured for band 1 are less relevant before the '80s that they are after.</p>
                 <p>Bottom suggests that the higher band and the two lower bands highlighted in the diagram on the left sound at least 19LU (~dB) less loud than the louder band.</p>
                 <p>The perceived periodicity may therefore reside in the central band, which follow a similar behaviour.</p></td>
             </tr>
@@ -240,10 +241,25 @@ Bottom, each band is normalised with its mean value. Higher and lower bands foll
         To answer this question, we evaluate the 
         pairwise correlations between frequency bands.</p>
         <p>!!! In the current state, pairwise correlation doesn't provide information about harmonic relations, it provides information about parallelism<br>
-          Insert model of harmonic relation and compare.
-          <br>      
-          <br>
+          Insert model of harmonic relation and compare.        <br>
       </p></td>
+    </tr>
+     <tr>
+      <td colspan="2" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+      Corrected WE -&gt; Peak salience<br>
+        <br>
+      </strong></td>    </tr>
+    <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center"><p>There are two issues with the WE representations:<br>
+        (1) The distribution is skewed.<br>
+        (2) Peak salience corresponds to low values, which is counter-intuitive.</p>
+        <p>Therefore, as in section 6, we derive &quot;peak salience&quot; from &quot;WE&quot;:  peak salience = (-WE).^.1.<br>
+          This way, the distribution is closer to normal, and high peak salience correspond to high values.
+        </p>
+        <p><img src="imgs/Peak_salience_upload.png" width="400" height="154" alt=""/></p>
+        <p>Observation: the order of periodicity was piano-orchestra-(concrete and CPM).<br>
+          The order of peak salience is CPM-piano-orchestra-concrete. The two notions do represent a different phenomenon, even though, as seen in section 3, they're correlated.</p></td>
     </tr>
     <tr>
       <td colspan="2" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
@@ -269,9 +285,7 @@ Bottom, each band is normalised with its mean value. Higher and lower bands foll
     </tr>
     <tr>
       <td width="106" rowspan="3" style="text-align: left">&nbsp;</td>
-      <td colspan="2" style="text-align: center"><p> <span style="text-align: center">&quot;Peak salience&quot; is derived from median filtered spectrum: peak salience = (-WE).^.1. WE is the non-weighted WE.</span></p>
-        <p>&quot;Minus&quot; comes from: when WE is high, peak salience is low<br>
-&quot;.^1&quot; comes from: make the WE distribution more normal</p>
+      <td colspan="2" style="text-align: center"><p> <span style="text-align: center">&quot;Peak salience&quot; here relates to the <em>physical</em> peaks. It is derived from median filtered spectrum <em>non-weighted</em> WE.</span>        </p>
         <table width="50%" border="0" align="center" cellpadding="0" cellspacing="0">
           <tbody>
             <tr>
@@ -290,7 +304,7 @@ Bottom, each band is normalised with its mean value. Higher and lower bands foll
       <td width="637" style="text-align: center"><img src="imgs/BEA_WE_Harm_balanced_dists_rotated_upload.png" width="400" height="305" alt=""/></td>
     </tr>
     <tr>
-      <td style="text-align: center">When peak salience increases, periodicity increases.<br>
+      <td style="text-align: center">When peak salience increases, periodicity increases. The two features are correlated.<br>
       On first approximation, both features reach a local minimum during the '80s.</td>
       <td style="text-align: center"><p>PCA of the left diagram.<br>
       </p>
@@ -738,7 +752,7 @@ Notice the inharmonicity.</td>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p><span style="font-size: xx-large">5. PAIRWISE CORRELATIONS, 0.1-SECOND WINDOWS  (properties 2 and 3, parallelism and harmonicity)</span></p>
-<p> (</p>
+<p>&nbsp;</p>
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
     <tr>
@@ -1908,8 +1922,10 @@ y axis is property 2, parallelism</strong><br>
 <p>Cichocki, Andrzej, Rafal Zdunek, and Shun-ichi Amari (2006). "New algorithms for non-negative matrix factorization in applications to blind source separation." <em>2006 IEEE International Conference on Acoustics Speech and Signal Processing Proceedings</em>. Vol. 5. IEEE, 2006. </p>
 <p>Grachten, Maarten, Emmanuel Deruty, and Alexandre Tanguy. "Auto-adaptive resonance equalization using dilated residual networks." <em>arXiv preprint arXiv:1807.08636</em> (2018).</p>
 <p>ISO/IEC (2001), Information technology — Multimedia content description interface — Part 4: Audio, in FDIS 15938-4:2001(E), n.d. </p>
+<p>ISO/IEC. "226: 2003: Acoustics–Normal equal-loudness-level contours." <em>International Organization for Standardization</em> 63 (2003).</p>
 <p>Mauch, Matthias, and Simon Dixon. "Approximate Note Transcription for the Improved Identification of Difficult Chords." <em>ISMIR</em>. 2010.</p>
 <p>Andrew J. Oxenham. &quot;Pitch Perception&quot;. Journal of Neuroscience 26 September 2012, 32 (39) 13335-13338; DOI: https://doi.org/10.1523/JNEUROSCI.3815-12.2012</p>
+<p>Parry, Charles Hubert Hastings. <em>Style in musical art</em>. Macmillan, 1911.</p>
 <p>Pestana, Pedro Duarte, et al. "Spectral characteristics of popular commercial recordings 1950-2010." <em>Audio Engineering Society Convention 135</em>. Audio Engineering Society, 2013.</p>
 <p>Pressnitzer, Daniel, Roy D. Patterson, and Katrin Krumbholz. "The lower limit of melodic pitch." <em>The Journal of the Acoustical Society of America</em> 109.5 (2001): 2074-2084.</p>
 <p>&nbsp;</p>
