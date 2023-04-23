@@ -258,11 +258,16 @@ Bottom, each band is normalised with its mean value. Higher and lower bands foll
         (2) Peak salience corresponds to low values, which is counter-intuitive.</p>
         <p>Therefore, as in section 6, we derive &quot;peak salience&quot; from &quot;WE&quot;:  peak salience = (-WE).^.1.<br>
           This way, the distribution is closer to normal, and high peak salience correspond to high values.
-        The  figure below shows the physical peak salience. <strong>Show weighted!</strong></p>
+        The  figure below shows the physical peak salience.</p>
         <p><img src="imgs/Peak_salience_upload.png" width="400" height="154" alt=""/></p>
         <p>Observation: the order of periodicity was piano-orchestra-(concrete and CPM).<br>
           The order of peak salience is CPM-piano-orchestra-concrete. The two notions do represent a different phenomenon, even though, as seen in section 3, they're correlated.<br>
-          As the order of piano, orchestra and concrete is the same as harmonicity, one interpretation is that there may be an &quot;anomaly&quot; with CPM. <strong>Find a way to verify.</strong></p></td>
+          As the order of piano, orchestra and concrete is the same as harmonicity, one interpretation is that there may be an &quot;anomaly&quot; with CPM.</p>
+        <p><strong><img src="imgs/Peak_salience_weighted_audio_upload.png" width="400" height="150" alt=""/></strong></p>
+        <p>The order of piano-orchestra-concrete remains the same.<br>
+          However, peak salience of CPM is comparatively lower. Means that for the less audible freqencies, peak salience of CPM is particularly high. Perhaps it's the bass
+        frequencies.<br>
+        Recent CPM peak salience remains high.</p></td>
     </tr>
     <tr>
       <td colspan="2" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
@@ -271,7 +276,7 @@ Bottom, each band is normalised with its mean value. Higher and lower bands foll
       </strong></td>    </tr>
     <tr>
       <td style="text-align: center">&nbsp;</td>
-      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">May verify that the bass freqs in CPM have a particularly high peak salience.</td>
     </tr>
   </tbody>
 </table>
@@ -287,7 +292,7 @@ Bottom, each band is normalised with its mean value. Higher and lower bands foll
       </strong></td>
     </tr>
     <tr>
-      <td width="106" rowspan="4" style="text-align: left">&nbsp;</td>
+      <td width="46" rowspan="4" style="text-align: left">&nbsp;</td>
       <td colspan="2" style="text-align: center"><p> <span style="text-align: center">Both &quot;peak salience&quot; and &quot;periodicity&quot; here relates to the physical, non-weighted domain.</span>        </p>
         <table width="50%" border="0" align="center" cellpadding="0" cellspacing="0">
           <tbody>
@@ -303,8 +308,8 @@ Bottom, each band is normalised with its mean value. Higher and lower bands foll
         </table></td>
     </tr>
     <tr>
-      <td width="637" style="text-align: center"><img src="imgs/BEA_WE_Harm_balanced_dists_upload.png" width="400" height="319" alt=""/></td>
-      <td width="637" style="text-align: center"><img src="imgs/BEA_WE_Harm_balanced_dists_rotated_upload.png" width="400" height="305" alt=""/></td>
+      <td width="709" style="text-align: center"><img src="imgs/BEA_WE_Harm_balanced_dists_upload.png" width="400" height="319" alt=""/></td>
+      <td width="623" style="text-align: center"><img src="imgs/BEA_WE_Harm_balanced_dists_rotated_upload.png" width="400" height="305" alt=""/></td>
     </tr>
     <tr>
       <td style="text-align: center">When peak salience increases, periodicity increases. The two features are correlated.<br>
@@ -338,8 +343,84 @@ Bottom, each band is normalised with its mean value. Higher and lower bands foll
       </strong></td>
     </tr>
     <tr>
+      <td rowspan="4" style="text-align: center">&nbsp;</td>
+      <td colspan="2" style="text-align: center"><p>Both &quot;peak salience&quot; and &quot;periodicity&quot; here relates to the &quot;perceptual&quot;, weighted domain. </p>
+        <table width="50%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td><strong><img src="imgs/Peak_salience_weighted_audio_upload.png" width="400" height="150" alt=""/></strong></td>
+              <td><img src="imgs/harmonic_ratio_on_weighted_audio_upload.png" width="400" height="148" alt=""/></td>
+            </tr>
+            <tr>
+              <td style="text-align: center">X axis in the left diagram below</td>
+              <td style="text-align: center">Y axis in the left diagram below</td>
+            </tr>
+          </tbody>
+      </table></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="imgs/BEA_WE_Harm_balanced_dists_weighted_audio_upload.png" width="400" height="319" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/BEA_WE_Harm_balanced_dists_rotated_weighted_audio_upload.png" width="400" height="305" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Comparable to unweighted, even if peak salience values are different</td>
+      <td style="text-align: center">Comparable to unweighted.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><p><img src="imgs/Peak_salience_periodicity_4datasets_better_straight_weighted_upload.png" width="400" height="328" alt=""/></p>
+      <p>Comparison between the four datasets. Blue is piano, red is orchestra, green is concrete music and black is CPM. The concentric shapes indicate median position, and 25th, 50th, 75th percentiles of values starting from the median.</p>
+      <p>CPM =&gt; separation by peak salience is less clear than in the case of unweighted audio.</p></td>
       <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
       <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center"><p>Interesting to find out which concrete music tracks are close to the CPM mean near the '2000s.</p>
+        <table width="80%" border="1" align="center" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td width="53%"> Pierre Henry - Sacrifice</td>
+              <td width="47%"><audio controls>
+                <source src="audio/Pierre Henry - Sacrifice.mp3" type="audio/mp3">
+              </audio></td>
+            </tr>
+            <tr>
+              <td>Pierre Henry - Exorcisme</td>
+              <td><audio controls>
+                <source src="audio/Pierre Henry - Exorcism.mp3" type="audio/mp3">
+              </audio></td>
+            </tr>
+            <tr>
+              <td>Bernard Parmegiani - soleils #4.mat</td>
+              <td><audio controls>
+                <source src="audio/Bernard Parmegiani - soleils 4.mp3" type="audio/mp3">
+              </audio></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Suggests that CPM is not very periodic. Organisation of periodicity (eg separation of noise vs periodicity) is important.</p>
+        <p>Interesting to find out which concrete music tracks intersect with the future evolution of CPM should the current tendency continue (intersection of future evolution and green elements above)</p>
+      <table width="80%" border="1" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td width="53%">Bernard Parmegiani - brûlure #14</td>
+            <td width="47%"><audio controls>
+              <source src="audio/Bernard Parmegiani - brulure 14.mp3" type="audio/mp3">
+            </audio></td>
+          </tr>
+          <tr>
+            <td>Pierre Henry - Mouvement-Rythme-Etude  - 15. Temps de pointe</td>
+            <td><audio controls>
+              <source src="audio/Pierre Henry - Mouvement-Rythme-Etude - 15. Temps de pointe.mp3" type="audio/mp3">
+            </audio></td>
+          </tr>
+          <tr>
+            <td>Bernard Parmegiani - Ondes</td>
+            <td><audio controls>
+              <source src="audio/Bernard Parmegiani - Ondes.mp3" type="audio/mp3">
+            </audio></td>
+          </tr>
+        </tbody>
+      </table></td>
       <td style="text-align: center">&nbsp;</td>
     </tr>
 	  <tr>
