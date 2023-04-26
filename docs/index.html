@@ -61,17 +61,102 @@
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
     <tr>
-      <td colspan="2" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
-        ISO/IEC 2001 (MPEG7), &quot;harmonic ratio&quot; (in fact periodicity)<br>
+      <td colspan="3" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+        ISO/IEC 2001 (MPEG7), &quot;harmonic ratio&quot; (in fact ratio of periodicity)<br>
         <br>
       </strong></td>
     </tr>
     <tr>
-      <td width="106" style="text-align: left">Overall</td>
-      <td width="1274" style="text-align: center"><p>HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
+      <td rowspan="15" style="text-align: left">Interpretation of &quot;harmonic ratio&quot;</td>
+      <td colspan="2" style="text-align: center"><p>HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
         <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;</p>
-        <p>=&gt; it does NOT measure the &quot;proportion of harmonic components within the power spectrum&quot; . It measures the proportion of <strong><em>periodic</em></strong> components within the power spectrum.<br>
-        </p>
+      <p>=&gt; it does NOT measure the &quot;proportion of harmonic components within the power spectrum&quot; . It measures the <em><strong>proportion of periodic components</strong></em> within the power spectrum.</p>
+      <p>Explanation below. <br>
+        <br>
+      </p></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center"><strong>First illustration</strong></td>
+    </tr>
+    <tr>
+      <td width="596" style="text-align: center"><img src="imgs/Corr_01_normalised_sine_wave_upload.png" width="400" height="321" alt=""/></td>
+      <td width="596" style="text-align: center"><img src="imgs/Corr_02_the_same_sine_wave_with harmonics_upload.png" width="400" height="314" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><p><strong>Case (1).</strong> Let’s start with a 220Hz sine wave.<br>
+        The sine wave is normalised. Its amplitude is inside [-1 1].</p>
+      <p>The figure above shows the power spectrum, the autocorrelation and the normalised autocorrelation. The maximum autocorrelation is 110250. The maximum normalised autocorrelation is 1.</p></td>
+      <td style="text-align: center"><p><strong>Case (2). </strong>Let’s add some harmonics.<br>
+        The autocorrelation is greater, as the autocorrelation from the harmonics adds up to the autocorrelation from the fundamental.<br>
+        The normalised autocorrelation is still 1.</p>
+        <p>The MPEG7 HarmonicRatio feature I use in the HTML page is <a href="https://fr.mathworks.com/help/audio/ref/harmonicratio.html">this one</a>.<br>
+          It uses normalised autocorrelation.<br>
+          Max(normalised autocorrelation) will always be 1 if we consider all lags including zero.<br>
+          That’s why we have to use a minimum lag, an “M0” according to the Mathworks page, &quot;where M0 is the lower edge of the search range, determined as the first zero crossing of the normalized autocorrelation”. Therefore, max(normalised autocorrelation) is to be understood as max(normalised autocorrelation after first zero crossing), i.e. the first peak.</p>
+        <p>On first approach, harmonicity increases autocorrelation, therefore autocorrelation measures both “ratio of periodicity” AND “harmonicity&quot;. BUT, adding harmonics to a normalised sine wave doesn’t make sense, as the resulting signal is out of range.</p>
+        <p><strong>Max of normalised autocorrelation remains 1, we can conclude that the MPEG7 HarmonicRatio feature doesn&rsquo;t measure harmonicity.</strong></p></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="imgs/Corr_03_normalised_sine_wave_with harmonics_upload.png" width="400" height="319" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/Corr_04_RMS_adjusted_sine_wave_with harmonics_upload.png" width="400" height="322" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><p><strong>Case (3).</strong>The next possible thing we can do is compare (1) the sine wave with (2) the complex tone of the same peak value.</p>
+      <p>In this case, the autocorrelation is less, not more!!!!<br>
+      And the normalised autocorrelation (the HarmonicRatio feature) is still the same!</p></td>
+      <td style="text-align: center"><p>it can be argued that comparing a sine wave and a complex tone that have the same peak value is arbitrary. Then let’s compare a sine wave and a complex tone that have the same RMS power. Ideally, they may have the same loudness, but then the result will depend on F0. Let’s see how it goes with same RMS power.</p>
+      <p>The autocorrelation is the same as the original sine wave's! The normalised autocorrelation is still the same. Therefore, not only MPEG7 HarmonicRatio (normalised autocorrelation) doesn’t measure harmonicity, but in fact, at equal RMS, even autocorrelation does not.</p></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center"><strong>Second illustration</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="imgs/Corr Same max non-normalised value equal RMS variable harmonicity upload.png" width="400" height="326" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/Corr Same max normalised value equal RMS variable harmonicity upload.png" width="400" height="325" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Non-normalised correlation. Increasingly harmonic samples, same RMS.<br>
+        Amplitude of fundamental decreases to keep same RMS.<br>
+        Max of autocorrelation remains stable.<br>
+        <strong>At equal RMS, autocorrelation is not dependent on harmonicity.</strong></td>
+      <td style="text-align: center">Same as left, with normalised autocorrelation (~MPEG7).<br>
+      <strong>Normalised auto-correlation is not dependent on harmonicity.</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="imgs/Corr Same max non-normalised value equal harmonoicity variable RMS upload.png" width="400" height="319" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/Corr Same max normalised value equal harmonoicity variable RMS upload.png" width="400" height="319" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Non-normalised correlation. Increasingly loud samples, same harmonicity.<br>
+Max of autocorrelation  increases. <strong>Non-normalised autocorrelation is dependent on RMS.</strong></td>
+      <td style="text-align: center">Same as left, with normalised autocorrelation (~MPEG7).<br>
+        <strong>Normalised auto-correlation is not dependent on RMS.</strong><br></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="imgs/Corr Same max non-normalised value equal harmonoicity variable noise upload.png" width="400" height="298" alt=""/></td>
+      <td style="text-align: center"><img src="imgs/Corr Same max normalised value equal harmonoicity variable noise upload.png" width="400" height="298" alt=""/></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Non-normalised correlation. Increasing white noise proportion. Max white noise RMS is equal to harmonic tone RMS. Autocorrelation remains stable.<br>
+      <strong>Non-normalised autocorrelation is not sensitive to non-perodic elements in the signal.</strong> <br></td>
+      <td style="text-align: center">Same as left, with normalised autocorrelation (~MPEG7).<br>
+        Max of normalised autocorrelation decreases with added noise.<br>
+        <strong>Normalised autocorrelation is related to the proportion of non-periodic elements.</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center"><p><strong>Summary</strong></p>
+        <p>For the purpose of measuring harmonicity, both normalised and non-normalised autocorrelations are unsuitable.<br>
+          For the purpose of measuring ratio of periodicity, non-normalised autocorrelation is unsuitable (sensitive to RMS, not sensitive to ratio).<br>
+          <strong>For the purpose of measuring ratio of periodicity, normalised autocorrelation (~MPEG7) is suitable.<br>
+        </strong></p></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center"><p><strong>Observation - to do</strong></p>
+      <p>The situation may change in case of equal loudness instead of equal RMS. For the lower range, lower harmonics will be less audible, and harmonicity may be a way to get a higher amount of periodicity - but not the only one, as non-harmonic higher tones may have the same result.</p></td>
+    </tr>
+    <tr>
+      <td width="186" style="text-align: left">Measures - overall</td>
+      <td colspan="2" style="text-align: center">
         <table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
           <tbody>
             <tr>
@@ -84,8 +169,8 @@
       </table></td>
     </tr>
     <tr>
-      <td style="text-align: left"><p>Band-specific</p></td>
-      <td style="text-align: center"><table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <td style="text-align: left"><p>Measures, band-specific</p></td>
+      <td colspan="2" style="text-align: center"><table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
           <tbody>
             <tr>
               <td width="50%" style="text-align: center"><p><img src="imgs/Periodicity_by_band_normalised_upload.png" width="400" height="317" alt=""/></p>
@@ -105,17 +190,17 @@ Bottom, each band is normalised with its mean value. Higher and lower bands foll
       <p>To stand closer to perception, let's evaluate the overall &quot;harmonic ratio&quot; on ISO226-2003 weighted audio.</p></td>
     </tr>
     <tr>
-            <td colspan="2" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
-        ISO/IEC 2001 (MPEG7), &quot;harmonic ratio&quot; (in fact periodicity), on ISO 226 2003 weighted audio<br>
+            <td colspan="3" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+        ISO/IEC 2001 (MPEG7), &quot;harmonic ratio&quot; (in fact ratio of periodicity), on ISO 226 2003 weighted audio<br>
         <br>
       </strong></td>
     </tr>
     <tr>
       <td style="text-align: center">&nbsp;</td>
-      <td style="text-align: center"><p><img src="imgs/harmonic_ratio_on_weighted_audio_upload.png" width="400" height="148" alt=""/><br>
-        The dottet line is the original periodicity on unweighted audio. The difference is homogeneous with the physical band-specific periodicity and the ISO-226 2003 weighting. The influence of the high periodicity values corresponding 
-      to the bass frequencies are attenuated. Note that perceived periodicity may therefore increase when one listens louder.</p>
-      <p>Relationships with piano, orhcestra and concrete music remain similar.</p></td>
+      <td colspan="2" style="text-align: center"><p><img src="imgs/harmonic_ratio_on_weighted_audio_upload.png" width="400" height="148" alt=""/><br>
+        The dottet line is the original periodicity ratio on unweighted audio. The difference is homogeneous with the physical band-specific periodicity and the ISO-226 2003 weighting. The influence of the high periodicity values corresponding 
+      to the bass frequencies are attenuated. Note that perceived periodicity ratio may therefore increase when one listens louder.</p>
+      <p>Relationships with piano, orchestra and concrete music remain similar.</p></td>
     </tr>
   </tbody>
 </table>
