@@ -174,11 +174,11 @@ Max of autocorrelation  increases. <strong>Non-normalised autocorrelation is dep
           <tbody>
             <tr>
               <td width="50%" style="text-align: center"><p><img src="imgs/Periodicity_by_band_normalised_upload.png" width="400" height="317" alt=""/><br>
-                !!!! better normalise 
-              each band!</p>
+              </p>
               <p>Top, not normalised. Difficult to read.<br>
-Middle, mean values for each band.<br>
-Bottom, each band is normalised with its mean value. Higher and lower bands follow a specific pattern. </p>
+                <br>
+Middle, each band is normalised with its mean value. Higher and lower bands follow a specific pattern.</p>
+              <p>Bottom, each band is normalised [0 1]. </p>
               <p>The highest band is irrelevant to melodic information: &quot;only repetition rates between ∼30 and 4000 Hz elicit a pitch sensation that is salient enough to carry melodic information&quot; (Oxenham, 2012)</p></td>
               <td width="50%" style="text-align: center"><p><img src="imgs/allspectra_diachronic_upload.png" width="400" height="213" alt=""/></p>
                 <p>Top, evolution of spectrum, normalised, same resolution as left diagram. Result coherent with (Pestana, 2013).<br>
@@ -217,9 +217,11 @@ Bottom, each band is normalised with its mean value. Higher and lower bands foll
       </strong></td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align: center"><br>
-      PROVIDE INTERPRETATION OF PEAK SALIENCE, AND HOW IT IS DIFFERENT FROM AUTOCORRELATION<br>      
-      <br> </td>
+      <td colspan="2" style="text-align: center"><p><br>
+        PROVIDE INTERPRETATION OF PEAK SALIENCE, AND HOW IT IS DIFFERENT FROM AUTOCORRELATION</p>
+        <p>!!!! -log(WE(x)) = var(log(x))<br>      
+          <br>
+      </p></td>
     </tr>
     <tr>
       <td style="text-align: left">Wiener entropy</td>
@@ -369,8 +371,8 @@ Bottom, each band is normalised with its mean value. Higher and lower bands foll
     <tr>
       <td style="text-align: center">&nbsp;</td>
       <td style="text-align: center"><p>[May verify that the bass freqs in CPM have a particularly high peak salience.]</p>
-      <p><img src="imgs/Summarise_Peak_salience_by_band_normalised_upload.png" width="1000" height="360" alt=""/><br>
-        Evaluated from variance, show that variance(log(spectrum)) = WE
+      <p><img src="imgs/Summarise_Peak_salience_by_band_normalised_upload.png" width="400" height="317" alt=""/><br>
+        Not weighted. Evaluated from variance, show that variance(log(spectrum)) = WE
       </p></td>
     </tr>
   </tbody>
