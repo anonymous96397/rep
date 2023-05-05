@@ -67,7 +67,7 @@
       </strong></td>
     </tr>
     <tr>
-      <td rowspan="15" style="text-align: left">Interpretation of &quot;harmonic ratio&quot;</td>
+      <td rowspan="17" style="text-align: left">Interpretation of &quot;harmonic ratio&quot;</td>
       <td colspan="2" style="text-align: center"><p>HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
         <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;</p>
       <p>=&gt; it does NOT measure the &quot;proportion of harmonic components within the power spectrum&quot; . It measures the <em><strong>proportion of periodic components</strong></em> within the power spectrum.</p>
@@ -144,11 +144,41 @@ Max of autocorrelation  increases. <strong>Non-normalised autocorrelation is dep
         <strong>Normalised autocorrelation is related to the proportion of non-periodic elements.</strong></td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align: center"><p><strong>Summary</strong></p>
-        <p>For the purpose of measuring harmonicity, both normalised and non-normalised autocorrelations are unsuitable.<br>
-          For the purpose of measuring ratio of periodicity, non-normalised autocorrelation is unsuitable (sensitive to RMS, not sensitive to ratio).<br>
-          <strong>For the purpose of measuring ratio of periodicity, normalised autocorrelation (~MPEG7) is suitable.<br>
-        </strong></p></td>
+      <td style="text-align: center"><p><img src="imgs/Increasing inharmonicity normalised compensated by noise manual_upload.png" width="400" height="318" alt=""/></p>
+      <p>Inharmonicity coefficient (manual definition) compensated by noise</p></td>
+      <td style="text-align: center"><p><img src="imgs/Increasing inharmonicity normalised compensated by noise_upload.png" width="400" height="220" alt=""/></p>
+      <p>Inharmonicity coefficient according to (Fletcher et al., 1962) compensated by noise</p></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center">Conclusion to the two diagrams above: for a given harmonicratio value, it is possible to find multiple combinations of inharmonicity and noise<br>
+        decreasing harmonicity can be compensated by noise<br>
+        insert audio files</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center"><p><strong> <br>
+        Summary</strong> - <strong>MPEG7 Harmonicratio</strong>        </p>
+        <table width="100%" border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td style="text-align: center">High values of this feature may correspond to:<br>
+* sine wave<br>
+* sine wave with very low harmonics, in which case inharmonicity doesn’t have much influence on the feature<br>
+* harmonic compound</td>
+              <td style="text-align: center">The more overtones there are, the more the feature is sensitive to inharmonicity.</td>
+              <td style="text-align: center">Low values of this feature may correspond to:<br>
+* anything with white noise, even a sine wave or a perfectly harmonic compound<br>
+* highly inharmonic compound</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Therefore, high values don’t indicate harmonicity, they indicate the absence of inharmonicity and the absence of noise.<br>
+        Low values indicate inharmonicity and/or noise.</p>
+        <p>The scale is:<br>
+          (noise and/or inharmonicity) ———&gt; (absence of noise and absence of inharmonicity)<br>
+          In logical terms:<br>
+          (noise OR inharmonicity) ———&gt; (!noise AND !inharmonicity)</p>
+        <p>Note again that !inharmonicity ≠ harmonicity, as exemplified by the sine wave.<strong><br>
+      </strong></p></td>
     </tr>
     <tr>
       <td colspan="2" style="text-align: center"><p><strong>Observation - to do</strong></p>
@@ -389,7 +419,7 @@ Middle, each band is normalised with its mean value. Higher and lower bands foll
       </strong></td>
     </tr>
     <tr>
-      <td width="46" rowspan="8" style="text-align: left">&nbsp;</td>
+      <td width="46" rowspan="9" style="text-align: left">&nbsp;</td>
       <td colspan="2" style="text-align: center"><p> <span style="text-align: center">Both &quot;peak salience&quot; and &quot;periodicity&quot; here relates to the physical, non-weighted domain.</span>        </p>
         <table width="50%" border="0" align="center" cellpadding="0" cellspacing="0">
           <tbody>
@@ -409,11 +439,22 @@ Middle, each band is normalised with its mean value. Higher and lower bands foll
       <td width="623" style="text-align: center"><img src="imgs/BEA_WE_Harm_balanced_dists_rotated_upload.png" width="400" height="305" alt=""/></td>
     </tr>
     <tr>
-      <td style="text-align: center">When peak salience increases, periodicity increases. The two features are correlated.<br>
-      On first approximation, both features reach a local minimum during the '80s.</td>
+      <td style="text-align: center"><p>When peak salience increases, periodicity increases. The two features are correlated.<br>
+      On first approximation, both features reach a local minimum during the '80s.</p></td>
       <td style="text-align: center"><p>PCA of the left diagram.<br>
       </p>
         <p>PC2 shows that from the '80s, periodicity at equal peak salience decreases.</p></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center"><p>We can suppose that the peak salience scale is:<br>
+        (noise) ———&gt; (no noise)</p>
+      <p>Indeed, peak salience doesn’t care about the respective positions of peaks. There are more or less acute peaks, &quot;infinitely not acute” peaks provide noise,  &quot;infinitely acute peaks” provide Dirac impulses in the spectral domain, ie. sine waves.</p>
+      <p>The 2D diagrams are: x axis = peak salience, y axis = harmonicratio.<br>
+      Representing the four corners, we can then write:</p>
+      <p><img src="imgs/dimensions_WE_harm.png" width="407" height="178" alt=""/></p>
+      <p>Sure enough, there are no samples on the top left and bottom right, as the positions are impossible: ’noise’ and ’no noise’ simultaneously.<br>
+      Then, when we do the PCA of the diagram, we single out (noise -&gt; no noise) on the new X axis, and what remains on the Y axis is (inharmonicity —&gt; absence of inharmonicity).</p>
+      <p>This y axis is getting closer to a measure of harmonicity (because, for the time being, it’s !harmonicity, not harmonicity).Of course, by convention, it is possible to say that a sine wave is harmonic, but it’ll be better to really detect harmonicity - which should be done with the pairwise representations.</p></td>
     </tr>
     <tr>
       <td style="text-align: center"><p><img src="imgs/Peak_salience_periodicity_4datasets_better_straight_upload.png" width="400" height="328" alt=""/></p>
@@ -472,7 +513,7 @@ Click to enlarge</a></td>
       </strong></td>
     </tr>
     <tr>
-      <td rowspan="4" style="text-align: center">&nbsp;</td>
+      <td rowspan="5" style="text-align: center">&nbsp;</td>
       <td colspan="2" style="text-align: center"><p>Both &quot;peak salience&quot; and &quot;periodicity&quot; here relates to the &quot;perceptual&quot;, weighted domain. </p>
         <table width="50%" border="0" align="center" cellpadding="0" cellspacing="0">
           <tbody>
@@ -494,6 +535,11 @@ Click to enlarge</a></td>
     <tr>
       <td style="text-align: center">Comparable to unweighted, even if peak salience values are different</td>
       <td style="text-align: center">Comparable to unweighted.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><p><img src="imgs/MeanNorm_Varlog-Harmratio_weighted_upload.png" width="400" height="325" alt=""/></p>
+      <p>Band by band, weighted with ISO226 + actual energy of band over the dataset</p></td>
+      <td style="text-align: center">&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: center"><p><img src="imgs/Peak_salience_periodicity_4datasets_better_straight_weighted_upload.png" width="400" height="328" alt=""/></p>
@@ -2178,6 +2224,7 @@ y axis is property 2, parallelism</strong><br>
 <p>&nbsp;</p>
 <p><span style="font-size: xx-large">REFERENCES</span></p>
 <p>Cichocki, Andrzej, Rafal Zdunek, and Shun-ichi Amari (2006). "New algorithms for non-negative matrix factorization in applications to blind source separation." <em>2006 IEEE International Conference on Acoustics Speech and Signal Processing Proceedings</em>. Vol. 5. IEEE, 2006. </p>
+<p>Fletcher, Harvey, E. Donnell Blackham, and Richard Stratton. "Quality of piano tones." <em>The Journal of the Acoustical Society of America</em> 34.6 (1962): 749-761.</p>
 <p>Grachten, Maarten, Emmanuel Deruty, and Alexandre Tanguy. "Auto-adaptive resonance equalization using dilated residual networks." <em>arXiv preprint arXiv:1807.08636</em> (2018).</p>
 <p>ISO/IEC (2001), Information technology — Multimedia content description interface — Part 4: Audio, in FDIS 15938-4:2001(E), n.d. </p>
 <p>ISO/IEC. "226: 2003: Acoustics–Normal equal-loudness-level contours." <em>International Organization for Standardization</em> 63 (2003).</p>
