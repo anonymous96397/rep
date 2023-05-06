@@ -63,29 +63,34 @@
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
     <tr>
-      <td style="text-align: center">&nbsp;</td>
-      <td style="text-align: center"><p>Essentia in the original 2013 version contains inharmonicity and dissonance measures (Bogdanov, Dmitry, et al).<br>
-        In later versions, it contains a <a href="https://essentia.upf.edu/reference/std_PitchSalience.html">pitchSalience</a> algorithm. Reference is (Ricard, 2004).</p>
-        <p>&quot;This algorithm computes the pitch salience of a spectrum. The pitch salience is given by the <em><strong>ratio of the highest auto correlation value of the spectrum to the non-shifted auto correlation value. </strong></em>Pitch salience was designed as quick measure of tone sensation. Unpitched sounds (non-musical sound effects) and pure tones have an average pitch salience value close to 0 whereas sounds containing several harmonics in the spectrum tend to have a higher value.</p>
-        <p>Note that this algorithm may give better results when used with low sampling rates (i.e. 8000) as the information in the bands musically meaningful will have more relevance.&quot;<br>
-        [note that bass freqs are not relevant either]</p>
-        <p>I have to check but it sounds very similar to mpeg7 harmonicratio.<br>
-        </p></td>
-      <td style="text-align: center"><img src="imgs/Ricard_pitchsalience.png" width="400" height="303" alt=""/></td>
-    </tr>
-    <tr>
       <td colspan="3" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
         ISO/IEC 2001 (MPEG7), &quot;harmonic ratio&quot; (in fact ratio of periodicity)<br>
         <br>
       </strong></td>
     </tr>
     <tr>
-      <td rowspan="17" style="text-align: left">Interpretation of &quot;harmonic ratio&quot;</td>
+      <td rowspan="19" style="text-align: left">Interpretation of &quot;harmonic ratio&quot;</td>
       <td colspan="2" style="text-align: center"><p>HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
         <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental peiod of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;</p>
       <p>=&gt; it does NOT measure the &quot;proportion of harmonic components within the power spectrum&quot; . It measures the <em><strong>proportion of periodic components</strong></em> within the power spectrum.</p>
       <p>Explanation below. <br>
         <br>
+      </p></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><p>Essentia (Bogdanov, Dmitry et al, 2013) contains a <a href="https://essentia.upf.edu/reference/std_PitchSalience.html">pitchSalience</a> algorithm. Reference is (Ricard, 2004).</p>
+        <p>&quot;This algorithm computes the pitch salience of a spectrum. The pitch salience is given by the <em><strong>ratio of the highest auto correlation value of the spectrum to the non-shifted auto correlation value. </strong></em>Pitch salience was designed as quick measure of tone sensation. Unpitched sounds (non-musical sound effects) and pure tones have an average pitch salience value close to 0 whereas sounds containing several harmonics in the spectrum tend to have a higher value.</p>
+        <p>Note that this algorithm may give better results when used with low sampling rates (i.e. 8000) as the information in the bands musically meaningful will have more relevance.&quot;<br>
+          [note that bass freqs are not relevant either]</p>
+        <p>I have to check but pitchSalience sounds very similar to mpeg7 harmonicratio.<br>
+      </p></td>
+      <td style="text-align: center"><img src="imgs/Ricard_pitchsalience.png" width="400" height="303" alt=""/></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center"><p>Essentia in the original 2013 version contains <a href="https://essentia.upf.edu/reference/std_Inharmonicity.html">inharmonicity</a> and <a href="https://essentia.upf.edu/reference/std_Dissonance.html">dissonance</a> measures</p>
+      <p>Inharmonicity: &quot;This algorithm calculates the inharmonicity of a signal given its spectral peaks. The inharmonicity value is computed as an energy weighted divergence of the spectral components from their closest multiple of the fundamental frequency. The fundamental frequency is taken as the first spectral peak from the input. The inharmonicity value ranges from 0 (purely harmonic signal) to 1 (inharmonic signal).&quot; Difficult to apply to multiple pitches.</p>
+      <p>Dissonance: &quot;This algorithm computes the sensory dissonance of an audio signal given its spectral peaks. Sensory dissonance (to be distinguished from musical or theoretical dissonance) measures perceptual roughness of the sound and is based on the roughness of its spectral peaks. Given the spectral peaks, the algorithm estimates total dissonance by summing up the normalized dissonance values for each pair of peaks. These values are computed using dissonance curves, which define dissonace between two spectral peaks according to their frequency and amplitude relations. The dissonance curves are based on perceptual experiments conducted in (R. Plomp and W. J. M. Levelt, 1965)&quot;. CHECK but perhaps difficult to interpret. Seems that noise is included in dissonance. <strong>Relates to original paper 1 (chromas no ground truth)</strong> <strong>with dissonance measures.</strong></p>
+      <p><img src="imgs/Dissonance_evolution.png" width="400" height="100" alt=""/><br>
       </p></td>
     </tr>
     <tr>
