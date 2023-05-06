@@ -32,8 +32,10 @@
   <tbody>
     <tr>
       <td><p style="font-size: large; text-align: center;">WHAT'S IN THIS PAGE?</p>
+        <p style="font-size: large; text-align: center;">Originally thought for the content of paper 3. Should be split into two papers, paper 3.1 dealing with 'harmonicratio + peak salience' and paper 3.2 introducing 'pairwise band correlation'.</p>
+        <p style="font-size: large; text-align: center;">&nbsp;</p>
         <p style="font-size: medium"><br>
-          [In the Western classical music paradigm, music is written as a score involving musical notes. Rendition of the score is done using mainly musical instruments that produce harmonic or quasi-harmonic compounds. The goal of the analyses performed in this document is to find out to what extent contemporary popular music can be modelled using harmonic or quasi-harmonic compounds. The primary medium for contemporary popular music is audio.]</p>
+        [In the Western classical music paradigm, music is written as a score involving musical notes. Rendition of the score is done using mainly musical instruments that produce harmonic or quasi-harmonic compounds. The goal of the analyses performed in this document is to find out to what extent contemporary popular music can be modelled using harmonic or quasi-harmonic compounds. The primary medium for contemporary popular music is audio.]</p>
         <p style="font-size: medium"><strong>The complete introduction should/will be the introduction written in the pdf for paper 3.</strong></p>
         <p style="font-size: medium">Involving harmonic or quasi harmonic sounds in the modelling of audio implicitly assumes that it features the following properties.</p>
         <p style="font-size: medium"><strong>(Property 1, periodicity ratio)</strong> Periodicity can be observed at at least one frequency value.<br>
@@ -61,6 +63,17 @@
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
     <tr>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center"><p>Essentia in the original 2013 version contains inharmonicity and dissonance measures (Bogdanov, Dmitry, et al).<br>
+        In later versions, it contains a <a href="https://essentia.upf.edu/reference/std_PitchSalience.html">pitchSalience</a> algorithm. Reference is (Ricard, 2004).</p>
+        <p>&quot;This algorithm computes the pitch salience of a spectrum. The pitch salience is given by the <em><strong>ratio of the highest auto correlation value of the spectrum to the non-shifted auto correlation value. </strong></em>Pitch salience was designed as quick measure of tone sensation. Unpitched sounds (non-musical sound effects) and pure tones have an average pitch salience value close to 0 whereas sounds containing several harmonics in the spectrum tend to have a higher value.</p>
+        <p>Note that this algorithm may give better results when used with low sampling rates (i.e. 8000) as the information in the bands musically meaningful will have more relevance.&quot;<br>
+        [note that bass freqs are not relevant either]</p>
+        <p>I have to check but it sounds very similar to mpeg7 harmonicratio.<br>
+        </p></td>
+      <td style="text-align: center"><img src="imgs/Ricard_pitchsalience.png" width="400" height="303" alt=""/></td>
+    </tr>
+    <tr>
       <td colspan="3" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
         ISO/IEC 2001 (MPEG7), &quot;harmonic ratio&quot; (in fact ratio of periodicity)<br>
         <br>
@@ -69,7 +82,7 @@
     <tr>
       <td rowspan="17" style="text-align: left">Interpretation of &quot;harmonic ratio&quot;</td>
       <td colspan="2" style="text-align: center"><p>HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
-        <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;</p>
+        <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental peiod of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;</p>
       <p>=&gt; it does NOT measure the &quot;proportion of harmonic components within the power spectrum&quot; . It measures the <em><strong>proportion of periodic components</strong></em> within the power spectrum.</p>
       <p>Explanation below. <br>
         <br>
@@ -213,6 +226,11 @@ Middle, each band is normalised with its mean value. Higher and lower bands foll
               <td width="50%" style="text-align: center"><p><img src="imgs/allspectra_diachronic_upload.png" width="400" height="213" alt=""/></p>
                 <p>Top, evolution of spectrum, normalised, same resolution as left diagram. Result coherent with (Pestana, 2013).<br>
                 Bottom, the same, weighted with ISO226-2003 (ISO/IEC, 2003).</p>
+                <p>Similar to Essentia's &quot;<a href="https://essentia.upf.edu/reference/std_EqualLoudness.html">EqualLoudness</a>&quot;.<br>
+                  <a href="https://replaygain.hydrogenaud.io/equal_loudness.html">Reference</a> (web page) <br>
+                  Essentia considers the mean of Robinson Dadson. I take the 50 phon of ISO226-2003.
+                  <br>
+                </p>
                 <p>Top suggests that the values measured for band 1 are less relevant before the '80s than they are after.</p>
                 <p>Bottom suggests that the higher band and the two lower bands highlighted in the diagram on the left sound at least 19LU (~dB) less loud than the louder band.</p>
                 <p>The perceived periodicity may therefore reside in the central band, which follow a similar behaviour.</p></td>
@@ -248,10 +266,12 @@ Middle, each band is normalised with its mean value. Higher and lower bands foll
     </tr>
     <tr>
       <td colspan="2" style="text-align: center"><p><br>
-        PROVIDE INTERPRETATION OF PEAK SALIENCE, AND HOW IT IS DIFFERENT FROM AUTOCORRELATION</p>
-        <p>!!!! -log(WE(x)) = var(log(x))<br>      
-          <br>
-      </p></td>
+        Peak salience isn't sensitive to the relative location of formants / peaks. It only evaluates noise ratio.</p>
+        <p>!!!! -log(WE(x)) is proportional to var(log(x)) -- x are the spectrum values</p>
+        <p>we = (exp((sum(log(x)))./length(x))) ./ (sum(x)./length(x));</p>
+        <p>var =(1/(N−1))∑ (x_i−μ).^2  where μ=(1/N)∑x_i</p>
+        <p>How to find the equivalence?</p>
+        <p>Similar to Essentia's <a href="https://essentia.upf.edu/reference/std_FlatnessDB.html">FlatnessDB</a> feature.</p></td>
     </tr>
     <tr>
       <td style="text-align: left">Wiener entropy</td>
@@ -389,9 +409,7 @@ Middle, each band is normalised with its mean value. Higher and lower bands foll
           As the order of piano, orchestra and concrete is the same as harmonicity, one interpretation is that there may be an &quot;anomaly&quot; with CPM.</p>
         <p><strong><img src="imgs/Peak_salience_weighted_audio_upload.png" width="400" height="150" alt=""/></strong></p>
         <p>The order of piano-orchestra-concrete remains the same.<br>
-          However, peak salience of CPM is comparatively lower. Means that for the less audible freqencies, peak salience of CPM is particularly high. Perhaps it's the bass
-        frequencies.<br>
-        Recent CPM peak salience remains high.</p></td>
+        However, peak salience of CPM is comparatively lower. To understand the difference between physical and weighted, must evaluate band by band peak salience.</p></td>
     </tr>
     <tr>
       <td colspan="2" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
@@ -400,10 +418,16 @@ Middle, each band is normalised with its mean value. Higher and lower bands foll
       </strong></td>    </tr>
     <tr>
       <td style="text-align: center">&nbsp;</td>
-      <td style="text-align: center"><p>[May verify that the bass freqs in CPM have a particularly high peak salience.]</p>
-      <p><img src="imgs/Summarise_Peak_salience_by_band_normalised_upload.png" width="400" height="317" alt=""/><br>
-        Not weighted. Evaluated from variance, show that variance(log(spectrum)) = WE
-      </p></td>
+      <td style="text-align: center"><p><img src="imgs/Summarise_Peak_salience_by_band_normalised_upload.png" width="400" height="317" alt=""/><br>
+        Not weighted. Evaluated from variance, as -log(WE(x)) = var(log(x))<br>
+        The increase in bass peak salience after the '80s may account for the more moderate increase
+        in weighted CPM peak salience.<br>
+        How to explain that CPM peak salience is generally lower compared to the three other categories when weighted?
+        </p>
+        <p>Is it necessary to evaluate mean spectrum for piano, orchestra and concrete music to understand why weighting makes CPM peak salience comparatively lower?<br>
+          Peak salience is var(log(spectrum)), therefore it should be insensitive to gain. CHECK THIS POINT and evaluate band-by-band peak salience for the three other categories.<br>
+          If, however, peak salience is sensitive to gain, then attenuation of the 112-199Hz band may account 
+        for the lower peak salience of CPM.</p></td>
     </tr>
   </tbody>
 </table>
@@ -450,7 +474,7 @@ Middle, each band is normalised with its mean value. Higher and lower bands foll
         (noise) ———&gt; (no noise)</p>
       <p>Indeed, peak salience doesn’t care about the respective positions of peaks. There are more or less acute peaks, &quot;infinitely not acute” peaks provide noise,  &quot;infinitely acute peaks” provide Dirac impulses in the spectral domain, ie. sine waves.</p>
       <p>The 2D diagrams are: x axis = peak salience, y axis = harmonicratio.<br>
-      Representing the four corners, we can then write:</p>
+      Representing the four corners:</p>
       <p><img src="imgs/dimensions_WE_harm.png" width="407" height="178" alt=""/></p>
       <p>Sure enough, there are no samples on the top left and bottom right, as the positions are impossible: ’noise’ and ’no noise’ simultaneously.<br>
       Then, when we do the PCA of the diagram, we single out (noise -&gt; no noise) on the new X axis, and what remains on the Y axis is (inharmonicity —&gt; absence of inharmonicity).</p>
@@ -2223,6 +2247,7 @@ y axis is property 2, parallelism</strong><br>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p><span style="font-size: xx-large">REFERENCES</span></p>
+<p>Bogdanov, Dmitry, et al. &quot;Essentia: An audio analysis library for music information retrieval.&quot; Britto A, Gouyon F, Dixon S, editors. 14th Conference of the International Society for Music Information Retrieval (ISMIR); 2013 Nov 4-8; Curitiba, Brazil.[place unknown]: ISMIR; 2013. p. 493-8. International Society for Music Information Retrieval (ISMIR), 2013.</p>
 <p>Cichocki, Andrzej, Rafal Zdunek, and Shun-ichi Amari (2006). "New algorithms for non-negative matrix factorization in applications to blind source separation." <em>2006 IEEE International Conference on Acoustics Speech and Signal Processing Proceedings</em>. Vol. 5. IEEE, 2006. </p>
 <p>Fletcher, Harvey, E. Donnell Blackham, and Richard Stratton. "Quality of piano tones." <em>The Journal of the Acoustical Society of America</em> 34.6 (1962): 749-761.</p>
 <p>Grachten, Maarten, Emmanuel Deruty, and Alexandre Tanguy. "Auto-adaptive resonance equalization using dilated residual networks." <em>arXiv preprint arXiv:1807.08636</em> (2018).</p>
@@ -2231,8 +2256,11 @@ y axis is property 2, parallelism</strong><br>
 <p>Mauch, Matthias, and Simon Dixon. "Approximate Note Transcription for the Improved Identification of Difficult Chords." <em>ISMIR</em>. 2010.</p>
 <p>Andrew J. Oxenham. &quot;Pitch Perception&quot;. Journal of Neuroscience 26 September 2012, 32 (39) 13335-13338; DOI: https://doi.org/10.1523/JNEUROSCI.3815-12.2012</p>
 <p>Parry, Charles Hubert Hastings. <em>Style in musical art</em>. Macmillan, 1911.</p>
+<p>Peeters, Geoffroy. A large set of audio features for sound description (similarity and classification) in the CUIDADO project. CUIDADO Project Report, 2004. Available online: http://recherche.ircam.fr/equipes/analysesynthese/peeters/ARTICLES/.</p>
 <p>Pestana, Pedro Duarte, et al. "Spectral characteristics of popular commercial recordings 1950-2010." <em>Audio Engineering Society Convention 135</em>. Audio Engineering Society, 2013.</p>
+<p>R. Plomp and W. J. M. Levelt. Tonal consonance and critical bandwidth. The Journal of the Acoustical Society of America, 38(4):548–560, 1965.</p>
 <p>Pressnitzer, Daniel, Roy D. Patterson, and Katrin Krumbholz. "The lower limit of melodic pitch." <em>The Journal of the Acoustical Society of America</em> 109.5 (2001): 2074-2084.</p>
+<p>J. Ricard "Towards computational morphological description of sound. DEA pre-thesis research work, Universitat Pompeu Fabra, Barcelona, 2004.</p>
 <p>&nbsp;</p>
 </body>
 </html>
