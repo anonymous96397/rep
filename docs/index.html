@@ -458,7 +458,7 @@ Middle, each band is normalised with its mean value. Higher and lower bands foll
       </strong></td>
     </tr>
     <tr>
-      <td width="46" rowspan="9" style="text-align: left">&nbsp;</td>
+      <td width="46" rowspan="10" style="text-align: left">&nbsp;</td>
       <td colspan="2" style="text-align: center"><p> <span style="text-align: center">Both &quot;peak salience&quot; and &quot;periodicity&quot; here relates to the physical, non-weighted domain.</span>        </p>
         <table width="50%" border="0" align="center" cellpadding="0" cellspacing="0">
           <tbody>
@@ -503,6 +503,15 @@ Middle, each band is normalised with its mean value. Higher and lower bands foll
       PCA version will indicate that CPM has generally lower periodicity at equal peak salience and that the trend is increasing. -&gt;<br>
       </p></td>
       <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><p><img src="imgs/Varlog-Harmratio_physical_upload.png" width="400" height="326" alt=""/></p>
+      <p>Band by band evolution.<br>
+        ! the scale is not the same because the peak salience evaluation method is slightly different
+          <br>
+          harmonise scales!
+      </p></td>
+      <td style="text-align: center; font-size: small;">&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: center"><a href="imgs/BEA_WE_Harm_straight_authors_upload.png"><img src="imgs/BEA_WE_Harm_straight_authors_upload.png" width="400" height="319" alt=""/><br>
@@ -578,7 +587,9 @@ Click to enlarge</a></td>
     <tr>
       <td style="text-align: center"><p><img src="imgs/MeanNorm_Varlog-Harmratio_weighted_upload.png" width="400" height="325" alt=""/></p>
         <p>Band by band, weighted with ISO226 + actual energy of band over the dataset<br>
-      !! Normalisation of feature value masks the actual contribution! </p></td>
+      !! Normalisation of feature value masks the actual contribution! <br>
+      How did I get the harmonic  band ratio weighted?
+        W1_audio_harmonicity/J_hrs.mat -&gt; verify that it's correct</p></td>
       <td style="text-align: center"><p>&nbsp;</p></td>
     </tr>
     <tr>
