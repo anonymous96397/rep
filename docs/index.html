@@ -63,48 +63,56 @@
 <table width="1386" border="1" cellpadding="0" cellspacing="0">
   <tbody>
     <tr>
-      <td colspan="3" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+      <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
         ISO/IEC 2001 (MPEG7), &quot;harmonic ratio&quot; (in fact ratio of periodicity)<br>
         <br>
       </strong></td>
     </tr>
     <tr>
       <td rowspan="19" style="text-align: left">Interpretation of &quot;harmonic ratio&quot;</td>
-      <td colspan="2" style="text-align: center"><p>HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
+      <td colspan="3" style="text-align: center"><p>HarmonicRatio in feature AudioHarmonicity  (ISO/IEC, 2001), p.44.</p>
         <p>&quot;HarmonicRatio is loosely defined as the proportion of harmonic components within the power spectrum. It is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental peiod of the signal.   In order to avoid dependency on the actual fundamental frequency estimate, the algorithm produces its own estimate by searching for the maximum value in the normalized cross-correlation of the signal.&quot;</p>
+        <p><img src="imgs/harmonicratio_mpeg.png" width="550" height="203" alt=""/></p>
       <p>=&gt; it does NOT measure the &quot;proportion of harmonic components within the power spectrum&quot; . It measures the <em><strong>proportion of periodic components</strong></em> within the power spectrum.</p>
       <p>Explanation below. <br>
         <br>
       </p></td>
     </tr>
     <tr>
-      <td style="text-align: center"><p>Essentia (Bogdanov, Dmitry et al, 2013) contains a <a href="https://essentia.upf.edu/reference/std_PitchSalience.html">pitchSalience</a> algorithm. Reference is (Ricard, 2004).</p>
+      <td style="text-align: center"><p>Essentia (Bogdanov, Dmitry et al, 2013) contains a <a href="https://essentia.upf.edu/reference/std_PitchSalience.html">pitchSalience</a> algorithm. </p>
         <p>&quot;This algorithm computes the pitch salience of a spectrum. The pitch salience is given by the <em><strong>ratio of the highest auto correlation value of the spectrum to the non-shifted auto correlation value. </strong></em>Pitch salience was designed as quick measure of tone sensation. Unpitched sounds (non-musical sound effects) and pure tones have an average pitch salience value close to 0 whereas sounds containing several harmonics in the spectrum tend to have a higher value.</p>
         <p>Note that this algorithm may give better results when used with low sampling rates (i.e. 8000) as the information in the bands musically meaningful will have more relevance.&quot;<br>
           [note that bass freqs are not relevant either]</p>
-        <p>I have to check but pitchSalience sounds very similar to mpeg7 harmonicratio.<br>
+        <p>I have to check but pitchSalience sounds partially similar to mpeg7 harmonicratio.</p>
+        <p>!! Pitch salience is computed using the ratio of the highest autocorrelation value of the spectrum to the non-shifted autocorrelation value. In contrast, the HarmonicRatio feature is derived from the correlation between the signal and a lagged representation of the signal, lagged by the fundamental period of the signal. </p>
+        <p>!! (Solomon and Gomez, 2012) propose a different interpretation, with a specification of the number of harmonics. It's the ref given by the Essentia C++ source code.<br>
+          Objection may be &quot; harmonic summation&quot;, which goes against the absence of hypothesis.<br>
+          Still, the phase spectrum and instantaneous frequency is a good idea to try.
+          <br>
       </p></td>
-      <td style="text-align: center"><img src="imgs/Ricard_pitchsalience.png" width="400" height="303" alt=""/></td>
+      <td style="text-align: center"><p><img src="imgs/Ricard_pitchsalience.png" width="400" height="303" alt=""/></p>
+      <p>(Ricard, 2004) - normalised first peak</p></td>
+      <td style="text-align: center">&nbsp;</td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align: center"><p>Essentia in the original 2013 version contains <a href="https://essentia.upf.edu/reference/std_Inharmonicity.html">inharmonicity</a> and <a href="https://essentia.upf.edu/reference/std_Dissonance.html">dissonance</a> measures</p>
+      <td colspan="3" style="text-align: center"><p>Essentia in the original 2013 version contains <a href="https://essentia.upf.edu/reference/std_Inharmonicity.html">inharmonicity</a> and <a href="https://essentia.upf.edu/reference/std_Dissonance.html">dissonance</a> measures</p>
       <p>Inharmonicity: &quot;This algorithm calculates the inharmonicity of a signal given its spectral peaks. The inharmonicity value is computed as an energy weighted divergence of the spectral components from their closest multiple of the fundamental frequency. The fundamental frequency is taken as the first spectral peak from the input. The inharmonicity value ranges from 0 (purely harmonic signal) to 1 (inharmonic signal).&quot; Difficult to apply to multiple pitches.</p>
       <p>Dissonance: &quot;This algorithm computes the sensory dissonance of an audio signal given its spectral peaks. Sensory dissonance (to be distinguished from musical or theoretical dissonance) measures perceptual roughness of the sound and is based on the roughness of its spectral peaks. Given the spectral peaks, the algorithm estimates total dissonance by summing up the normalized dissonance values for each pair of peaks. These values are computed using dissonance curves, which define dissonace between two spectral peaks according to their frequency and amplitude relations. The dissonance curves are based on perceptual experiments conducted in (R. Plomp and W. J. M. Levelt, 1965)&quot;. CHECK but perhaps difficult to interpret. Seems that noise is included in dissonance. <strong>Relates to original paper 1 (chromas no ground truth)</strong> <strong>with dissonance measures.</strong></p>
       <p><img src="imgs/Dissonance_evolution.png" width="400" height="100" alt=""/><br>
       </p></td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align: center"><strong>First illustration</strong></td>
+      <td colspan="3" style="text-align: center"><strong>What does HarmonicRatio measure? first illustration</strong></td>
     </tr>
     <tr>
       <td width="596" style="text-align: center"><img src="imgs/Corr_01_normalised_sine_wave_upload.png" width="400" height="321" alt=""/></td>
-      <td width="596" style="text-align: center"><img src="imgs/Corr_02_the_same_sine_wave_with harmonics_upload.png" width="400" height="314" alt=""/></td>
+      <td width="596" colspan="2" style="text-align: center"><img src="imgs/Corr_02_the_same_sine_wave_with harmonics_upload.png" width="400" height="314" alt=""/></td>
     </tr>
     <tr>
       <td style="text-align: center"><p><strong>Case (1).</strong> Let’s start with a 220Hz sine wave.<br>
         The sine wave is normalised. Its amplitude is inside [-1 1].</p>
       <p>The figure above shows the power spectrum, the autocorrelation and the normalised autocorrelation. The maximum autocorrelation is 110250. The maximum normalised autocorrelation is 1.</p></td>
-      <td style="text-align: center"><p><strong>Case (2). </strong>Let’s add some harmonics.<br>
+      <td colspan="2" style="text-align: center"><p><strong>Case (2). </strong>Let’s add some harmonics.<br>
         The autocorrelation is greater, as the autocorrelation from the harmonics adds up to the autocorrelation from the fundamental.<br>
         The normalised autocorrelation is still 1.</p>
         <p>The MPEG7 HarmonicRatio feature I use in the HTML page is <a href="https://fr.mathworks.com/help/audio/ref/harmonicratio.html">this one</a>.<br>
@@ -116,64 +124,64 @@
     </tr>
     <tr>
       <td style="text-align: center"><img src="imgs/Corr_03_normalised_sine_wave_with harmonics_upload.png" width="400" height="319" alt=""/></td>
-      <td style="text-align: center"><img src="imgs/Corr_04_RMS_adjusted_sine_wave_with harmonics_upload.png" width="400" height="322" alt=""/></td>
+      <td colspan="2" style="text-align: center"><img src="imgs/Corr_04_RMS_adjusted_sine_wave_with harmonics_upload.png" width="400" height="322" alt=""/></td>
     </tr>
     <tr>
       <td style="text-align: center"><p><strong>Case (3).</strong>The next possible thing we can do is compare (1) the sine wave with (2) the complex tone of the same peak value.</p>
       <p>In this case, the autocorrelation is less, not more!!!!<br>
       And the normalised autocorrelation (the HarmonicRatio feature) is still the same!</p></td>
-      <td style="text-align: center"><p>it can be argued that comparing a sine wave and a complex tone that have the same peak value is arbitrary. Then let’s compare a sine wave and a complex tone that have the same RMS power. Ideally, they may have the same loudness, but then the result will depend on F0. Let’s see how it goes with same RMS power.</p>
+      <td colspan="2" style="text-align: center"><p>it can be argued that comparing a sine wave and a complex tone that have the same peak value is arbitrary. Then let’s compare a sine wave and a complex tone that have the same RMS power. Ideally, they may have the same loudness, but then the result will depend on F0. Let’s see how it goes with same RMS power.</p>
       <p>The autocorrelation is the same as the original sine wave's! The normalised autocorrelation is still the same. Therefore, not only MPEG7 HarmonicRatio (normalised autocorrelation) doesn’t measure harmonicity, but in fact, at equal RMS, even autocorrelation does not.</p></td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align: center"><strong>Second illustration</strong></td>
+      <td colspan="3" style="text-align: center"><strong>What does HarmonicRatio measure? Second illustration</strong></td>
     </tr>
     <tr>
       <td style="text-align: center"><img src="imgs/Corr Same max non-normalised value equal RMS variable harmonicity upload.png" width="400" height="326" alt=""/></td>
-      <td style="text-align: center"><img src="imgs/Corr Same max normalised value equal RMS variable harmonicity upload.png" width="400" height="325" alt=""/></td>
+      <td colspan="2" style="text-align: center"><img src="imgs/Corr Same max normalised value equal RMS variable harmonicity upload.png" width="400" height="325" alt=""/></td>
     </tr>
     <tr>
       <td style="text-align: center">Non-normalised correlation. Increasingly harmonic samples, same RMS.<br>
         Amplitude of fundamental decreases to keep same RMS.<br>
         Max of autocorrelation remains stable.<br>
         <strong>At equal RMS, autocorrelation is not dependent on harmonicity.</strong></td>
-      <td style="text-align: center">Same as left, with normalised autocorrelation (~MPEG7).<br>
+      <td colspan="2" style="text-align: center">Same as left, with normalised autocorrelation (~MPEG7).<br>
       <strong>Normalised auto-correlation is not dependent on harmonicity.</strong></td>
     </tr>
     <tr>
       <td style="text-align: center"><img src="imgs/Corr Same max non-normalised value equal harmonoicity variable RMS upload.png" width="400" height="319" alt=""/></td>
-      <td style="text-align: center"><img src="imgs/Corr Same max normalised value equal harmonoicity variable RMS upload.png" width="400" height="319" alt=""/></td>
+      <td colspan="2" style="text-align: center"><img src="imgs/Corr Same max normalised value equal harmonoicity variable RMS upload.png" width="400" height="319" alt=""/></td>
     </tr>
     <tr>
       <td style="text-align: center">Non-normalised correlation. Increasingly loud samples, same harmonicity.<br>
 Max of autocorrelation  increases. <strong>Non-normalised autocorrelation is dependent on RMS.</strong></td>
-      <td style="text-align: center">Same as left, with normalised autocorrelation (~MPEG7).<br>
+      <td colspan="2" style="text-align: center">Same as left, with normalised autocorrelation (~MPEG7).<br>
         <strong>Normalised auto-correlation is not dependent on RMS.</strong><br></td>
     </tr>
     <tr>
       <td style="text-align: center"><img src="imgs/Corr Same max non-normalised value equal harmonoicity variable noise upload.png" width="400" height="298" alt=""/></td>
-      <td style="text-align: center"><img src="imgs/Corr Same max normalised value equal harmonoicity variable noise upload.png" width="400" height="298" alt=""/></td>
+      <td colspan="2" style="text-align: center"><img src="imgs/Corr Same max normalised value equal harmonoicity variable noise upload.png" width="400" height="298" alt=""/></td>
     </tr>
     <tr>
       <td style="text-align: center">Non-normalised correlation. Increasing white noise proportion. Max white noise RMS is equal to harmonic tone RMS. Autocorrelation remains stable.<br>
       <strong>Non-normalised autocorrelation is not sensitive to non-perodic elements in the signal.</strong> <br></td>
-      <td style="text-align: center">Same as left, with normalised autocorrelation (~MPEG7).<br>
+      <td colspan="2" style="text-align: center">Same as left, with normalised autocorrelation (~MPEG7).<br>
         Max of normalised autocorrelation decreases with added noise.<br>
         <strong>Normalised autocorrelation is related to the proportion of non-periodic elements.</strong></td>
     </tr>
     <tr>
       <td style="text-align: center"><p><img src="imgs/Increasing inharmonicity normalised compensated by noise manual_upload.png" width="400" height="318" alt=""/></p>
       <p>Inharmonicity coefficient (manual definition) compensated by noise</p></td>
-      <td style="text-align: center"><p><img src="imgs/Increasing inharmonicity normalised compensated by noise_upload.png" width="400" height="220" alt=""/></p>
+      <td colspan="2" style="text-align: center"><p><img src="imgs/Increasing inharmonicity normalised compensated by noise_upload.png" width="400" height="220" alt=""/></p>
       <p>Inharmonicity coefficient according to (Fletcher et al., 1962) compensated by noise</p></td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align: center">Conclusion to the two diagrams above: for a given harmonicratio value, it is possible to find multiple combinations of inharmonicity and noise<br>
+      <td colspan="3" style="text-align: center">Conclusion to the two diagrams above: for a given harmonicratio value, it is possible to find multiple combinations of inharmonicity and noise<br>
         decreasing harmonicity can be compensated by noise<br>
         insert audio files</td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align: center"><p><strong> <br>
+      <td colspan="3" style="text-align: center"><p><strong> <br>
         Summary</strong> - <strong>MPEG7 Harmonicratio</strong>        </p>
         <table width="100%" border="1" cellspacing="0" cellpadding="0">
           <tbody>
@@ -199,12 +207,12 @@ Max of autocorrelation  increases. <strong>Non-normalised autocorrelation is dep
       </strong></p></td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align: center"><p><strong>Observation - to do</strong></p>
+      <td colspan="3" style="text-align: center"><p><strong>Observation - to do</strong></p>
       <p>The situation may change in case of equal loudness instead of equal RMS. For the lower range, lower harmonics will be less audible, and harmonicity may be a way to get a higher amount of periodicity - but not the only one, as non-harmonic higher tones may have the same result.</p></td>
     </tr>
     <tr>
       <td width="186" style="text-align: left">Measures - overall</td>
-      <td colspan="2" style="text-align: center">
+      <td colspan="3" style="text-align: center">
         <table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
           <tbody>
             <tr>
@@ -218,7 +226,7 @@ Max of autocorrelation  increases. <strong>Non-normalised autocorrelation is dep
     </tr>
     <tr>
       <td style="text-align: left"><p>Measures, band-specific</p></td>
-      <td colspan="2" style="text-align: center"><table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <td colspan="3" style="text-align: center"><table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
           <tbody>
             <tr>
               <td width="50%" style="text-align: center"><p><img src="imgs/Periodicity_by_band_normalised_upload.png" width="400" height="317" alt=""/><br>
@@ -232,7 +240,7 @@ Middle, each band is normalised with its mean value. Higher and lower bands foll
                 <p>Top, evolution of spectrum, normalised, same resolution as left diagram. Result coherent with (Pestana, 2013).<br>
                 Bottom, the same, weighted with ISO226-2003 (ISO/IEC, 2003).</p>
                 <p>Similar to Essentia's &quot;<a href="https://essentia.upf.edu/reference/std_EqualLoudness.html">EqualLoudness</a>&quot;.<br>
-                  <a href="https://replaygain.hydrogenaud.io/equal_loudness.html">Reference</a> (web page) <br>
+                  <a href="https://replaygain.hydrogenaud.io/equal_loudness.html">Reference</a> (web page) and (Solomon Gomez, 2012)<br>
                   Essentia considers the mean of Robinson Dadson. I take the 50 phon of ISO226-2003.
                   <br>
                 </p>
@@ -245,14 +253,14 @@ Middle, each band is normalised with its mean value. Higher and lower bands foll
       <p>To stand closer to perception, let's evaluate the overall &quot;harmonic ratio&quot; on ISO226-2003 weighted audio.</p></td>
     </tr>
     <tr>
-            <td colspan="3" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
+            <td colspan="4" bgcolor="#88F5FF" style="text-align: center"><strong> <br>
         ISO/IEC 2001 (MPEG7), &quot;harmonic ratio&quot; (in fact ratio of periodicity), on ISO 226 2003 weighted audio<br>
         <br>
       </strong></td>
     </tr>
     <tr>
       <td style="text-align: center">&nbsp;</td>
-      <td colspan="2" style="text-align: center"><p><img src="imgs/harmonic_ratio_on_weighted_audio_upload.png" width="400" height="148" alt=""/><br>
+      <td colspan="3" style="text-align: center"><p><img src="imgs/harmonic_ratio_on_weighted_audio_upload.png" width="400" height="148" alt=""/><br>
         The dottet line is the original periodicity ratio on unweighted audio. The difference is homogeneous with the physical band-specific periodicity and the ISO-226 2003 weighting. The influence of the high periodicity values corresponding 
       to the bass frequencies are attenuated. Note that perceived periodicity ratio may therefore increase when one listens louder.</p>
       <p>Relationships with piano, orchestra and concrete music remain similar.</p></td>
@@ -273,10 +281,12 @@ Middle, each band is normalised with its mean value. Higher and lower bands foll
       <td colspan="2" style="text-align: center"><p><br>
         Peak salience isn't sensitive to the relative location of formants / peaks. It only evaluates noise ratio.</p>
         <p>!!!! -log(WE(x)) is proportional to var(log(x)) -- x are the spectrum values</p>
+        <p><img src="imgs/WE-VarLog_corr_upload.png" width="400" height="149" alt=""/></p>
         <p>we = (exp((sum(log(x)))./length(x))) ./ (sum(x)./length(x));</p>
         <p>var =(1/(N−1))∑ (x_i−μ).^2  where μ=(1/N)∑x_i</p>
-        <p>How to find the equivalence?</p>
-        <p>Similar to Essentia's <a href="https://essentia.upf.edu/reference/std_FlatnessDB.html">FlatnessDB</a> feature.</p></td>
+        <p>Find the equivalence formally.</p>
+        <p>&nbsp;</p>
+      <p>Also, Wiener entropy is similar to Essentia's <a href="https://essentia.upf.edu/reference/std_FlatnessDB.html">FlatnessDB</a> feature.</p></td>
     </tr>
     <tr>
       <td style="text-align: left">Wiener entropy</td>
@@ -567,8 +577,9 @@ Click to enlarge</a></td>
     </tr>
     <tr>
       <td style="text-align: center"><p><img src="imgs/MeanNorm_Varlog-Harmratio_weighted_upload.png" width="400" height="325" alt=""/></p>
-      <p>Band by band, weighted with ISO226 + actual energy of band over the dataset</p></td>
-      <td style="text-align: center">&nbsp;</td>
+        <p>Band by band, weighted with ISO226 + actual energy of band over the dataset<br>
+      !! Normalisation of feature value masks the actual contribution! </p></td>
+      <td style="text-align: center"><p>&nbsp;</p></td>
     </tr>
     <tr>
       <td style="text-align: center"><p><img src="imgs/Peak_salience_periodicity_4datasets_better_straight_weighted_upload.png" width="400" height="328" alt=""/></p>
@@ -2266,6 +2277,8 @@ y axis is property 2, parallelism</strong><br>
 <p>R. Plomp and W. J. M. Levelt. Tonal consonance and critical bandwidth. The Journal of the Acoustical Society of America, 38(4):548–560, 1965.</p>
 <p>Pressnitzer, Daniel, Roy D. Patterson, and Katrin Krumbholz. "The lower limit of melodic pitch." <em>The Journal of the Acoustical Society of America</em> 109.5 (2001): 2074-2084.</p>
 <p>J. Ricard "Towards computational morphological description of sound. DEA pre-thesis research work, Universitat Pompeu Fabra, Barcelona, 2004.</p>
+<p>Salamon, Justin, and Emilia Gómez. "Melody extraction from polyphonic music signals using pitch contour characteristics." <em>IEEE transactions on audio, speech, and language processing</em> 20.6 (2012): 1759-1770.</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 </body>
 </html>
