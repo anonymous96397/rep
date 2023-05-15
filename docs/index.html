@@ -281,10 +281,12 @@ Middle, each band is normalised with its mean value. Higher and lower bands foll
       <td colspan="2" style="text-align: center"><p><br>
         Peak salience isn't sensitive to the relative location of formants / peaks. It only evaluates noise ratio.</p>
         <p>!!!! -log(WE(x)) is proportional to var(log(x)) -- x are the spectrum values</p>
-        <p><img src="imgs/WE-VarLog_corr_upload.png" width="400" height="149" alt=""/></p>
-        <p>we = (exp((sum(log(x)))./length(x))) ./ (sum(x)./length(x));</p>
-        <p>var =(1/(N−1))∑ (x_i−μ).^2  where μ=(1/N)∑x_i</p>
-        <p>Find the equivalence formally.</p>
+        <p><img src="imgs/WE-VarLog_corr_Pearson_upload.png" width="400" height="146" alt=""/></p>
+        <p>we(x) = (exp((sum(log(x)))./length(x))) ./ (sum(x)./length(x));</p>
+        <p>var(log(x)) =(1/(N−1))∑ (log(x)−μ).^2  where μ=(1/N)∑log(x)</p>
+        <p>The equivalence can 't be formally established. In the general case, there is correlation, but for the modified spectra we use, correlation is almost 1.<br>
+          Is it still true for simple signals? For instance a single complex tone has a lower peak salience but seems to have a high var.
+        </p>
         <p>&nbsp;</p>
       <p>Also, Wiener entropy is similar to Essentia's <a href="https://essentia.upf.edu/reference/std_FlatnessDB.html">FlatnessDB</a> feature.</p></td>
     </tr>
